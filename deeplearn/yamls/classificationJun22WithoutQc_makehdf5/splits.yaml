@@ -1,0 +1,9 @@
+{
+    "splits": {
+        "split_name_to_split_files": {
+            "train": "../splits/trainJun22ClassificationWithoutQc.txt.gz"
+            ,"valid": "../splits/valJun22ClassificationWithoutQc.txt.gz"
+            ,"test": "../splits/testJun22ClassificationWithoutQc.txt.gz"
+        }
+    }
+}

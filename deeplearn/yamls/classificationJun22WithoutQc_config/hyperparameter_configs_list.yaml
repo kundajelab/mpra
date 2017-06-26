@@ -1,0 +1,225 @@
+
+    [
+    {
+        "other_data_loaders":{
+            "train": {
+                "class": "hdf5_data_loader.MultimodalBatchDataLoader",
+                "kwargs": {
+                    "batch_size": 500,
+                    "path_to_hdf5": "../hdf5files/train_data.hdf5",
+                    "num_to_load_for_eval": 50000,
+                    "bundle_x_and_y_in_generator": True,
+                    "strip_enclosing_dictionary": False
+                }
+            }
+        },
+    "model_creator":{
+        "class": "flexible_keras.FlexibleKerasGraph",
+        "kwargs": {
+            "inputs_config": [
+                {"name": "sequence",
+                 "input_shape": [1, 4, 2000]}
+            ],
+            "nodes_config": [
+                {
+                    "name": "conv1",
+                    "input_name": "sequence", 
+                    "class": "keras.layers.convolutional.Convolution2D", 
+                    "kwargs": {"nb_filter": 300, "nb_row": 4, "nb_col": 19}
+                               #"W_learning_rate_multiplier": 10}
+                },
+                {
+                    "name": "conv1_batchnorm",
+                    "input_name": "conv1", 
+                    "class": "keras.layers.normalization.BatchNormalization", 
+                    "kwargs": {"axis": 3} #theano specific
+                },
+                {
+                    "name": "conv1_act",
+                    "input_name": "conv1_batchnorm", 
+                    "class": "keras.layers.core.Activation", 
+                    "kwargs": {"activation": "relu"}
+                },
+                {
+                    "name": "max_pool1",
+                    "input_name": "conv1_act", 
+                    "class": "keras.layers.convolutional.MaxPooling2D", 
+                    "kwargs": {"pool_size": [1,3], "strides": [1,3]}
+                },
+                {
+                    "name": "conv2",
+                    "input_name": "max_pool1", 
+                    "class": "keras.layers.convolutional.Convolution2D", 
+                    "kwargs": {
+                        "nb_filter": 200, "nb_row": 1, "nb_col": 11,
+                        #"W_learning_rate_multiplier": 5,
+                        "W_constraint": {                                       
+                            "autoload": true,                                   
+                            "class": "keras.constraints.maxnorm",               
+                            "kwargs": {"m": 7, "axis": 0}                       
+                        } 
+                    }
+                },
+                {
+                    "name": "conv2_batchnorm",
+                    "input_name": "conv2", 
+                    "class": "keras.layers.normalization.BatchNormalization", 
+                    "kwargs": {"axis": 3} #theano specific
+                },
+                {
+                    "name": "conv2_act",
+                    "input_name": "conv2_batchnorm", 
+                    "class": "keras.layers.core.Activation", 
+                    "kwargs": {"activation": "relu"}
+                },
+                {
+                    "name": "max_pool2",
+                    "input_name": "conv2_act", 
+                    "class": "keras.layers.convolutional.MaxPooling2D", 
+                    "kwargs": {"pool_size": [1,4], "strides": [1,4]}
+                },
+                {
+                    "name": "conv3",
+                    "input_name": "max_pool2", 
+                    "class": "keras.layers.convolutional.Convolution2D", 
+                    "kwargs": {
+                        "nb_filter": 200, "nb_row": 1, "nb_col": 7,
+                        "W_constraint": {                                       
+                            "autoload": true,                                   
+                            "class": "keras.constraints.maxnorm",               
+                            "kwargs": {"m": 7, "axis": 0}                       
+                        } 
+                    }
+                },
+                {
+                    "name": "conv3_batchnorm",
+                    "input_name": "conv3", 
+                    "class": "keras.layers.normalization.BatchNormalization", 
+                    "kwargs": {"axis": 3} #theano specific
+                },
+                {
+                    "name": "conv3_act",
+                    "input_name": "conv3_batchnorm", 
+                    "class": "keras.layers.core.Activation", 
+                    "kwargs": {"activation": "relu"}
+                },
+                {
+                    "name": "max_pool3",
+                    "input_name": "conv3_act", 
+                    "class": "keras.layers.convolutional.MaxPooling2D", 
+                    "kwargs": {"pool_size": [1,4], "strides": [1,4]}
+                },
+                {
+                    "name": "flatten",
+                    "input_name": "max_pool3", 
+                    "class": "keras.layers.core.Flatten", 
+                    "kwargs": {}
+                },
+                {
+                    "name": "fc1",
+                    "input_name": "flatten", 
+                    "class": "keras.layers.core.Dense", 
+                    "kwargs": {
+                        "output_dim": 1000,
+                        "activity_regularizer": {                               
+                            "autoload": true,                                   
+                            "class": "keras.regularizers.ActivityRegularizer",  
+                            "kwargs": {"l1":0.00001}                            
+                        },
+                        "W_constraint": {                                       
+                            "autoload": true,                                   
+                            "class": "keras.constraints.maxnorm",               
+                            "kwargs": {"m": 7, "axis": 0}                       
+                        } 
+                    }
+                },
+                {
+                    "name": "fc1_act",
+                    "input_name": "fc1", 
+                    "class": "keras.layers.advanced_activations.PReLU", 
+                    "kwargs": {}
+                },
+                {
+                    "name": "fc1_dropout",
+                    "input_name": "fc1_act",
+                    "class": "keras.layers.core.Dropout",
+                    "kwargs": {"p": 0.3}
+                },
+                {
+                    "name": "fc2",
+                    "input_name": "fc1_dropout", 
+                    "class": "keras.layers.core.Dense", 
+                    "kwargs": {
+                        "output_dim": 1000,
+                        "activity_regularizer": {                               
+                            "autoload": true,                                   
+                            "class": "keras.regularizers.ActivityRegularizer",  
+                            "kwargs": {"l1":0.00001}                            
+                        },
+                        "W_constraint": {                                       
+                            "autoload": true,                                   
+                            "class": "keras.constraints.maxnorm",               
+                            "kwargs": {"m": 7, "axis": 0}                       
+                        } 
+                    }
+                },
+                {
+                    "name": "fc2_act",
+                    "input_name": "fc2", 
+                    "class": "keras.layers.advanced_activations.PReLU", 
+                    "kwargs": {}
+                },
+                {
+                    "name": "fc2_dropout",
+                    "input_name": "fc2_act",
+                    "class": "keras.layers.core.Dropout",
+                    "kwargs": {"p": 0.3}
+                },
+                {
+                    "name": "binary_task_outputs_preact",
+                    "input_name": "fc2_dropout", 
+                    "class": "keras.layers.core.Dense", 
+                    "kwargs": {"output_dim": 4}
+                },
+                {
+                    "name": "binary_task_outputs_act",
+                    "input_name": "binary_task_outputs_preact", 
+                    "class": "keras.layers.core.Activation", 
+                    "kwargs": {"activation": "sigmoid"}
+                }
+            ],
+                "outputs_config": [
+                   {"name": "output",
+                    "input": "binary_task_outputs_act"}
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {"lr": 0.001}
+                },
+                "loss_dictionary": {
+                    "output":{
+                        "class": "keras.objectives.get_weighted_binary_crossentropy",
+                        "kwargs": {
+                            "w0_weights": [0.18222995561309147, 0.35571371525199913, 0.40435767285161739, 0.19780213443510128, 0.4420541090686822, 0.4983385543332377, 0.2132099706922426, 0.25645801407867974, 0.38797675561828121, 0.21421765010314658, 0.10272851905725032, 0.24028180425070603, 0.41149648321327198, 0.20220478525184057, 0.4280907574606479, 0.24876995356601742, 0.37223879262995679, 0.43509405728635825],
+                            "w1_weights": [0.81777004438690848, 0.64428628474800087, 0.59564232714838261, 0.80219786556489869, 0.55794589093131775, 0.5016614456667623, 0.78679002930775743, 0.74354198592132026, 0.61202324438171885, 0.78578234989685347, 0.89727148094274967, 0.759718195749294, 0.58850351678672808, 0.7977952147481594, 0.57190924253935216, 0.75123004643398261, 0.62776120737004315, 0.56490594271364181]
+                        }
+                    }
+                }
+            }
+        },
+        "model_trainer":{
+            "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+            "kwargs": {
+                "samples_per_epoch": 200000,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping" ,
+                    "kwargs": {
+                       "max_epochs": 300,
+                       "epochs_to_wait": 5
+                    }
+                },
+            }
+        }
+    }
+    ]
+    

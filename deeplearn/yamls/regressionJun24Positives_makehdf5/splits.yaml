@@ -1,0 +1,9 @@
+{
+    "splits": {
+        "split_name_to_split_files": {
+            "train": "../splits/trainJun24RegressionPositives.txt.gz"
+            ,"valid": "../splits/valJun24RegressionPositives.txt.gz"
+            ,"test": "../splits/testJun24RegressionPositives.txt.gz"
+        }
+    }
+}

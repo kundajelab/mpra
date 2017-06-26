@@ -1,0 +1,210 @@
+[
+{
+    "message": "example model and training config",
+    "other_data_loaders":{
+        "train": {
+            "class": "hdf5_data_loader.MultimodalBatchDataLoader",
+            #"class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+            "kwargs": {
+                "batch_size": 500,
+                "path_to_hdf5": "../hdf5files/regressionJun24Positives/train_data.hdf5",
+                "num_to_load_for_eval": 20000, #if my training data is large
+                #and I only want to load a subset when I'm calculating the
+                #performance stats on the training data, specify this number,
+                #and only that many datapoints of the training data will be used
+                #for performance stat calculation
+                "bundle_x_and_y_in_generator": False,
+                "strip_enclosing_dictionary": True
+            }
+        }
+    },
+    "model_creator":{
+        "class": "flexible_keras.FlexibleKerasSequential",
+        "kwargs": {
+            "layers_config": [
+                {
+                    "class": "keras.layers.convolutional.Convolution1D", 
+                    "kwargs": {
+                        #"input_shape": [1,4,2000],
+                        "input_shape": [2000,4],
+                        "nb_filter": 51,
+                        "filter_length": 11,
+                        #"nb_col":11,
+                        #"nb_row":4,
+                        "border_mode": "same",
+                        #"W_constraint": {
+                        #    "autoload": true, #turn the dictionary into a class
+                        #    "class": "keras.constraints.maxnorm",
+                        #    "kwargs": {"m": 7, "axis": 1}
+                        #}
+                    }
+                },
+                {
+                    "class": "keras.layers.core.Activation", 
+                    "kwargs": {"activation": "relu"}
+                },
+                {
+                    "class": "keras.layers.convolutional.Convolution1D", 
+                    "kwargs": {
+                        "nb_filter": 49,
+                        "filter_length": 10,
+                        #"nb_row": 1,
+                        #"nb_col": 10,
+                        "border_mode": "same"
+                    }
+                },
+                {
+                    "class": "keras.layers.core.Activation", 
+                    "kwargs": {"activation": "relu"}
+                },
+                {
+                    "class": "keras.layers.convolutional.Convolution1D", 
+                    "kwargs": {"nb_filter": 10, "filter_length": 10}
+                    #"kwargs": {"nb_filter": 10, "nb_row": 1, "nb_col": 10}
+                },
+                {
+                    "class": "keras.layers.core.Activation", 
+                    "kwargs": {"activation": "relu"}
+                },
+                {
+                    "class": "keras.layers.convolutional.MaxPooling1D", 
+                    "kwargs": {"pool_length": 40, "stride": 40}
+                    #"kwargs": {"pool_size": [1,40], "strides": [1,40]}
+                },
+                {
+                    "class": "keras.layers.core.Flatten", 
+                    "kwargs": {}
+                },
+                {
+                    "class": "keras.layers.core.Dense", 
+                    "kwargs": {"output_dim": 3}
+                }
+            ],
+            "optimizer_config": {
+                "class": "keras.optimizers.Adam",
+                "kwargs": {"lr": 0.001}
+            },
+            "loss": "mean_squared_error" 
+        } 
+    },
+    "model_trainer":{
+        "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+        "kwargs": {
+            "seed": 1234,
+            "samples_per_epoch": 50000,
+            "stopping_criterion_config": {
+                "class": "EarlyStopping" ,
+                "kwargs": {
+                   "max_epochs": 300, 
+                   "epochs_to_wait": 3
+                } 
+            },
+            #"class_weight": {"0":1, "1":25}
+        }
+    },
+},
+{
+    "message": "different seed - example model and training config",
+    "other_data_loaders":{
+        "train": {
+            "class": "hdf5_data_loader.MultimodalBatchDataLoader",
+            #"class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+            "kwargs": {
+                "batch_size": 500,
+                "path_to_hdf5": "../hdf5files/regressionJun24Positives/train_data.hdf5",
+                "num_to_load_for_eval": 20000, #if my training data is YUGE
+                #and I only want to load a subset when I'm calculating the
+                #performance stats on the training data, specify this number,
+                #and only that many datapoints of the training data will be used
+                #for performance stat calculation
+                "bundle_x_and_y_in_generator": False,
+                "strip_enclosing_dictionary": True
+            }
+        }
+    },
+    "model_creator":{
+        "class": "flexible_keras.FlexibleKerasSequential",
+        "kwargs": {
+            "layers_config": [
+                {
+                    "class": "keras.layers.convolutional.Convolution1D", 
+                    "kwargs": {
+                        #"input_shape": [1,4,2000],
+                        "input_shape": [2000,4],
+                        "nb_filter": 51,
+                        "filter_length": 11,
+                        #"nb_col":11,
+                        #"nb_row":4,
+                        "border_mode": "same",
+                        "W_constraint": {
+                            "autoload": true, #turn the dictionary into a class
+                            "class": "keras.constraints.maxnorm",
+                            "kwargs": {"m": 7, "axis": 1}
+                        }
+                    }
+                },
+                {
+                    "class": "keras.layers.core.Activation", 
+                    "kwargs": {"activation": "relu"}
+                },
+                {
+                    "class": "keras.layers.convolutional.Convolution1D", 
+                    "kwargs": {
+                        "nb_filter": 49,
+                        "filter_length": 10,
+                        #"nb_row": 1,
+                        #"nb_col": 10,
+                        "border_mode": "same"
+                    }
+                },
+                {
+                    "class": "keras.layers.core.Activation", 
+                    "kwargs": {"activation": "relu"}
+                },
+                {
+                    "class": "keras.layers.convolutional.Convolution1D", 
+                    "kwargs": {"nb_filter": 10, "filter_length": 10}
+                    #"kwargs": {"nb_filter": 10, "nb_row": 1, "nb_col": 10}
+                },
+                {
+                    "class": "keras.layers.core.Activation", 
+                    "kwargs": {"activation": "relu"}
+                },
+                {
+                    "class": "keras.layers.convolutional.MaxPooling1D", 
+                    "kwargs": {"pool_length": 40, "stride": 40}
+                    #"kwargs": {"pool_size": [1,40], "strides": [1,40]}
+                },
+                {
+                    "class": "keras.layers.core.Flatten", 
+                    "kwargs": {}
+                },
+                {
+                    "class": "keras.layers.core.Dense", 
+                    "kwargs": {"output_dim": 3}
+                }
+            ],
+            "optimizer_config": {
+                "class": "keras.optimizers.Adam",
+                "kwargs": {"lr": 0.001}
+            },
+            "loss": "mean_squared_error" 
+        } 
+    },
+    "model_trainer":{
+        "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+        "kwargs": {
+            "seed": 4567,
+            "samples_per_epoch": 50000,
+            "stopping_criterion_config": {
+                "class": "EarlyStopping" ,
+                "kwargs": {
+                   "max_epochs": 300, 
+                   "epochs_to_wait": 3
+                } 
+            },
+            #"class_weight": {"0":1, "1":25}
+        }
+    },
+}
+]
