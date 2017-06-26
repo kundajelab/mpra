@@ -1,0 +1,5 @@
+/var/spool/slurmd/job292317/slurm_script: line 2: REM: command not found
+/var/spool/slurmd/job292317/slurm_script: line 3: REM: command not found
+/var/spool/slurmd/job292317/slurm_script: line 7: REM: command not found
+/var/spool/slurmd/job292317/slurm_script: line 13: 164753 Killed                  idr --samples ../fixedIdrSureFragmentSignalMappedReplicate1.bed ../fixedIdrSureFragmentSignalMappedReplicate2.bed --input-file-type bed --rank 5 --plot -o idrSingleBpSbatchRun.txt
+slurmstepd: error: Exceeded step memory limit at some point.
