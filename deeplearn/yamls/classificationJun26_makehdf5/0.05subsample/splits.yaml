@@ -1,0 +1,9 @@
+{
+    "splits": {
+        "split_name_to_split_files": {
+            "train": "../splits/Jun26Classification0.05NegativeSubsample/train_split.txt.gz"
+            ,"valid": "../splits/Jun26Classification0.05NegativeSubsample/val_split.txt.gz"
+            ,"test": "../splits/Jun26Classification0.05NegativeSubsample/test_split.txt.gz"
+        }
+    }
+}

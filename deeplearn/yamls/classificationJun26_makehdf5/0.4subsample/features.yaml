@@ -1,0 +1,12 @@
+{
+   "features": {
+       "input_mode_name": "sequence",
+       "features_format": "fasta",
+       "opts": {
+            "file_names": ["../features/paddedsequencesJun26Classification0.4NegativeSubsample.fa.gz"],
+            "progress_update": 5000,
+            "one_hot_format": "1d"
+            #"one_hot_format": "theano_one_hot_row"
+        }
+    } 
+}

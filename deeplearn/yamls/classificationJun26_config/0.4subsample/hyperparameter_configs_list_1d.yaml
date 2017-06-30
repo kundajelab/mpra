@@ -6,7 +6,7 @@
                 "class": "hdf5_data_loader.MultimodalBatchDataLoader",
                 "kwargs": {
                     "batch_size": 500,
-                    "path_to_hdf5": "../hdf5files/regressionJun24Positives/train_data.hdf5",
+                    "path_to_hdf5": "../hdf5files/classificationJun26/0.4subsample/train_data.hdf5",
                     "num_to_load_for_eval": 20000,
                     "bundle_x_and_y_in_generator": False,
                     "strip_enclosing_dictionary": True
@@ -201,11 +201,11 @@
                 }
             },
             {
-                "name": "regression_task_act",
+                "name": "classification_task_act",
                 "class": "keras.layers.core.Dense",
                 "kwargs": {
                     "output_dim": 3,
-                    "activation": "linear"
+                    "activation": "sigmoid"
                 }
             }
         ],
@@ -215,7 +215,7 @@
                 "lr": 0.001
             }
         },
-        "loss": "mean_squared_error"
+        "loss": "binary_crossentropy"
           }
         },
         "model_trainer":{

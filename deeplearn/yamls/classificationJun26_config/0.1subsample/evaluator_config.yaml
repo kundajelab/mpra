@@ -1,0 +1,6 @@
+
+    {
+        "class": "SequentialAccuracyStats",
+        "kwargs": {"key_metric": "auROC",
+                   "all_metrics": ["auROC", "auPRC", "unbalanced_accuracy", "balanced_accuracy"]}
+    }    
