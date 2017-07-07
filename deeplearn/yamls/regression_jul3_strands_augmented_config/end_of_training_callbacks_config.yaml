@@ -1,7 +1,7 @@
 
     [
     {"class":"WriteToDbCallback",
-     "kwargs":{"db_path": "../../model_results/classificationWithoutQcJun22/results.db"}},
+     "kwargs":{"db_path": "../model_results/regression_jul3_strands_augmented.db"}},
     {"class":"EmailCallback",
      "kwargs":{"to_emails":["therajiv@gmail.com"],
                "from_email": "momma-dragonn@stanford.edu",

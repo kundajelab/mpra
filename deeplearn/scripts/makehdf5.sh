@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
-export YAMLDIR="classificationJun26_makehdf5/0.05subsample/*"
-export HDF5DIR="classificationJun26/0.05subsample/"
-mkdir ../hdf5files/$HDF5DIR
-make_hdf5 --yaml_configs ../yamls/$YAMLDIR --output_dir ../hdf5files/$HDF5DIR
+export YAMLDIR=../yamls/regression_jul3_strands_augmented_makehdf5/*
+export HDF5DIR=../hdf5files/regression_jul3_strands_augmented_rep2only/
+
+if [ ! -d $HDFDIR ]; then
+    mkdir $HDF5DIR
+fi
+
+make_hdf5 --yaml_configs $YAMLDIR --output_dir $HDF5DIR

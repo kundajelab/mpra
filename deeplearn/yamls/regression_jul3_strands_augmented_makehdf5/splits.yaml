@@ -1,0 +1,9 @@
+{
+    "splits": {
+        "split_name_to_split_files": {
+            "train": "../splits/regression_jul3_strands_augmented/train_split.txt.gz"
+            ,"valid": "../splits/regression_jul3_strands_augmented/val_split.txt.gz"
+            ,"test": "../splits/regression_jul3_strands_augmented/test_split.txt.gz"
+        }
+    }
+}

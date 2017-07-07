@@ -5,7 +5,7 @@
                 "class": "hdf5_data_loader.MultimodalBatchDataLoader",
                 "kwargs": {
                     "batch_size": 500,
-                    "path_to_hdf5": "../hdf5files/regressionJun24Positives_rep2Only/train_data.hdf5",
+                    "path_to_hdf5": "../hdf5files/regressionJun24Positives/train_data.hdf5",
                     "num_to_load_for_eval": 51838,
                     "bundle_x_and_y_in_generator": False,
                     "strip_enclosing_dictionary": True
@@ -24,7 +24,7 @@
                         2000,
                         4
                     ],
-                    "nb_filter": 20,
+                    "nb_filter": 3,
                     "filter_length": 19
                 }
             },
@@ -59,7 +59,7 @@
                 "name": "fc1",
                 "class": "keras.layers.core.Dense",
                 "kwargs": {
-                    "output_dim": 100,
+                    "output_dim": 30,
                     "activity_regularizer": {
                         "autoload": true,
                         "class": "keras.regularizers.ActivityRegularizer",
@@ -89,18 +89,18 @@
                     "p": 0.3
                 }
             },
-            {
-                "name": "fc2",
-                "class": "keras.layers.core.Dense",
-                "kwargs": {
-                    "output_dim": 100,
-                    "activity_regularizer": {
-                        "autoload": true,
-                        "class": "keras.regularizers.ActivityRegularizer",
-                        "kwargs": {
-                            "l1": 1e-05
-                        }
-                    },
+            #{
+            #    "name": "fc2",
+            #    "class": "keras.layers.core.Dense",
+            #    "kwargs": {
+            #        "output_dim": 100,
+            #        "activity_regularizer": {
+            #            "autoload": true,
+            #            "class": "keras.regularizers.ActivityRegularizer",
+            #            "kwargs": {
+            #                "l1": 1e-05
+            #            }
+            #        },
                     #"W_constraint": {
                     #    "autoload": true,
                     #    "class": "keras.constraints.maxnorm",
@@ -109,25 +109,25 @@
                     #        "axis": 0
                     #    }
                     #}
-                }
-            },
-            {
-                "name": "fc2_act",
-                "class": "keras.layers.advanced_activations.PReLU",
-                "kwargs": {}
-            },
-            {
-                "name": "fc2_dropout",
-                "class": "keras.layers.core.Dropout",
-                "kwargs": {
-                    "p": 0.3
-                }
-            },
+            #    }
+            #},
+            #{
+            #    "name": "fc2_act",
+            #    "class": "keras.layers.advanced_activations.PReLU",
+            #    "kwargs": {}
+            #},
+            #{
+            #    "name": "fc2_dropout",
+            #    "class": "keras.layers.core.Dropout",
+            #    "kwargs": {
+            #        "p": 0.3
+            #    }
+            #},
             {
                 "name": "regression_task_act",
                 "class": "keras.layers.core.Dense",
                 "kwargs": {
-                    "output_dim": 1,
+                    "output_dim": 3,
                     "activation": "linear"
                 }
             }

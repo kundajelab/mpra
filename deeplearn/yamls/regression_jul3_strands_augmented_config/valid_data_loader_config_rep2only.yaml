@@ -2,7 +2,7 @@
     {
         "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
         "kwargs": {
-           "path_to_hdf5": "../hdf5files/regressionJun24Positives_rep2Only/valid_data.hdf5",
+           "path_to_hdf5": "../hdf5files/regression_jul3_strands_augmented_rep2only/valid_data.hdf5",
            "strip_enclosing_dictionary": True
         }
     }
