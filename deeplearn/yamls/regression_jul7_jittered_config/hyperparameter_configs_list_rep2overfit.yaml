@@ -5,7 +5,7 @@
                 "class": "hdf5_data_loader.MultimodalBatchDataLoader",
                 "kwargs": {
                     "batch_size": 500,
-                    "path_to_hdf5": "../hdf5files/regression_jul3_strands_augmented_rep2only/train_data.hdf5",
+                    "path_to_hdf5": "../hdf5files/regression_jul7_jittered_rep2only_2/train_data.hdf5",
                     "num_to_load_for_eval": 20000,
                     "bundle_x_and_y_in_generator": False,
                     "strip_enclosing_dictionary": True
@@ -230,7 +230,7 @@
         "optimizer_config": {
             "class": "keras.optimizers.Adam",
             "kwargs": {
-                "lr": 0.0001
+                "lr": 0.001
             }
         },
         "loss": "mean_squared_error"
@@ -239,7 +239,7 @@
         "model_trainer":{
             "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
             "kwargs": {
-                "samples_per_epoch": 200000,
+                "samples_per_epoch": 400000,
                 "stopping_criterion_config": {
                     "class": "EarlyStopping" ,
                     "kwargs": {

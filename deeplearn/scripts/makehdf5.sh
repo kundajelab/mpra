@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-export YAMLDIR=../yamls/regression_jul3_strands_augmented_makehdf5/*
-export HDF5DIR=../hdf5files/regression_jul3_strands_augmented_rep2only/
+export YAMLDIR=../yamls/regression_jul7_jittered_makehdf5/*
+export HDF5DIR=../hdf5files/regression_jul7_jittered_rep2only_2/
 
 if [ ! -d $HDFDIR ]; then
     mkdir $HDF5DIR

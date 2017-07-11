@@ -1,0 +1,9 @@
+{
+    "splits": {
+        "split_name_to_split_files": {
+            "train": "../splits/regression_jul7_jittered/train_split.txt.gz"
+            ,"valid": "../splits/regression_jul7_jittered/val_split.txt.gz"
+            ,"test": "../splits/regression_jul7_jittered/test_split.txt.gz"
+        }
+    }
+}

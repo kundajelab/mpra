@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-CONFIGPATH="../yamls/regression_jul3_strands_augmented_config"
+CONFIGPATH="../yamls/regression_jul7_jittered_config"
 momma_dragonn_train --valid_data_loader_config\
  $CONFIGPATH/valid_data_loader_config_rep2only.yaml\
  --evaluator_config $CONFIGPATH/evaluator_config.yaml\

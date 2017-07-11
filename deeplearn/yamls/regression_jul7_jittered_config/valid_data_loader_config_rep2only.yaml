@@ -1,0 +1,11 @@
+
+    {
+        "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+        "kwargs": {
+           "path_to_hdf5": "../hdf5files/regression_jul7_jittered_rep2only_2/valid_data.hdf5",
+           "strip_enclosing_dictionary": True,
+           "max_to_load": 500000,
+           "bundle_x_and_y_in_generator": False
+        }
+    }
+    
