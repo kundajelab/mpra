@@ -1,0 +1,3 @@
+avg
+rep1
+rep2

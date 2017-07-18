@@ -1,0 +1,9 @@
+{
+    "splits": {
+        "split_name_to_split_files": {
+            "train": "../splits/sharpr_regression_jul17/train_split.txt.gz"
+            ,"valid": "../splits/sharpr_regression_jul17/val_split.txt.gz"
+            ,"test": "../splits/sharpr_regression_jul17/test_split.txt.gz"
+        }
+    }
+}

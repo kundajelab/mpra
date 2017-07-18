@@ -1,0 +1,7 @@
+{
+    "labels": {
+       "file_name": "../labels/labels_sharpr_regression_jul17.txt.gz",
+       "output_mode_name": "output",
+       #"file_with_subset_of_label_names": "../yamls/sharpr_regression_jul17/taskSubset.txt"
+    }
+}

@@ -1,0 +1,2054 @@
+{
+    "metadata": {
+        "total_records": 6,
+        "best_valid_key_metric": 0.3232602664246765,
+        "best_saved_files_config": {
+            "weights_file": "../model_files/sharpr_regression_jul17//record_5_model_uHsi1_modelWeights.h5",
+            "json_file": "../model_files/sharpr_regression_jul17//record_5_model_uHsi1_modelJson.json",
+            "directory": "../model_files/sharpr_regression_jul17/",
+            "prefix": "model_uHsi1"
+        }
+    },
+    "records": [
+        {
+            "record_number": 5,
+            "message": "",
+            "best_valid_key_metric": 0.3232602664246765,
+            "best_valid_perf_info": {
+                "epoch": 5,
+                "valid_key_metric": 0.3232602664246765,
+                "train_key_metric": 0.32622610474881697,
+                "valid_all_stats": {
+                    "per_output_spearman_corr": [
+                        0.49258217807475857,
+                        0.422455414388151,
+                        0.5185518478306068,
+                        0.563120539342774,
+                        0.5918503298143064,
+                        0.6050428594283928,
+                        0.5304727067652046,
+                        0.5873567695149655,
+                        0.6061509266445866,
+                        0.6332414998845136,
+                        0.6162197017135091,
+                        0.6468755443485843,
+                        0.1499702991558522,
+                        0.2482188323213008,
+                        0.21362740439449954,
+                        0.022046083929102653,
+                        0.006195538442799298,
+                        0.012265938874355693,
+                        0.11331012634449734,
+                        0.029984631209067247,
+                        0.09937565177669828,
+                        0.01647192236675088,
+                        0.015925596457046685,
+                        0.016934051169911743
+                    ],
+                    "mean_spearman_corr": 0.3232602664246765
+                }
+            },
+            "training_metadata": {
+                "termination_condition": "normal",
+                "total_epochs_trained_for": 30
+            },
+            "other_data_loaders_info": {
+                "train": {
+                    "batch_size": 500,
+                    "num_to_load_for_eval": 100000,
+                    "bundle_x_and_y_in_generator": false,
+                    "strip_enclosing_dictionary": true,
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_jul17/train_data.hdf5"
+                }
+            },
+            "model_trainer_info": {
+                "seed": 1234,
+                "samples_per_epoch": 200000,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 300,
+                        "epochs_to_wait": 25
+                    }
+                },
+                "class_weight": null
+            },
+            "model_creator_info": {
+                "layers_config": [
+                    {
+                        "name": "conv1",
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "input_shape": [
+                                145,
+                                4
+                            ],
+                            "nb_filter": 100,
+                            "filter_length": 8
+                        }
+                    },
+                    {
+                        "name": "conv1_act",
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "name": "conv1_batchnorm",
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    {
+                        "name": "fc1_dropout",
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.2
+                        }
+                    },
+                    {
+                        "name": "conv2",
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "nb_filter": 100,
+                            "filter_length": 15
+                        }
+                    },
+                    {
+                        "name": "conv2_act",
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "name": "conv2_batchnorm",
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    {
+                        "name": "fc1_dropout",
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.2
+                        }
+                    },
+                    {
+                        "name": "flatten",
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "name": "fc1",
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 1000
+                        }
+                    },
+                    {
+                        "name": "fc1_act",
+                        "class": "keras.layers.advanced_activations.PReLU",
+                        "kwargs": {}
+                    },
+                    {
+                        "name": "fc1_batchnorm",
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    {
+                        "name": "fc2",
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 1000
+                        }
+                    },
+                    {
+                        "name": "fc2_act",
+                        "class": "keras.layers.advanced_activations.PReLU",
+                        "kwargs": {}
+                    },
+                    {
+                        "name": "fc2_batchnorm",
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    {
+                        "name": "regression_task_act",
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 24,
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 0.0001
+                    }
+                },
+                "loss": "mean_squared_error"
+            },
+            "key_metric_history": [
+                [
+                    "train",
+                    "valid"
+                ],
+                [
+                    0.26853360699408846,
+                    0.26021077720616037
+                ],
+                [
+                    0.27515426644185625,
+                    0.28787812100630866
+                ],
+                [
+                    0.2858658310831857,
+                    0.2889465929519819
+                ],
+                [
+                    0.31079486282250746,
+                    0.3186055383760836
+                ],
+                [
+                    0.2966086431380176,
+                    0.2998484258406393
+                ],
+                [
+                    0.32622610474881697,
+                    0.3232602664246765
+                ],
+                [
+                    0.3215468670989609,
+                    0.3007908358834395
+                ],
+                [
+                    0.246646075435719,
+                    0.2388263504843666
+                ],
+                [
+                    0.20615882310699332,
+                    0.20396571983397557
+                ],
+                [
+                    0.23782437497276088,
+                    0.21868182047177379
+                ],
+                [
+                    0.2895967602203257,
+                    0.28507627878635877
+                ],
+                [
+                    0.20649199956977957,
+                    0.18006012804359695
+                ],
+                [
+                    0.2853462467775479,
+                    0.27586950853242326
+                ],
+                [
+                    0.25355880904894845,
+                    0.2245508228658923
+                ],
+                [
+                    0.2824630084555844,
+                    0.24961356136757393
+                ],
+                [
+                    0.1947385982102514,
+                    0.17372036880966854
+                ],
+                [
+                    0.22167402898273558,
+                    0.18310587573188122
+                ],
+                [
+                    0.28258533454299456,
+                    0.25394809811115776
+                ],
+                [
+                    0.29155679838376747,
+                    0.2555496868532207
+                ],
+                [
+                    0.26216554821039356,
+                    0.21617804515314487
+                ],
+                [
+                    0.26423704904843165,
+                    0.19885840765332255
+                ],
+                [
+                    0.2746397417924768,
+                    0.23022403090325846
+                ],
+                [
+                    0.21819845419597783,
+                    0.16748872418252128
+                ],
+                [
+                    0.24366699332209327,
+                    0.19567780178639405
+                ],
+                [
+                    0.2578941074073542,
+                    0.20985491856131486
+                ],
+                [
+                    0.2119477392454934,
+                    0.14725008013178728
+                ],
+                [
+                    0.3076696574652628,
+                    0.263285732073188
+                ],
+                [
+                    0.27424307125801023,
+                    0.20300859572598792
+                ],
+                [
+                    0.2560514757733388,
+                    0.1908496918961208
+                ],
+                [
+                    0.24376632578981008,
+                    0.1757551043440365
+                ],
+                [
+                    0.24408258325670704,
+                    0.1920679167399049
+                ]
+            ],
+            "saved_files_config": {
+                "weights_file": "../model_files/sharpr_regression_jul17//record_5_model_uHsi1_modelWeights.h5",
+                "json_file": "../model_files/sharpr_regression_jul17//record_5_model_uHsi1_modelJson.json",
+                "directory": "../model_files/sharpr_regression_jul17/",
+                "prefix": "model_uHsi1"
+            }
+        },
+        {
+            "record_number": 6,
+            "message": "",
+            "best_valid_key_metric": 0.3013884506140951,
+            "best_valid_perf_info": {
+                "epoch": 28,
+                "valid_key_metric": 0.3013884506140951,
+                "train_key_metric": 0.28902832887058777,
+                "valid_all_stats": {
+                    "per_output_spearman_corr": [
+                        0.4544229311807506,
+                        0.3852261460575424,
+                        0.47835134447337146,
+                        0.523302777141906,
+                        0.5495160181694029,
+                        0.5619724065516892,
+                        0.49286358817981907,
+                        0.5449165409469566,
+                        0.5633303284386033,
+                        0.58848015377081,
+                        0.5733934503357274,
+                        0.6029572320200128,
+                        0.13535521830097785,
+                        0.23388914665057697,
+                        0.22092478947918293,
+                        0.021938582233680153,
+                        -0.019330254461740498,
+                        0.004199456219847715,
+                        0.10588611635601058,
+                        0.029505072377137172,
+                        0.059054706943738246,
+                        0.0619903999108063,
+                        0.019424201460177943,
+                        0.041752462001295794
+                    ],
+                    "mean_spearman_corr": 0.3013884506140951
+                }
+            },
+            "key_metric_history": [
+                [
+                    "train",
+                    "valid"
+                ],
+                [
+                    0.23740869028267966,
+                    0.23406003215984764
+                ],
+                [
+                    0.2387311145573373,
+                    0.2584937063288102
+                ],
+                [
+                    0.24821118059546596,
+                    0.26053264711843505
+                ],
+                [
+                    0.2418808458833993,
+                    0.26992732672581704
+                ],
+                [
+                    0.2459526547904015,
+                    0.2660442721409558
+                ],
+                [
+                    0.25265337820249695,
+                    0.2585240360283984
+                ],
+                [
+                    0.2657486325389735,
+                    0.2547537495418838
+                ],
+                [
+                    0.28199584561958274,
+                    0.26279950845392036
+                ],
+                [
+                    0.26197217417866014,
+                    0.2694548523075447
+                ],
+                [
+                    0.2608757276543375,
+                    0.25885046183589583
+                ],
+                [
+                    0.26137416845751743,
+                    0.2748901807778798
+                ],
+                [
+                    0.2593589139986219,
+                    0.26991667770001376
+                ],
+                [
+                    0.2515639888657584,
+                    0.27794193213880863
+                ],
+                [
+                    0.27781166561543136,
+                    0.27818399827599466
+                ],
+                [
+                    0.29447402796347827,
+                    0.2801360504462749
+                ],
+                [
+                    0.2895597626852195,
+                    0.28536194617348526
+                ],
+                [
+                    0.28865252601486063,
+                    0.2814248239803222
+                ],
+                [
+                    0.28219185009938635,
+                    0.28571188841488643
+                ],
+                [
+                    0.2889940559521323,
+                    0.2889391992473915
+                ],
+                [
+                    0.2811936597009878,
+                    0.28329232486713957
+                ],
+                [
+                    0.28249984945524836,
+                    0.28821774885537793
+                ],
+                [
+                    0.289600578303811,
+                    0.28510741815706003
+                ],
+                [
+                    0.302206540032897,
+                    0.28847294548358454
+                ],
+                [
+                    0.3032932387084535,
+                    0.28628189639688506
+                ],
+                [
+                    0.2972858733060497,
+                    0.29487086464057205
+                ],
+                [
+                    0.290368299824899,
+                    0.28650187509993164
+                ],
+                [
+                    0.29967433113313263,
+                    0.29591571676308553
+                ],
+                [
+                    0.2821006500011197,
+                    0.28604243576971106
+                ],
+                [
+                    0.28902832887058777,
+                    0.3013884506140951
+                ],
+                [
+                    0.2923029719121679,
+                    0.29105480715233134
+                ],
+                [
+                    0.314668049382339,
+                    0.29019623315346005
+                ],
+                [
+                    0.2973081420081081,
+                    0.2910655415517866
+                ],
+                [
+                    0.30136181079169977,
+                    0.2879090997993717
+                ],
+                [
+                    0.2931335301816405,
+                    0.29056713651109806
+                ],
+                [
+                    0.30801657393720216,
+                    0.2944807742904585
+                ],
+                [
+                    0.28655996249985877,
+                    0.28439018419206946
+                ],
+                [
+                    0.2944359941201507,
+                    0.2940591837532334
+                ],
+                [
+                    0.29571898333742663,
+                    0.2874939281226965
+                ],
+                [
+                    0.30404427414072815,
+                    0.28901185153777786
+                ],
+                [
+                    0.307377540427117,
+                    0.28390678803765973
+                ],
+                [
+                    0.29746519198953614,
+                    0.2940889911544883
+                ],
+                [
+                    0.2915036245377371,
+                    0.28110190665032325
+                ],
+                [
+                    0.30578268737694736,
+                    0.295877358579645
+                ],
+                [
+                    0.2909698160753595,
+                    0.28680867750703776
+                ],
+                [
+                    0.29007266139951565,
+                    0.2964839706179911
+                ],
+                [
+                    0.28838616083994123,
+                    0.28489966144047546
+                ],
+                [
+                    0.3185501711505287,
+                    0.2911681372158199
+                ],
+                [
+                    0.29494343412890056,
+                    0.28731054094635805
+                ],
+                [
+                    0.30262605699815165,
+                    0.2868081845518527
+                ],
+                [
+                    0.29816735538135447,
+                    0.2932188488305095
+                ],
+                [
+                    0.3135310992337717,
+                    0.2999754549987556
+                ],
+                [
+                    0.291234684682547,
+                    0.28606032820908295
+                ],
+                [
+                    0.2973065782163277,
+                    0.29394766688947954
+                ],
+                [
+                    0.3036662069695339,
+                    0.29242728152549596
+                ]
+            ],
+            "saved_files_config": {
+                "weights_file": "../model_files/sharpr_regression_jul17//record_6_model_BMYaw_modelWeights.h5",
+                "json_file": "../model_files/sharpr_regression_jul17//record_6_model_BMYaw_modelJson.json",
+                "directory": "../model_files/sharpr_regression_jul17/",
+                "prefix": "model_BMYaw"
+            },
+            "model_creator_info": {
+                "layers_config": [
+                    {
+                        "name": "conv1",
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "input_shape": [
+                                145,
+                                4
+                            ],
+                            "nb_filter": 100,
+                            "filter_length": 8
+                        }
+                    },
+                    {
+                        "name": "conv1_act",
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "name": "conv1_batchnorm",
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    {
+                        "name": "fc1_dropout",
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.2
+                        }
+                    },
+                    {
+                        "name": "conv2",
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "nb_filter": 100,
+                            "filter_length": 15
+                        }
+                    },
+                    {
+                        "name": "conv2_act",
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "name": "conv2_batchnorm",
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    {
+                        "name": "fc1_dropout",
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.2
+                        }
+                    },
+                    {
+                        "name": "max_pool2",
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "pool_length": 10,
+                            "stride": 10
+                        }
+                    },
+                    {
+                        "name": "flatten",
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "name": "fc1",
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 1000
+                        }
+                    },
+                    {
+                        "name": "fc1_act",
+                        "class": "keras.layers.advanced_activations.PReLU",
+                        "kwargs": {}
+                    },
+                    {
+                        "name": "fc1_batchnorm",
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    {
+                        "name": "fc1_dropout",
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.3
+                        }
+                    },
+                    {
+                        "name": "fc2",
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 1000
+                        }
+                    },
+                    {
+                        "name": "fc2_act",
+                        "class": "keras.layers.advanced_activations.PReLU",
+                        "kwargs": {}
+                    },
+                    {
+                        "name": "fc2_batchnorm",
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    {
+                        "name": "fc2_dropout",
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.3
+                        }
+                    },
+                    {
+                        "name": "regression_task_act",
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 24,
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 2e-05
+                    }
+                },
+                "loss": "mean_squared_error"
+            },
+            "other_data_loaders_info": {
+                "train": {
+                    "batch_size": 500,
+                    "num_to_load_for_eval": 100000,
+                    "bundle_x_and_y_in_generator": false,
+                    "strip_enclosing_dictionary": true,
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_jul17/train_data.hdf5"
+                }
+            },
+            "model_trainer_info": {
+                "seed": 1234,
+                "samples_per_epoch": 200000,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 300,
+                        "epochs_to_wait": 25
+                    }
+                },
+                "class_weight": null
+            },
+            "training_metadata": {
+                "termination_condition": "normal",
+                "total_epochs_trained_for": 53
+            }
+        },
+        {
+            "record_number": 4,
+            "message": "",
+            "best_valid_key_metric": 0.29805374808973917,
+            "best_valid_perf_info": {
+                "epoch": 7,
+                "valid_key_metric": 0.29805374808973917,
+                "train_key_metric": 0.30915595482916053,
+                "valid_all_stats": {
+                    "per_output_spearman_corr": [
+                        0.49262626446412494,
+                        0.419937253260293,
+                        0.5174110350494471,
+                        0.5526750355200689,
+                        0.5779408661667085,
+                        0.5914490039488434,
+                        0.5252034096463393,
+                        0.5815403754328105,
+                        0.5983307227615812,
+                        0.6187104151418529,
+                        0.6071712302181831,
+                        0.6350103409965407,
+                        0.11509121128731914,
+                        0.2180173960749162,
+                        0.17360695585345967,
+                        0.007653273024600117,
+                        -0.05084926363806803,
+                        -0.008074084088055364,
+                        0.08340209235113868,
+                        -0.027893522052699384,
+                        0.03184407413984326,
+                        -0.05432171822139372,
+                        -0.008384544516568875,
+                        -0.04480786866754491
+                    ],
+                    "mean_spearman_corr": 0.29805374808973917
+                }
+            },
+            "training_metadata": {
+                "termination_condition": "normal",
+                "total_epochs_trained_for": 27
+            },
+            "other_data_loaders_info": {
+                "train": {
+                    "batch_size": 500,
+                    "num_to_load_for_eval": 100000,
+                    "bundle_x_and_y_in_generator": false,
+                    "strip_enclosing_dictionary": true,
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_jul17/train_data.hdf5"
+                }
+            },
+            "model_trainer_info": {
+                "seed": 1234,
+                "samples_per_epoch": 200000,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 300,
+                        "epochs_to_wait": 20
+                    }
+                },
+                "class_weight": null
+            },
+            "model_creator_info": {
+                "layers_config": [
+                    {
+                        "name": "conv1",
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "input_shape": [
+                                145,
+                                4
+                            ],
+                            "nb_filter": 100,
+                            "filter_length": 8
+                        }
+                    },
+                    {
+                        "name": "conv1_act",
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "name": "conv1_batchnorm",
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    {
+                        "name": "fc1_dropout",
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.2
+                        }
+                    },
+                    {
+                        "name": "conv2",
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "nb_filter": 100,
+                            "filter_length": 15
+                        }
+                    },
+                    {
+                        "name": "conv2_act",
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "name": "conv2_batchnorm",
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    {
+                        "name": "fc1_dropout",
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.2
+                        }
+                    },
+                    {
+                        "name": "flatten",
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "name": "fc1",
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 100
+                        }
+                    },
+                    {
+                        "name": "fc1_act",
+                        "class": "keras.layers.advanced_activations.PReLU",
+                        "kwargs": {}
+                    },
+                    {
+                        "name": "fc1_batchnorm",
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    {
+                        "name": "fc2",
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 100
+                        }
+                    },
+                    {
+                        "name": "fc2_act",
+                        "class": "keras.layers.advanced_activations.PReLU",
+                        "kwargs": {}
+                    },
+                    {
+                        "name": "fc2_batchnorm",
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    {
+                        "name": "regression_task_act",
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 24,
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 0.0001
+                    }
+                },
+                "loss": "mean_squared_error"
+            },
+            "key_metric_history": [
+                [
+                    "train",
+                    "valid"
+                ],
+                [
+                    0.2500260339993963,
+                    0.250989068047925
+                ],
+                [
+                    0.24972016855866694,
+                    0.26573868972557246
+                ],
+                [
+                    0.2652313536836958,
+                    0.27445778347755295
+                ],
+                [
+                    0.2732708070594782,
+                    0.285618487887085
+                ],
+                [
+                    0.2778912957228373,
+                    0.2950387288402258
+                ],
+                [
+                    0.2868487259214239,
+                    0.29006970927230685
+                ],
+                [
+                    0.2936868955609448,
+                    0.29269906293871994
+                ],
+                [
+                    0.30915595482916053,
+                    0.29805374808973917
+                ],
+                [
+                    0.28006009003070537,
+                    0.29364393604878175
+                ],
+                [
+                    0.29454035465483763,
+                    0.2969421081287959
+                ],
+                [
+                    0.2748491496523923,
+                    0.29061257807881297
+                ],
+                [
+                    0.29724334570766486,
+                    0.29759640450379293
+                ],
+                [
+                    0.27315773845957536,
+                    0.29018548962964974
+                ],
+                [
+                    0.2815875720923529,
+                    0.27112417697240176
+                ],
+                [
+                    0.29652142137862847,
+                    0.2834851191767717
+                ],
+                [
+                    0.29105220445518265,
+                    0.29102633118274696
+                ],
+                [
+                    0.28921812285583376,
+                    0.28512892176592236
+                ],
+                [
+                    0.27862103873121824,
+                    0.2863300465597196
+                ],
+                [
+                    0.290642976790071,
+                    0.2812843835033555
+                ],
+                [
+                    0.26619363882362634,
+                    0.26871905242970867
+                ],
+                [
+                    0.2717985315342329,
+                    0.25711765506218076
+                ],
+                [
+                    0.2689263109075339,
+                    0.2604031712426524
+                ],
+                [
+                    0.2664946580405425,
+                    0.24998293114982106
+                ],
+                [
+                    0.26959495175691983,
+                    0.25313200512647116
+                ],
+                [
+                    0.27552337747297057,
+                    0.269567493187815
+                ],
+                [
+                    0.27568892072456375,
+                    0.2627601261101241
+                ],
+                [
+                    0.2714561646001645,
+                    0.26871329597839
+                ],
+                [
+                    0.26372011366400877,
+                    0.2553864071886947
+                ]
+            ],
+            "saved_files_config": {
+                "weights_file": "../model_files/sharpr_regression_jul17//record_4_model_EVHvG_modelWeights.h5",
+                "json_file": "../model_files/sharpr_regression_jul17//record_4_model_EVHvG_modelJson.json",
+                "directory": "../model_files/sharpr_regression_jul17/",
+                "prefix": "model_EVHvG"
+            }
+        },
+        {
+            "record_number": 1,
+            "message": "",
+            "best_valid_key_metric": 0.12454031931192656,
+            "best_valid_perf_info": {
+                "epoch": 8,
+                "valid_key_metric": 0.12454031931192656,
+                "train_key_metric": 0.1702197401016718,
+                "valid_all_stats": {
+                    "per_output_spearman_corr": [
+                        0.18404177616852635,
+                        0.2758989159447124,
+                        0.09853124569011504,
+                        0.06574614767877196,
+                        0.14229159266232633,
+                        0.07950346122786973,
+                        0.08781600730358187,
+                        0.06249340781950886
+                    ],
+                    "mean_spearman_corr": 0.12454031931192656
+                }
+            },
+            "training_metadata": {
+                "termination_condition": "normal",
+                "total_epochs_trained_for": 28
+            },
+            "other_data_loaders_info": {
+                "train": {
+                    "batch_size": 500,
+                    "num_to_load_for_eval": 100000,
+                    "bundle_x_and_y_in_generator": false,
+                    "strip_enclosing_dictionary": true,
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_jul17/train_data.hdf5"
+                }
+            },
+            "model_trainer_info": {
+                "seed": 1234,
+                "samples_per_epoch": 200000,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 300,
+                        "epochs_to_wait": 20
+                    }
+                },
+                "class_weight": null
+            },
+            "model_creator_info": {
+                "layers_config": [
+                    {
+                        "name": "conv1",
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "input_shape": [
+                                145,
+                                4
+                            ],
+                            "nb_filter": 100,
+                            "filter_length": 19
+                        }
+                    },
+                    {
+                        "name": "conv1_batchnorm",
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    {
+                        "name": "conv1_act",
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "name": "max_pool1",
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "pool_length": 3,
+                            "stride": 3
+                        }
+                    },
+                    {
+                        "name": "conv2",
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "nb_filter": 100,
+                            "filter_length": 11
+                        }
+                    },
+                    {
+                        "name": "conv2_batchnorm",
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    {
+                        "name": "conv2_act",
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "name": "max_pool2",
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "pool_length": 3,
+                            "stride": 3
+                        }
+                    },
+                    {
+                        "name": "flatten",
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "name": "fc1",
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 100
+                        }
+                    },
+                    {
+                        "name": "fc1_act",
+                        "class": "keras.layers.advanced_activations.PReLU",
+                        "kwargs": {}
+                    },
+                    {
+                        "name": "fc1_batchnorm",
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    {
+                        "name": "fc2",
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 100
+                        }
+                    },
+                    {
+                        "name": "fc2_act",
+                        "class": "keras.layers.advanced_activations.PReLU",
+                        "kwargs": {}
+                    },
+                    {
+                        "name": "fc2_batchnorm",
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    {
+                        "name": "regression_task_act",
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 8,
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 0.001
+                    }
+                },
+                "loss": "mean_squared_error"
+            },
+            "key_metric_history": [
+                [
+                    "train",
+                    "valid"
+                ],
+                [
+                    0.056416005489127494,
+                    0.06587247926038009
+                ],
+                [
+                    0.11803889811830079,
+                    0.10603460244351384
+                ],
+                [
+                    0.12374022703112443,
+                    0.10376126069468067
+                ],
+                [
+                    0.11784739705985744,
+                    0.10055427959075475
+                ],
+                [
+                    0.13281068145134897,
+                    0.1108588042781578
+                ],
+                [
+                    0.1019859320088847,
+                    0.0940962142406962
+                ],
+                [
+                    0.13498041058227278,
+                    0.09971466130858728
+                ],
+                [
+                    0.17898127412096956,
+                    0.11041305177336659
+                ],
+                [
+                    0.1702197401016718,
+                    0.12454031931192656
+                ],
+                [
+                    0.14146731566249107,
+                    0.0808151085580802
+                ],
+                [
+                    0.12578820189925496,
+                    0.08864931944099526
+                ],
+                [
+                    0.1785049891630704,
+                    0.1076419537983319
+                ],
+                [
+                    0.12049209788469706,
+                    0.09264191753234832
+                ],
+                [
+                    0.20108807639584375,
+                    0.10241427379331294
+                ],
+                [
+                    0.20423858127784114,
+                    0.10437691709792803
+                ],
+                [
+                    0.22128643215007893,
+                    0.12071856137323639
+                ],
+                [
+                    0.20965294271361562,
+                    0.08072572789248479
+                ],
+                [
+                    0.15189554695625979,
+                    0.07480796562819342
+                ],
+                [
+                    0.2077389073949339,
+                    0.06511765668747098
+                ],
+                [
+                    0.22340878775195674,
+                    0.10438307278131403
+                ],
+                [
+                    0.25934797029285656,
+                    0.11638339840431272
+                ],
+                [
+                    0.22221886742343644,
+                    0.11218383065364805
+                ],
+                [
+                    0.265279491310976,
+                    0.09819420281979457
+                ],
+                [
+                    0.27179704959859813,
+                    0.08786435939732179
+                ],
+                [
+                    0.23061084685804023,
+                    0.09421832059682053
+                ],
+                [
+                    0.25660445576443075,
+                    0.07246419962118242
+                ],
+                [
+                    0.2642124267581474,
+                    0.09255300905778129
+                ],
+                [
+                    0.21999012118413241,
+                    0.08609176342208069
+                ],
+                [
+                    0.1701702269598549,
+                    0.07839666701414116
+                ]
+            ],
+            "saved_files_config": {
+                "weights_file": "../model_files/sharpr_regression_jul17//record_1_model_F3Nr1_modelWeights.h5",
+                "json_file": "../model_files/sharpr_regression_jul17//record_1_model_F3Nr1_modelJson.json",
+                "directory": "../model_files/sharpr_regression_jul17/",
+                "prefix": "model_F3Nr1"
+            }
+        },
+        {
+            "record_number": 2,
+            "message": "",
+            "best_valid_key_metric": 0.11319540470280351,
+            "best_valid_perf_info": {
+                "epoch": 15,
+                "valid_key_metric": 0.11319540470280351,
+                "train_key_metric": 0.1704972448930163,
+                "valid_all_stats": {
+                    "per_output_spearman_corr": [
+                        0.18695368603782989,
+                        0.27118443185477775,
+                        0.08500918597221387,
+                        0.04953524424902109,
+                        0.13925286814167015,
+                        0.05694810230832548,
+                        0.07526744355519069,
+                        0.04141227550339918
+                    ],
+                    "mean_spearman_corr": 0.11319540470280351
+                }
+            },
+            "training_metadata": {
+                "termination_condition": "normal",
+                "total_epochs_trained_for": 35
+            },
+            "other_data_loaders_info": {
+                "train": {
+                    "batch_size": 500,
+                    "num_to_load_for_eval": 100000,
+                    "bundle_x_and_y_in_generator": false,
+                    "strip_enclosing_dictionary": true,
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_jul17/train_data.hdf5"
+                }
+            },
+            "model_trainer_info": {
+                "seed": 1234,
+                "samples_per_epoch": 200000,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 300,
+                        "epochs_to_wait": 20
+                    }
+                },
+                "class_weight": null
+            },
+            "model_creator_info": {
+                "layers_config": [
+                    {
+                        "name": "conv1",
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "input_shape": [
+                                145,
+                                4
+                            ],
+                            "nb_filter": 100,
+                            "filter_length": 8
+                        }
+                    },
+                    {
+                        "name": "conv1_batchnorm",
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    {
+                        "name": "conv1_act",
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "name": "max_pool1",
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "pool_length": 3,
+                            "stride": 3
+                        }
+                    },
+                    {
+                        "name": "conv2",
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "nb_filter": 100,
+                            "filter_length": 11
+                        }
+                    },
+                    {
+                        "name": "conv2_batchnorm",
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    {
+                        "name": "conv2_act",
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "name": "max_pool2",
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "pool_length": 3,
+                            "stride": 3
+                        }
+                    },
+                    {
+                        "name": "flatten",
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "name": "fc1",
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 100
+                        }
+                    },
+                    {
+                        "name": "fc1_act",
+                        "class": "keras.layers.advanced_activations.PReLU",
+                        "kwargs": {}
+                    },
+                    {
+                        "name": "fc1_batchnorm",
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    {
+                        "name": "fc2",
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 100
+                        }
+                    },
+                    {
+                        "name": "fc2_act",
+                        "class": "keras.layers.advanced_activations.PReLU",
+                        "kwargs": {}
+                    },
+                    {
+                        "name": "fc2_batchnorm",
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    {
+                        "name": "regression_task_act",
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 8,
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 0.0001
+                    }
+                },
+                "loss": "mean_squared_error"
+            },
+            "key_metric_history": [
+                [
+                    "train",
+                    "valid"
+                ],
+                [
+                    0.02262643515174649,
+                    0.006255798870744505
+                ],
+                [
+                    0.1018666233437937,
+                    0.06779521136949646
+                ],
+                [
+                    0.11094240257281057,
+                    0.06881264847886018
+                ],
+                [
+                    0.13114805983899216,
+                    0.0965953122977121
+                ],
+                [
+                    0.11538098873942854,
+                    0.07999090031435302
+                ],
+                [
+                    0.16358996110417887,
+                    0.09225963502346203
+                ],
+                [
+                    0.1419876619711008,
+                    0.10309261479663137
+                ],
+                [
+                    0.19766703063636817,
+                    0.10607387808916294
+                ],
+                [
+                    0.18643022841151327,
+                    0.10639254610966542
+                ],
+                [
+                    0.1653440202014514,
+                    0.10468772685503511
+                ],
+                [
+                    0.1600986416140083,
+                    0.07927536198633528
+                ],
+                [
+                    0.17358085992856256,
+                    0.10589035004697879
+                ],
+                [
+                    0.17586217024282352,
+                    0.09680812517515484
+                ],
+                [
+                    0.11997479285513149,
+                    0.06660537312467357
+                ],
+                [
+                    0.21372695435942535,
+                    0.07372543491792752
+                ],
+                [
+                    0.1704972448930163,
+                    0.11319540470280351
+                ],
+                [
+                    0.23537975849854328,
+                    0.10471691990388382
+                ],
+                [
+                    0.19376733857710088,
+                    0.09813061075663979
+                ],
+                [
+                    0.16345708161461506,
+                    0.060608298506563636
+                ],
+                [
+                    0.2102752595348838,
+                    0.1041148728488077
+                ],
+                [
+                    0.22975008771521635,
+                    0.10860626307212982
+                ],
+                [
+                    0.15448802479522322,
+                    0.09721336367969333
+                ],
+                [
+                    0.17194197887978613,
+                    0.06807713105460397
+                ],
+                [
+                    0.23810286581348428,
+                    0.05848658718675143
+                ],
+                [
+                    0.23697709820048996,
+                    0.10916471958571496
+                ],
+                [
+                    0.22639382788003326,
+                    0.10392569949115572
+                ],
+                [
+                    0.2644196089904914,
+                    0.09517662812108141
+                ],
+                [
+                    0.19424929450377948,
+                    0.09307700379690569
+                ],
+                [
+                    0.24153538012093645,
+                    0.08266830882172031
+                ],
+                [
+                    0.15422560085515216,
+                    0.05100699133386179
+                ],
+                [
+                    0.2820279336646437,
+                    0.07915396882492019
+                ],
+                [
+                    0.19788881526482965,
+                    0.0989445023353144
+                ],
+                [
+                    0.27988443206847624,
+                    0.0915020676401661
+                ],
+                [
+                    0.23996993444220557,
+                    0.09202377387327906
+                ],
+                [
+                    0.18789731033035834,
+                    0.04149257927796462
+                ],
+                [
+                    0.2664685732970256,
+                    0.10106465152178928
+                ]
+            ],
+            "saved_files_config": {
+                "weights_file": "../model_files/sharpr_regression_jul17//record_2_model_azon3_modelWeights.h5",
+                "json_file": "../model_files/sharpr_regression_jul17//record_2_model_azon3_modelJson.json",
+                "directory": "../model_files/sharpr_regression_jul17/",
+                "prefix": "model_azon3"
+            }
+        },
+        {
+            "record_number": 3,
+            "message": "",
+            "best_valid_key_metric": 0.10936851100237072,
+            "best_valid_perf_info": {
+                "epoch": 16,
+                "valid_key_metric": 0.10936851100237072,
+                "train_key_metric": 0.2443848348312498,
+                "valid_all_stats": {
+                    "per_output_spearman_corr": [
+                        0.190060452223133,
+                        0.26480540798531627,
+                        0.07879809190844123,
+                        0.03366708865664113,
+                        0.13547710710954217,
+                        0.06400579187117388,
+                        0.04887413331605988,
+                        0.05926001494865829
+                    ],
+                    "mean_spearman_corr": 0.10936851100237072
+                }
+            },
+            "training_metadata": {
+                "termination_condition": "normal",
+                "total_epochs_trained_for": 36
+            },
+            "other_data_loaders_info": {
+                "train": {
+                    "batch_size": 500,
+                    "num_to_load_for_eval": 100000,
+                    "bundle_x_and_y_in_generator": false,
+                    "strip_enclosing_dictionary": true,
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_jul17/train_data.hdf5"
+                }
+            },
+            "model_trainer_info": {
+                "seed": 1234,
+                "samples_per_epoch": 200000,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 300,
+                        "epochs_to_wait": 20
+                    }
+                },
+                "class_weight": null
+            },
+            "model_creator_info": {
+                "layers_config": [
+                    {
+                        "name": "conv1",
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "input_shape": [
+                                145,
+                                4
+                            ],
+                            "nb_filter": 100,
+                            "filter_length": 8
+                        }
+                    },
+                    {
+                        "name": "conv1_batchnorm",
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    {
+                        "name": "conv1_act",
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "name": "max_pool1",
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "pool_length": 3,
+                            "stride": 3
+                        }
+                    },
+                    {
+                        "name": "conv2",
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "nb_filter": 100,
+                            "filter_length": 11
+                        }
+                    },
+                    {
+                        "name": "conv2_batchnorm",
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    {
+                        "name": "conv2_act",
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "name": "max_pool2",
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "pool_length": 3,
+                            "stride": 3
+                        }
+                    },
+                    {
+                        "name": "flatten",
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "name": "fc1",
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 100
+                        }
+                    },
+                    {
+                        "name": "fc1_act",
+                        "class": "keras.layers.advanced_activations.PReLU",
+                        "kwargs": {}
+                    },
+                    {
+                        "name": "fc1_batchnorm",
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    {
+                        "name": "fc2",
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 100
+                        }
+                    },
+                    {
+                        "name": "fc2_act",
+                        "class": "keras.layers.advanced_activations.PReLU",
+                        "kwargs": {}
+                    },
+                    {
+                        "name": "fc2_batchnorm",
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    {
+                        "name": "regression_task_act",
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 8,
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 0.0001
+                    }
+                },
+                "loss": "mean_squared_error"
+            },
+            "key_metric_history": [
+                [
+                    "train",
+                    "valid"
+                ],
+                [
+                    0.02431298593008143,
+                    0.010176327522141912
+                ],
+                [
+                    0.10343742438196273,
+                    0.06908481107152242
+                ],
+                [
+                    0.11395082504376704,
+                    0.07172147415408192
+                ],
+                [
+                    0.13131886910709212,
+                    0.09347446283398445
+                ],
+                [
+                    0.11675572817926982,
+                    0.0822401664254783
+                ],
+                [
+                    0.16450054702551226,
+                    0.09342597435861329
+                ],
+                [
+                    0.1433893845080766,
+                    0.10232635338944678
+                ],
+                [
+                    0.19727555853936696,
+                    0.10835260094536688
+                ],
+                [
+                    0.18444868661347638,
+                    0.09986503201492507
+                ],
+                [
+                    0.15488437294910404,
+                    0.09835876925406857
+                ],
+                [
+                    0.15661405292704683,
+                    0.07451048694396056
+                ],
+                [
+                    0.16726067345378126,
+                    0.10442654699340473
+                ],
+                [
+                    0.18265061870969468,
+                    0.09939914642281562
+                ],
+                [
+                    0.10180090447905601,
+                    0.057510555195351476
+                ],
+                [
+                    0.2170070827561099,
+                    0.0775750766049138
+                ],
+                [
+                    0.1656108201367365,
+                    0.10505497800822974
+                ],
+                [
+                    0.2443848348312498,
+                    0.10936851100237072
+                ],
+                [
+                    0.2084037928239942,
+                    0.09871387137366573
+                ],
+                [
+                    0.18491371825875696,
+                    0.07392906387988668
+                ],
+                [
+                    0.23058037886576943,
+                    0.10782367475280523
+                ],
+                [
+                    0.22445626210901137,
+                    0.10741298520796028
+                ],
+                [
+                    0.1907566552660018,
+                    0.10054379127882275
+                ],
+                [
+                    0.12781477235881805,
+                    0.052999467817368584
+                ],
+                [
+                    0.216243481298529,
+                    0.0515901599864063
+                ],
+                [
+                    0.23784457045332888,
+                    0.10597797862715183
+                ],
+                [
+                    0.18924473476409376,
+                    0.08114329822892606
+                ],
+                [
+                    0.2326095483779154,
+                    0.07729771583799402
+                ],
+                [
+                    0.15769824604905527,
+                    0.07711637269258863
+                ],
+                [
+                    0.23930964271011673,
+                    0.08075568294792573
+                ],
+                [
+                    0.141311705884767,
+                    0.045384978432948725
+                ],
+                [
+                    0.2643055055790103,
+                    0.08398323087691362
+                ],
+                [
+                    0.21540623508285764,
+                    0.09718341541094602
+                ],
+                [
+                    0.3012643704814873,
+                    0.10290889448980461
+                ],
+                [
+                    0.2514736243775648,
+                    0.09140793521009219
+                ],
+                [
+                    0.20929903525187107,
+                    0.05880216771169124
+                ],
+                [
+                    0.2693284442978067,
+                    0.09951237746580796
+                ],
+                [
+                    0.25782501228308885,
+                    0.09598429123599933
+                ]
+            ],
+            "saved_files_config": {
+                "weights_file": "../model_files/sharpr_regression_jul17//record_3_model_Q7MiI_modelWeights.h5",
+                "json_file": "../model_files/sharpr_regression_jul17//record_3_model_Q7MiI_modelJson.json",
+                "directory": "../model_files/sharpr_regression_jul17/",
+                "prefix": "model_Q7MiI"
+            }
+        }
+    ]
+}

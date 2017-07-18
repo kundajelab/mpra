@@ -1,0 +1,8 @@
+
+    [
+        {"class": "SaveBestValidModel",
+         "kwargs": {"directory": "../model_files/sharpr_regression_jul17/"}},
+        {"class": "PrintPerfAfterEpoch",
+         "kwargs": {"print_trend": true}}
+    ]
+    

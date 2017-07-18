@@ -1,0 +1,8 @@
+
+    [
+        {"class": "SaveBestValidModel",
+         "kwargs": {"directory": "../model_files/regression_jul12_normalized/"}},
+        {"class": "PrintPerfAfterEpoch",
+         "kwargs": {"print_trend": true}}
+    ]
+    
