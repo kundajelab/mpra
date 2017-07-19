@@ -57,6 +57,7 @@ total_dna_rna_read_counts = {'dna': {'1': {'minp': 0, 'sv40p': 0},
                                        
 PSEUDOCOUNT = 1.0
 
+# Read in DNA counts w/o the +1 pseudocount, compute running sum of total number of reads
 for dna_file in dna_files:
     print("Loading from file " + dna_file)
     f = open(dna_file)
@@ -78,6 +79,7 @@ for dna_file in dna_files:
         total_dna_rna_read_counts['dna'][design][promoter] += read_count + PSEUDOCOUNT
     f.close()
 
+# Read in RNA counts w/o the +1 pseudocount, compute running sums of total numbers of reads
 for rna_file in rna_files:
     print("Loading from file " + rna_file)
     f = open(rna_file)

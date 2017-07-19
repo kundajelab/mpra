@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-export YAMLDIR=../yamls/sharpr_regression_jul17_makehdf5/*
-export HDF5DIR=../hdf5files/sharpr_regression_jul17/
+export YAMLDIR=../yamls/sharpr_regression_znormed_jul18_makehdf5/*
+export HDF5DIR=../hdf5files/sharpr_regression_znormed_jul18/
 
-if [ ! -d $HDFDIR ]; then
+if [ ! -d "$HDFDIR" ]; then
     mkdir $HDF5DIR
 fi
 

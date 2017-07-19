@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-CONFIGPATH="../yamls/sharpr_regression_jul17_config"
+CONFIGPATH="../yamls/sharpr_regression_znormed_jul18_config"
 momma_dragonn_train --valid_data_loader_config\
  $CONFIGPATH/valid_data_loader_config.yaml\
  --evaluator_config $CONFIGPATH/evaluator_config.yaml\

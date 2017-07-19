@@ -7,12 +7,12 @@ chrs = ['chr' + str(i) for i in range(1, 23)] + ['chrX', 'chrY']
 train_chrs = chrs
 train_chrs = [chrom for chrom in train_chrs if chrom not in val_chrs and chrom not in test_chrs]
 
-run_name = 'sharpr_regression_jul17'
+run_name = 'sharpr_regression_znormed_jul18'
 deeplearn_dir = os.environ.get("DL")
 split_path = deeplearn_dir + "/splits/" + run_name + "/"
 os.system("mkdir " + split_path)
 
-dataMatrix = open(os.environ.get("SHARPR") + "/data/processed_data/sharprFullDataMatrix.tsv").readlines()[1:]
+dataMatrix = open(os.environ.get("SHARPR") + "/data/processed_data/sharprFullDataMatrixZNormed.tsv").readlines()[1:]
 #dataMatrix.readline()
 
 trainSplit = open(split_path + "train_split.txt", 'w')
