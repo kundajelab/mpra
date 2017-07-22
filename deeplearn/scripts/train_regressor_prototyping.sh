@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-CONFIGPATH="../yamls/regression_jul12_normalized_config"
+CONFIGPATH="../yamls/sharpr_hyperparam_jul19_config"
 momma_dragonn_train --valid_data_loader_config\
  $CONFIGPATH/valid_data_loader_config.yaml\
  --evaluator_config $CONFIGPATH/evaluator_config.yaml\
  --end_of_epoch_callbacks_config $CONFIGPATH/end_of_epoch_callbacks_config.yaml\
  --end_of_training_callbacks_config $CONFIGPATH/end_of_training_callbacks_config.yaml\
- --hyperparameter_configs_list $CONFIGPATH/hyperparameter_configs_list.yaml
+ --hyperparameter_configs_list $CONFIGPATH/hyperparameter_configs_list_paramsearch.yaml
