@@ -1,5 +1,16 @@
 import numpy as np
 import os
+import string
+nucleotideMap = string.maketrans('ACGT', 'TGCA')
+
+def rev(seq):
+    return seq[::-1]
+
+def comp(seq):
+    return seq.translate(nucleotideMap)
+
+def rev_comp(seq):
+    return rev(comp(seq))
 
 val_chrs = ['chr8']
 test_chrs = ['chr18']
@@ -7,12 +18,12 @@ chrs = ['chr' + str(i) for i in range(1, 23)] + ['chrX', 'chrY']
 train_chrs = chrs
 train_chrs = [chrom for chrom in train_chrs if chrom not in val_chrs and chrom not in test_chrs]
 
-run_name = 'sharpr_regression_znormed_jul18'
+run_name = 'sharpr_znormed_jul23'
 deeplearn_dir = os.environ.get("DL")
 split_path = deeplearn_dir + "/splits/" + run_name + "/"
 os.system("mkdir " + split_path)
 
-dataMatrix = open(os.environ.get("SHARPR") + "/data/processed_data/sharprFullDataMatrixZNormed.tsv").readlines()[1:]
+dataMatrix = open(os.environ.get("SHARPR") + "/data/processed_data/sharprFullDataMatrixLfcZNormed.tsv").readlines()[1:]
 #dataMatrix.readline()
 
 trainSplit = open(split_path + "train_split.txt", 'w')
@@ -39,26 +50,30 @@ for (i, line) in enumerate(dataMatrix):
     if i in print_levels:
         print("On fragment " + str(i) + " / " + str(num_fragments))
     line = line.strip().split('\t')
-    chrom = line[1]
-    if chrom in chrs:
-        counts[3] += 1
+    for ori in ('n', 'rc'):
+        chrom = line[1]
+        if chrom in chrs:
+            counts[3] += 1
     
-    fragmentName = line[0]
-    if chrom in train_chrs:
-        trainSplit.write(fragmentName + '\n')
-        counts[0] += 1
-    if chrom in val_chrs:
-        valSplit.write(fragmentName + '\n')
-        counts[1] += 1
-    if chrom in test_chrs:
-        testSplit.write(fragmentName + '\n')
-        counts[2] += 1
+        fragmentName = line[0] + '_' + ori
+        if chrom in train_chrs:
+            trainSplit.write(fragmentName + '\n')
+            counts[0] += 1
+        if chrom in val_chrs and ori == 'n': # for val, don't get the revcomp sequence too
+            valSplit.write(fragmentName + '\n')
+            counts[1] += 1
+        if chrom in test_chrs and ori in 'n':
+            testSplit.write(fragmentName + '\n')
+            counts[2] += 1
     
-    if chrom in train_chrs or chrom in val_chrs or chrom in test_chrs:
-        labels.write(fragmentName + '\t' + '\t'.join(line[7:31]) + '\n')
-        seq = line[3]
-        features.write('>' + fragmentName + '\n')
-        features.write(line[3] + '\n')
+        if chrom in train_chrs or chrom in val_chrs or chrom in test_chrs:
+            labels.write(fragmentName + '\t' + '\t'.join(line[7:31]) + '\n')
+            seq = line[3]
+            features.write('>' + fragmentName + '\n')
+            if ori == 'rc':
+                features.write(rev_comp(line[3]) + '\n')    
+            else:
+                features.write(line[3] + '\n')
 
 trainSplit.close()
 valSplit.close()

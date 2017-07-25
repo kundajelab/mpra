@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-CONFIGPATH="../yamls/sharpr_znormed_jul23_config"
+CONFIGPATH="../yamls/atac_xferlearn_jul24_config"
 momma_dragonn_train --valid_data_loader_config\
- $CONFIGPATH/valid_data_loader_config_norevcomp.yaml\
+ $CONFIGPATH/valid_data_loader_config.yaml\
  --evaluator_config $CONFIGPATH/evaluator_config.yaml\
  --end_of_epoch_callbacks_config $CONFIGPATH/end_of_epoch_callbacks_config.yaml\
  --end_of_training_callbacks_config $CONFIGPATH/end_of_training_callbacks_config.yaml\
- --hyperparameter_configs_list $CONFIGPATH/hyperparameter_configs_list_norevcomp.yaml
+ --hyperparameter_configs_list $CONFIGPATH/hyperparameter_configs_list.yaml

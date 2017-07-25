@@ -7,18 +7,18 @@ python zscore_normalize_labels.py
 echo "Creating train/val/test splits, regression labels, and sequence features"
 python create_splits_labels_features.py
 
-export RUN_NAME=sharpr_regression_znormed_jul18
+export RUN_NAME=sharpr_znormed_jul23
 
 echo "Gzipping files"
-gzip -f $DL/labels/labels_$RUN_NAME.txt
-gzip -f $DL/splits/$RUN_NAME/*.txt
-gzip -f $DL/features/sequences_$RUN_NAME.fa
+gzip -f $DL/labels/labels_${RUN_NAME}.txt
+gzip -f $DL/splits/${RUN_NAME}/*.txt
+gzip -f $DL/features/sequences_${RUN_NAME}.fa
 
 echo "Making HDF5 files from splits, labels, features"
 cd $DL/scripts/
 
-export YAMLDIR=../yamls/$RUN_NAME_makehdf5/*
-export HDF5DIR=../hdf5files/$RUN_NAME/
+export YAMLDIR=../yamls/${RUN_NAME}_makehdf5/*
+export HDF5DIR=../hdf5files/${RUN_NAME}/
 
 mkdir $HDF5DIR
 

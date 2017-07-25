@@ -98,8 +98,8 @@ for rna_file in rna_files:
         total_dna_rna_read_counts['rna'][design][celltype][promoter][replicate] += read_count + PSEUDOCOUNT
     f.close()
 
-dataMatrix = open(data_path + "/processed_data/sharprFullDataMatrix.tsv", 'w')
-print("Creating data matrix at path " + data_path + "/processed_data/sharprFullDataMatrix.tsv")
+dataMatrix = open(data_path + "/processed_data/sharprFullDataMatrixLfc.tsv", 'w')
+print("Creating data matrix at path " + data_path + "/processed_data/sharprFullDataMatrixLfc.tsv")
 dataMatrix.write("name\tchrom\tcenter_coord\tsequence\tbarcode\tchromatin_state\tdesign\t" +
                  "k562_minp_rep1_count\tk562_minp_rep2_count\tk562_minp_avg_count\t" + 
                  "k562_sv40p_rep1_count\tk562_sv40p_rep2_count\tk562_sv40p_avg_count\t" +
@@ -121,6 +121,15 @@ promoters = ['minp', 'sv40p']
 reps = ['rep1', 'rep2', 'avg']
 # PSEUDOCOUNT = 1
 
+from scipy.stats import rankdata
+
+#  def quantile_normalize(data):
+    #  data_ranked = np.array([(rankdata(arr, method = 'min') - 1) for arr in data])
+    #  data_sorted = np.array([np.sort(arr) for arr in data])
+    #  average_by_rank = np.mean(data_sorted, axis = 0)
+    #  data_normed = np.array([np.take(average_by_rank, ranks) for ranks in data_ranked])
+    #  return data_normed
+
 for (i, seq_name) in enumerate(names_to_info.keys()):
     if i in print_levels:
         print("On fragment " + str(i) + " / " + str(num_fragments))
@@ -136,9 +145,10 @@ for (i, seq_name) in enumerate(names_to_info.keys()):
             rna_count = rna_reads[design][ct][p][rep][seq_name]
             dna_count = dna_reads[design][p][seq_name]
             seq_labels[j] = rna_count
-            seq_labels[j+12] = (np.log2(rna_count + 1) - np.log2(dna_count + 1) - 
-                                np.log2(total_dna_rna_read_counts['rna'][design][ct][p][rep]) + 
-                                np.log2(total_dna_rna_read_counts['dna'][design][p]))
+            seq_labels[j+12] = np.log2(rna_count + 1) - np.log2(dna_count + 1)
+            #  seq_labels[j+12] = (np.log2(rna_count + 1) - np.log2(dna_count + 1) - 
+                                #  np.log2(total_dna_rna_read_counts['rna'][design][ct][p][rep]) + 
+                                #  np.log2(total_dna_rna_read_counts['dna'][design][p]))
         if rep == 'avg':
             seq_labels[j] = (seq_labels[j-2] + seq_labels[j-1]) / 2.0
             seq_labels[j+12] = (seq_labels[j+10] + seq_labels[j+11]) / 2.0

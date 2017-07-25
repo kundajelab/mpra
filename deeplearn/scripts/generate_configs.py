@@ -27,7 +27,7 @@ def get_model_trainer(seed):
                 "class": "EarlyStopping" ,
                 "kwargs": {
                    "max_epochs": 1000, 
-                   "epochs_to_wait": 14,
+                   "epochs_to_wait": 18,
                    "running_mean_over_epochs": 1
                 } 
             },
@@ -170,12 +170,12 @@ def get_random_hyperparams():
     p_conv_dropout = np.random.random() / 6 # float from 0 to 0.5
     pool_length = np.random.randint(low = 1, high = 2)
     stride = pool_length
-    nb_filters = np.random.randint(low = 75, high = 200, size = nconvlayers)
+    nb_filters = np.random.randint(low = 75, high = 125, size = nconvlayers)
     separableFC = np.random.random() > 1 # never use sepFC layer / random boolean with p = 1/2
     if separableFC == True: # if True, then define output_dim
         separableFC = np.random.randint(low = 25, high = 100)
     symmetric = np.random.random() > 1 # never use sep FC layer / p = 1/2
-    lr = 10 ** -np.random.uniform(low=3, high=4)
+    lr = 10 ** -np.random.uniform(low=3.5, high=4.3)
     good_params = check_params(filter_lengths = filter_lengths, pool_length = pool_length, stride = stride)
     if good_params:
         return {"nconvlayers": nconvlayers,
@@ -204,14 +204,14 @@ def main(args):
     np.random.seed(seed)
     
     possible_settings = [get_random_hyperparams() for i in range(25)]
-    # possible_settings[0]["filter_lengths"] = np.array([4, 4, 4])
-    possible_settings[1]["filter_lengths"] = np.array([4, 5, 6])
-    possible_settings[2]["filter_lengths"] = np.array([6, 6, 6])
-    possible_settings[3]["filter_lengths"] = np.array([4, 6, 8])
-    possible_settings[4]["filter_lengths"] = np.array([4, 7, 10])
-    possible_settings[5]["filter_lengths"] = np.array([8, 8, 8])
-    possible_settings[1]["filter_lengths"] = np.array([5, 8, 5])
-    possible_settings[1]["filter_lengths"] = np.array([5, 10, 4])
+    possible_settings[0]["filter_lengths"] = np.array([4, 4, 4])
+    possible_settings[1]["filter_lengths"] = np.array([5, 9, 4])
+    possible_settings[2]["filter_lengths"] = np.array([4, 10, 6])
+    possible_settings[3]["filter_lengths"] = np.array([5, 5, 5])
+    possible_settings[4]["filter_lengths"] = np.array([4, 8, 4])
+    possible_settings[5]["filter_lengths"] = np.array([4, 6, 5])
+    # possible_settings[1]["filter_lengths"] = np.array([5, 8, 5])
+    # possible_settings[1]["filter_lengths"] = np.array([5, 10, 4])
     possible_settings = [setting for setting in possible_settings if setting != {}]
 
     hyperparameter_configs = []

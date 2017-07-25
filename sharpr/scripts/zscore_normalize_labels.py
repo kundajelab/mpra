@@ -3,7 +3,7 @@ import numpy as np
 from scipy.stats import zscore
 
 base_path = os.environ.get("SHARPR") + "/data/processed_data/"
-data_path = base_path + "sharprFullDataMatrix.tsv"
+data_path = base_path + "sharprFullDataMatrixLfc.tsv"
 dataMatrix = np.genfromtxt(fname = data_path,
                            dtype = 'string',
                            delimiter = '\t',
@@ -20,7 +20,7 @@ print np.mean(dataMatrixZNormed[:, 7].astype(np.float))
 print np.std(dataMatrixZNormed[:, 7].astype(np.float))
 print np.mean(dataMatrixZNormed[:, 30].astype(np.float))
 print np.std(dataMatrixZNormed[:, 30].astype(np.float))
-np.savetxt(fname = base_path + "sharprFullDataMatrixZNormed.tsv",
+np.savetxt(fname = base_path + "sharprFullDataMatrixLfcZNormed.tsv",
            X = dataMatrixZNormed,
            fmt = '%s',
            delimiter = '\t',
