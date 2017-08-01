@@ -1,1 +1,0 @@
-cmd = /scratch/users/rmovva/mpra/sharpr/data/homer_files/K562_minP_top20000_positives.fa human K562_minP_20kVs50k_output/ -fasta /scratch/users/rmovva/mpra/sharpr/data/homer_files/K562_minP_50000_background.fa

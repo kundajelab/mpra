@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-CONFIGPATH="../yamls/sharpr_znormed_jul23_config"
+CONFIGPATH="../yamls/promoter_tasks_jul31_config"
 momma_dragonn_train --valid_data_loader_config\
  $CONFIGPATH/valid_data_loader_config.yaml\
  --evaluator_config $CONFIGPATH/evaluator_config.yaml\

@@ -1,0 +1,9 @@
+{
+    "splits": {
+        "split_name_to_split_files": {
+            "train": "../splits/sharpr_qnormed_jul22/train_split.txt.gz"
+            ,"valid": "../splits/sharpr_qnormed_jul22/val_split.txt.gz"
+            ,"test": "../splits/sharpr_qnormed_jul22/test_split.txt.gz"
+        }
+    }
+}

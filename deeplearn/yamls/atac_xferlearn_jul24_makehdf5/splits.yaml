@@ -1,0 +1,9 @@
+{
+    "splits": {
+        "split_name_to_split_files": {
+            "train": "../splits/atac_xferlearn_jul24/train_split.txt.gz"
+            ,"valid": "../splits/atac_xferlearn_jul24/val_split.txt.gz"
+            ,"test": "../splits/atac_xferlearn_jul24/test_split.txt.gz"
+        }
+    }
+}

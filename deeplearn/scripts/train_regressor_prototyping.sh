@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-CONFIGPATH="../yamls/sharpr_qnormed_jul22_config"
+CONFIGPATH="../yamls/celltype_tasks_jul25_config"
 momma_dragonn_train --valid_data_loader_config\
  $CONFIGPATH/valid_data_loader_config.yaml\
  --evaluator_config $CONFIGPATH/evaluator_config.yaml\
  --end_of_epoch_callbacks_config $CONFIGPATH/end_of_epoch_callbacks_config.yaml\
  --end_of_training_callbacks_config $CONFIGPATH/end_of_training_callbacks_config.yaml\
- --hyperparameter_configs_list $CONFIGPATH/hyperparameter_configs_list_paramsearch.yaml
+ --hyperparameter_configs_list $CONFIGPATH/hyperparameter_configs_list_5x.yaml

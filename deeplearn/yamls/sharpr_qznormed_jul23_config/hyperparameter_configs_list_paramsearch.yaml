@@ -1,0 +1,4052 @@
+[
+    {
+        "message": "sharpr_qnormed_jul22-nconvlay_3-filterlens_4,4,4-pconvdropout_0.025-poolw_1-poolstride_1-nbf_106,102,75-sep_f-dim_null-symm_f-lr_0.000235499299694-seed_0",
+        "model_creator": {
+            "class": "flexible_keras.FlexibleKerasSequential",
+            "kwargs": {
+                "loss": "mean_squared_error",
+                "layers_config": [
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 4,
+                            "nb_filter": 106,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.024823362573849556
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 4,
+                            "nb_filter": 102,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.024823362573849556
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 4,
+                            "nb_filter": 75,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.024823362573849556
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 12
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 0.00023549929969368221
+                    }
+                }
+            }
+        },
+        "model_trainer": {
+            "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+            "kwargs": {
+                "samples_per_epoch": 200000,
+                "seed": 0,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 1000,
+                        "epochs_to_wait": 18,
+                        "running_mean_over_epochs": 1
+                    }
+                }
+            }
+        },
+        "other_data_loaders": {
+            "train": {
+                "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+                "kwargs": {
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_znormed_jul18/train_data.hdf5",
+                    "bundle_x_and_y_in_generator": false,
+                    "num_to_load_for_eval": 100000,
+                    "strip_enclosing_dictionary": true,
+                    "batch_size": 500
+                }
+            }
+        }
+    },
+    {
+        "message": "sharpr_qnormed_jul22-nconvlay_3-filterlens_5,9,4-pconvdropout_0.066-poolw_1-poolstride_1-nbf_119,109,117-sep_f-dim_null-symm_f-lr_8.26998507366e-05-seed_0",
+        "model_creator": {
+            "class": "flexible_keras.FlexibleKerasSequential",
+            "kwargs": {
+                "loss": "mean_squared_error",
+                "layers_config": [
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 5,
+                            "nb_filter": 119,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.0664500408742726
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 9,
+                            "nb_filter": 109,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.0664500408742726
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 4,
+                            "nb_filter": 117,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.0664500408742726
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 12
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 8.269985073659395e-05
+                    }
+                }
+            }
+        },
+        "model_trainer": {
+            "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+            "kwargs": {
+                "samples_per_epoch": 200000,
+                "seed": 0,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 1000,
+                        "epochs_to_wait": 18,
+                        "running_mean_over_epochs": 1
+                    }
+                }
+            }
+        },
+        "other_data_loaders": {
+            "train": {
+                "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+                "kwargs": {
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_znormed_jul18/train_data.hdf5",
+                    "bundle_x_and_y_in_generator": false,
+                    "num_to_load_for_eval": 100000,
+                    "strip_enclosing_dictionary": true,
+                    "batch_size": 500
+                }
+            }
+        }
+    },
+    {
+        "message": "sharpr_qnormed_jul22-nconvlay_3-filterlens_4,10,6-pconvdropout_0.126-poolw_1-poolstride_1-nbf_108,100,116-sep_f-dim_null-symm_f-lr_0.000192652247349-seed_0",
+        "model_creator": {
+            "class": "flexible_keras.FlexibleKerasSequential",
+            "kwargs": {
+                "loss": "mean_squared_error",
+                "layers_config": [
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 4,
+                            "nb_filter": 108,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.1259069776967142
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 10,
+                            "nb_filter": 100,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.1259069776967142
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 6,
+                            "nb_filter": 116,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.1259069776967142
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 12
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 0.00019265224734882523
+                    }
+                }
+            }
+        },
+        "model_trainer": {
+            "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+            "kwargs": {
+                "samples_per_epoch": 200000,
+                "seed": 0,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 1000,
+                        "epochs_to_wait": 18,
+                        "running_mean_over_epochs": 1
+                    }
+                }
+            }
+        },
+        "other_data_loaders": {
+            "train": {
+                "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+                "kwargs": {
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_znormed_jul18/train_data.hdf5",
+                    "bundle_x_and_y_in_generator": false,
+                    "num_to_load_for_eval": 100000,
+                    "strip_enclosing_dictionary": true,
+                    "batch_size": 500
+                }
+            }
+        }
+    },
+    {
+        "message": "sharpr_qnormed_jul22-nconvlay_3-filterlens_5,5,5-pconvdropout_0.155-poolw_1-poolstride_1-nbf_94,102,80-sep_f-dim_null-symm_f-lr_5.71286192451e-05-seed_0",
+        "model_creator": {
+            "class": "flexible_keras.FlexibleKerasSequential",
+            "kwargs": {
+                "loss": "mean_squared_error",
+                "layers_config": [
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 5,
+                            "nb_filter": 94,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.15469821238463385
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 5,
+                            "nb_filter": 102,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.15469821238463385
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 5,
+                            "nb_filter": 80,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.15469821238463385
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 12
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 5.712861924514106e-05
+                    }
+                }
+            }
+        },
+        "model_trainer": {
+            "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+            "kwargs": {
+                "samples_per_epoch": 200000,
+                "seed": 0,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 1000,
+                        "epochs_to_wait": 18,
+                        "running_mean_over_epochs": 1
+                    }
+                }
+            }
+        },
+        "other_data_loaders": {
+            "train": {
+                "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+                "kwargs": {
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_znormed_jul18/train_data.hdf5",
+                    "bundle_x_and_y_in_generator": false,
+                    "num_to_load_for_eval": 100000,
+                    "strip_enclosing_dictionary": true,
+                    "batch_size": 500
+                }
+            }
+        }
+    },
+    {
+        "message": "sharpr_qnormed_jul22-nconvlay_3-filterlens_4,8,4-pconvdropout_0.090-poolw_1-poolstride_1-nbf_75,95,103-sep_f-dim_null-symm_f-lr_9.56103752156e-05-seed_0",
+        "model_creator": {
+            "class": "flexible_keras.FlexibleKerasSequential",
+            "kwargs": {
+                "loss": "mean_squared_error",
+                "layers_config": [
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 4,
+                            "nb_filter": 75,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.08997683771004089
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 8,
+                            "nb_filter": 95,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.08997683771004089
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 4,
+                            "nb_filter": 103,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.08997683771004089
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 12
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 9.561037521559467e-05
+                    }
+                }
+            }
+        },
+        "model_trainer": {
+            "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+            "kwargs": {
+                "samples_per_epoch": 200000,
+                "seed": 0,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 1000,
+                        "epochs_to_wait": 18,
+                        "running_mean_over_epochs": 1
+                    }
+                }
+            }
+        },
+        "other_data_loaders": {
+            "train": {
+                "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+                "kwargs": {
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_znormed_jul18/train_data.hdf5",
+                    "bundle_x_and_y_in_generator": false,
+                    "num_to_load_for_eval": 100000,
+                    "strip_enclosing_dictionary": true,
+                    "batch_size": 500
+                }
+            }
+        }
+    },
+    {
+        "message": "sharpr_qnormed_jul22-nconvlay_3-filterlens_4,6,5-pconvdropout_0.132-poolw_1-poolstride_1-nbf_117,79,91-sep_f-dim_null-symm_f-lr_5.43136222779e-05-seed_0",
+        "model_creator": {
+            "class": "flexible_keras.FlexibleKerasSequential",
+            "kwargs": {
+                "loss": "mean_squared_error",
+                "layers_config": [
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 4,
+                            "nb_filter": 117,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.13189427822387104
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 6,
+                            "nb_filter": 79,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.13189427822387104
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 5,
+                            "nb_filter": 91,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.13189427822387104
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 12
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 5.431362227786324e-05
+                    }
+                }
+            }
+        },
+        "model_trainer": {
+            "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+            "kwargs": {
+                "samples_per_epoch": 200000,
+                "seed": 0,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 1000,
+                        "epochs_to_wait": 18,
+                        "running_mean_over_epochs": 1
+                    }
+                }
+            }
+        },
+        "other_data_loaders": {
+            "train": {
+                "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+                "kwargs": {
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_znormed_jul18/train_data.hdf5",
+                    "bundle_x_and_y_in_generator": false,
+                    "num_to_load_for_eval": 100000,
+                    "strip_enclosing_dictionary": true,
+                    "batch_size": 500
+                }
+            }
+        }
+    },
+    {
+        "message": "sharpr_qnormed_jul22-nconvlay_3-filterlens_9,9,8-pconvdropout_0.125-poolw_1-poolstride_1-nbf_123,122,95-sep_f-dim_null-symm_f-lr_0.000236350867473-seed_0",
+        "model_creator": {
+            "class": "flexible_keras.FlexibleKerasSequential",
+            "kwargs": {
+                "loss": "mean_squared_error",
+                "layers_config": [
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 9,
+                            "nb_filter": 123,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.1246549956092971
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 9,
+                            "nb_filter": 122,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.1246549956092971
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 8,
+                            "nb_filter": 95,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.1246549956092971
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 12
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 0.00023635086747296656
+                    }
+                }
+            }
+        },
+        "model_trainer": {
+            "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+            "kwargs": {
+                "samples_per_epoch": 200000,
+                "seed": 0,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 1000,
+                        "epochs_to_wait": 18,
+                        "running_mean_over_epochs": 1
+                    }
+                }
+            }
+        },
+        "other_data_loaders": {
+            "train": {
+                "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+                "kwargs": {
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_znormed_jul18/train_data.hdf5",
+                    "bundle_x_and_y_in_generator": false,
+                    "num_to_load_for_eval": 100000,
+                    "strip_enclosing_dictionary": true,
+                    "batch_size": 500
+                }
+            }
+        }
+    },
+    {
+        "message": "sharpr_qnormed_jul22-nconvlay_3-filterlens_4,8,7-pconvdropout_0.005-poolw_1-poolstride_1-nbf_87,111,122-sep_f-dim_null-symm_f-lr_0.000129428636746-seed_0",
+        "model_creator": {
+            "class": "flexible_keras.FlexibleKerasSequential",
+            "kwargs": {
+                "loss": "mean_squared_error",
+                "layers_config": [
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 4,
+                            "nb_filter": 87,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.0054343339030481315
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 8,
+                            "nb_filter": 111,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.0054343339030481315
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 7,
+                            "nb_filter": 122,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.0054343339030481315
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 12
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 0.00012942863674559268
+                    }
+                }
+            }
+        },
+        "model_trainer": {
+            "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+            "kwargs": {
+                "samples_per_epoch": 200000,
+                "seed": 0,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 1000,
+                        "epochs_to_wait": 18,
+                        "running_mean_over_epochs": 1
+                    }
+                }
+            }
+        },
+        "other_data_loaders": {
+            "train": {
+                "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+                "kwargs": {
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_znormed_jul18/train_data.hdf5",
+                    "bundle_x_and_y_in_generator": false,
+                    "num_to_load_for_eval": 100000,
+                    "strip_enclosing_dictionary": true,
+                    "batch_size": 500
+                }
+            }
+        }
+    },
+    {
+        "message": "sharpr_qnormed_jul22-nconvlay_3-filterlens_4,7,5-pconvdropout_0.131-poolw_1-poolstride_1-nbf_123,90,107-sep_f-dim_null-symm_f-lr_9.4995812808e-05-seed_0",
+        "model_creator": {
+            "class": "flexible_keras.FlexibleKerasSequential",
+            "kwargs": {
+                "loss": "mean_squared_error",
+                "layers_config": [
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 4,
+                            "nb_filter": 123,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.13113334560485163
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 7,
+                            "nb_filter": 90,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.13113334560485163
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 5,
+                            "nb_filter": 107,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.13113334560485163
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 12
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 9.499581280795382e-05
+                    }
+                }
+            }
+        },
+        "model_trainer": {
+            "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+            "kwargs": {
+                "samples_per_epoch": 200000,
+                "seed": 0,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 1000,
+                        "epochs_to_wait": 18,
+                        "running_mean_over_epochs": 1
+                    }
+                }
+            }
+        },
+        "other_data_loaders": {
+            "train": {
+                "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+                "kwargs": {
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_znormed_jul18/train_data.hdf5",
+                    "bundle_x_and_y_in_generator": false,
+                    "num_to_load_for_eval": 100000,
+                    "strip_enclosing_dictionary": true,
+                    "batch_size": 500
+                }
+            }
+        }
+    },
+    {
+        "message": "sharpr_qnormed_jul22-nconvlay_3-filterlens_8,7,5-pconvdropout_0.095-poolw_1-poolstride_1-nbf_87,101,122-sep_f-dim_null-symm_f-lr_9.36235646885e-05-seed_0",
+        "model_creator": {
+            "class": "flexible_keras.FlexibleKerasSequential",
+            "kwargs": {
+                "loss": "mean_squared_error",
+                "layers_config": [
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 8,
+                            "nb_filter": 87,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.09504536592779345
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 7,
+                            "nb_filter": 101,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.09504536592779345
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 5,
+                            "nb_filter": 122,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.09504536592779345
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 12
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 9.362356468851719e-05
+                    }
+                }
+            }
+        },
+        "model_trainer": {
+            "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+            "kwargs": {
+                "samples_per_epoch": 200000,
+                "seed": 0,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 1000,
+                        "epochs_to_wait": 18,
+                        "running_mean_over_epochs": 1
+                    }
+                }
+            }
+        },
+        "other_data_loaders": {
+            "train": {
+                "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+                "kwargs": {
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_znormed_jul18/train_data.hdf5",
+                    "bundle_x_and_y_in_generator": false,
+                    "num_to_load_for_eval": 100000,
+                    "strip_enclosing_dictionary": true,
+                    "batch_size": 500
+                }
+            }
+        }
+    },
+    {
+        "message": "sharpr_qnormed_jul22-nconvlay_3-filterlens_4,7,9-pconvdropout_0.064-poolw_1-poolstride_1-nbf_124,104,75-sep_f-dim_null-symm_f-lr_0.000188608607034-seed_0",
+        "model_creator": {
+            "class": "flexible_keras.FlexibleKerasSequential",
+            "kwargs": {
+                "loss": "mean_squared_error",
+                "layers_config": [
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 4,
+                            "nb_filter": 124,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.0641017749641911
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 7,
+                            "nb_filter": 104,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.0641017749641911
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 9,
+                            "nb_filter": 75,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.0641017749641911
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 12
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 0.00018860860703410505
+                    }
+                }
+            }
+        },
+        "model_trainer": {
+            "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+            "kwargs": {
+                "samples_per_epoch": 200000,
+                "seed": 0,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 1000,
+                        "epochs_to_wait": 18,
+                        "running_mean_over_epochs": 1
+                    }
+                }
+            }
+        },
+        "other_data_loaders": {
+            "train": {
+                "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+                "kwargs": {
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_znormed_jul18/train_data.hdf5",
+                    "bundle_x_and_y_in_generator": false,
+                    "num_to_load_for_eval": 100000,
+                    "strip_enclosing_dictionary": true,
+                    "batch_size": 500
+                }
+            }
+        }
+    },
+    {
+        "message": "sharpr_qnormed_jul22-nconvlay_3-filterlens_9,7,7-pconvdropout_0.000-poolw_1-poolstride_1-nbf_120,75,119-sep_f-dim_null-symm_f-lr_0.000236194129343-seed_0",
+        "model_creator": {
+            "class": "flexible_keras.FlexibleKerasSequential",
+            "kwargs": {
+                "loss": "mean_squared_error",
+                "layers_config": [
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 9,
+                            "nb_filter": 120,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.0003599377951731449
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 7,
+                            "nb_filter": 75,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.0003599377951731449
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 7,
+                            "nb_filter": 119,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.0003599377951731449
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 12
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 0.00023619412934264787
+                    }
+                }
+            }
+        },
+        "model_trainer": {
+            "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+            "kwargs": {
+                "samples_per_epoch": 200000,
+                "seed": 0,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 1000,
+                        "epochs_to_wait": 18,
+                        "running_mean_over_epochs": 1
+                    }
+                }
+            }
+        },
+        "other_data_loaders": {
+            "train": {
+                "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+                "kwargs": {
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_znormed_jul18/train_data.hdf5",
+                    "bundle_x_and_y_in_generator": false,
+                    "num_to_load_for_eval": 100000,
+                    "strip_enclosing_dictionary": true,
+                    "batch_size": 500
+                }
+            }
+        }
+    },
+    {
+        "message": "sharpr_qnormed_jul22-nconvlay_3-filterlens_7,5,6-pconvdropout_0.115-poolw_1-poolstride_1-nbf_119,110,107-sep_f-dim_null-symm_f-lr_0.00013247631048-seed_0",
+        "model_creator": {
+            "class": "flexible_keras.FlexibleKerasSequential",
+            "kwargs": {
+                "loss": "mean_squared_error",
+                "layers_config": [
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 7,
+                            "nb_filter": 119,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.11453183141467839
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 5,
+                            "nb_filter": 110,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.11453183141467839
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 6,
+                            "nb_filter": 107,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.11453183141467839
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 12
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 0.00013247631047992988
+                    }
+                }
+            }
+        },
+        "model_trainer": {
+            "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+            "kwargs": {
+                "samples_per_epoch": 200000,
+                "seed": 0,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 1000,
+                        "epochs_to_wait": 18,
+                        "running_mean_over_epochs": 1
+                    }
+                }
+            }
+        },
+        "other_data_loaders": {
+            "train": {
+                "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+                "kwargs": {
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_znormed_jul18/train_data.hdf5",
+                    "bundle_x_and_y_in_generator": false,
+                    "num_to_load_for_eval": 100000,
+                    "strip_enclosing_dictionary": true,
+                    "batch_size": 500
+                }
+            }
+        }
+    },
+    {
+        "message": "sharpr_qnormed_jul22-nconvlay_3-filterlens_5,8,4-pconvdropout_0.040-poolw_1-poolstride_1-nbf_93,106,113-sep_f-dim_null-symm_f-lr_7.01016062207e-05-seed_0",
+        "model_creator": {
+            "class": "flexible_keras.FlexibleKerasSequential",
+            "kwargs": {
+                "loss": "mean_squared_error",
+                "layers_config": [
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 5,
+                            "nb_filter": 93,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.04012835790692156
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 8,
+                            "nb_filter": 106,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.04012835790692156
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 4,
+                            "nb_filter": 113,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.04012835790692156
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 12
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 7.010160622073497e-05
+                    }
+                }
+            }
+        },
+        "model_trainer": {
+            "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+            "kwargs": {
+                "samples_per_epoch": 200000,
+                "seed": 0,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 1000,
+                        "epochs_to_wait": 18,
+                        "running_mean_over_epochs": 1
+                    }
+                }
+            }
+        },
+        "other_data_loaders": {
+            "train": {
+                "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+                "kwargs": {
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_znormed_jul18/train_data.hdf5",
+                    "bundle_x_and_y_in_generator": false,
+                    "num_to_load_for_eval": 100000,
+                    "strip_enclosing_dictionary": true,
+                    "batch_size": 500
+                }
+            }
+        }
+    },
+    {
+        "message": "sharpr_qnormed_jul22-nconvlay_3-filterlens_6,7,9-pconvdropout_0.137-poolw_1-poolstride_1-nbf_106,76,79-sep_f-dim_null-symm_f-lr_0.000165365932971-seed_0",
+        "model_creator": {
+            "class": "flexible_keras.FlexibleKerasSequential",
+            "kwargs": {
+                "loss": "mean_squared_error",
+                "layers_config": [
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 6,
+                            "nb_filter": 106,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.13664097461148392
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 7,
+                            "nb_filter": 76,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.13664097461148392
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 9,
+                            "nb_filter": 79,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.13664097461148392
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 12
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 0.00016536593297090322
+                    }
+                }
+            }
+        },
+        "model_trainer": {
+            "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+            "kwargs": {
+                "samples_per_epoch": 200000,
+                "seed": 0,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 1000,
+                        "epochs_to_wait": 18,
+                        "running_mean_over_epochs": 1
+                    }
+                }
+            }
+        },
+        "other_data_loaders": {
+            "train": {
+                "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+                "kwargs": {
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_znormed_jul18/train_data.hdf5",
+                    "bundle_x_and_y_in_generator": false,
+                    "num_to_load_for_eval": 100000,
+                    "strip_enclosing_dictionary": true,
+                    "batch_size": 500
+                }
+            }
+        }
+    },
+    {
+        "message": "sharpr_qnormed_jul22-nconvlay_3-filterlens_4,7,8-pconvdropout_0.046-poolw_1-poolstride_1-nbf_97,79,75-sep_f-dim_null-symm_f-lr_0.000169330413505-seed_0",
+        "model_creator": {
+            "class": "flexible_keras.FlexibleKerasSequential",
+            "kwargs": {
+                "loss": "mean_squared_error",
+                "layers_config": [
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 4,
+                            "nb_filter": 97,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.045566334179871715
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 7,
+                            "nb_filter": 79,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.045566334179871715
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 8,
+                            "nb_filter": 75,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.045566334179871715
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 12
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 0.00016933041350504816
+                    }
+                }
+            }
+        },
+        "model_trainer": {
+            "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+            "kwargs": {
+                "samples_per_epoch": 200000,
+                "seed": 0,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 1000,
+                        "epochs_to_wait": 18,
+                        "running_mean_over_epochs": 1
+                    }
+                }
+            }
+        },
+        "other_data_loaders": {
+            "train": {
+                "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+                "kwargs": {
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_znormed_jul18/train_data.hdf5",
+                    "bundle_x_and_y_in_generator": false,
+                    "num_to_load_for_eval": 100000,
+                    "strip_enclosing_dictionary": true,
+                    "batch_size": 500
+                }
+            }
+        }
+    },
+    {
+        "message": "sharpr_qnormed_jul22-nconvlay_3-filterlens_9,6,8-pconvdropout_0.153-poolw_1-poolstride_1-nbf_121,122,113-sep_f-dim_null-symm_f-lr_0.00029146294127-seed_0",
+        "model_creator": {
+            "class": "flexible_keras.FlexibleKerasSequential",
+            "kwargs": {
+                "loss": "mean_squared_error",
+                "layers_config": [
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 9,
+                            "nb_filter": 121,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.15282746688782936
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 6,
+                            "nb_filter": 122,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.15282746688782936
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 8,
+                            "nb_filter": 113,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.15282746688782936
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 12
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 0.00029146294127021177
+                    }
+                }
+            }
+        },
+        "model_trainer": {
+            "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+            "kwargs": {
+                "samples_per_epoch": 200000,
+                "seed": 0,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 1000,
+                        "epochs_to_wait": 18,
+                        "running_mean_over_epochs": 1
+                    }
+                }
+            }
+        },
+        "other_data_loaders": {
+            "train": {
+                "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+                "kwargs": {
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_znormed_jul18/train_data.hdf5",
+                    "bundle_x_and_y_in_generator": false,
+                    "num_to_load_for_eval": 100000,
+                    "strip_enclosing_dictionary": true,
+                    "batch_size": 500
+                }
+            }
+        }
+    },
+    {
+        "message": "sharpr_qnormed_jul22-nconvlay_3-filterlens_6,8,4-pconvdropout_0.123-poolw_1-poolstride_1-nbf_120,103,113-sep_f-dim_null-symm_f-lr_6.19278085086e-05-seed_0",
+        "model_creator": {
+            "class": "flexible_keras.FlexibleKerasSequential",
+            "kwargs": {
+                "loss": "mean_squared_error",
+                "layers_config": [
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 6,
+                            "nb_filter": 120,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.12263116707401045
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 8,
+                            "nb_filter": 103,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.12263116707401045
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 4,
+                            "nb_filter": 113,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.12263116707401045
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 12
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 6.192780850864333e-05
+                    }
+                }
+            }
+        },
+        "model_trainer": {
+            "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+            "kwargs": {
+                "samples_per_epoch": 200000,
+                "seed": 0,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 1000,
+                        "epochs_to_wait": 18,
+                        "running_mean_over_epochs": 1
+                    }
+                }
+            }
+        },
+        "other_data_loaders": {
+            "train": {
+                "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+                "kwargs": {
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_znormed_jul18/train_data.hdf5",
+                    "bundle_x_and_y_in_generator": false,
+                    "num_to_load_for_eval": 100000,
+                    "strip_enclosing_dictionary": true,
+                    "batch_size": 500
+                }
+            }
+        }
+    },
+    {
+        "message": "sharpr_qnormed_jul22-nconvlay_3-filterlens_8,7,9-pconvdropout_0.150-poolw_1-poolstride_1-nbf_83,98,100-sep_f-dim_null-symm_f-lr_8.32782148251e-05-seed_0",
+        "model_creator": {
+            "class": "flexible_keras.FlexibleKerasSequential",
+            "kwargs": {
+                "loss": "mean_squared_error",
+                "layers_config": [
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 8,
+                            "nb_filter": 83,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.14969868614953297
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 7,
+                            "nb_filter": 98,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.14969868614953297
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 9,
+                            "nb_filter": 100,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.14969868614953297
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 12
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 8.327821482513031e-05
+                    }
+                }
+            }
+        },
+        "model_trainer": {
+            "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+            "kwargs": {
+                "samples_per_epoch": 200000,
+                "seed": 0,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 1000,
+                        "epochs_to_wait": 18,
+                        "running_mean_over_epochs": 1
+                    }
+                }
+            }
+        },
+        "other_data_loaders": {
+            "train": {
+                "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+                "kwargs": {
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_znormed_jul18/train_data.hdf5",
+                    "bundle_x_and_y_in_generator": false,
+                    "num_to_load_for_eval": 100000,
+                    "strip_enclosing_dictionary": true,
+                    "batch_size": 500
+                }
+            }
+        }
+    },
+    {
+        "message": "sharpr_qnormed_jul22-nconvlay_3-filterlens_8,8,6-pconvdropout_0.109-poolw_1-poolstride_1-nbf_116,75,114-sep_f-dim_null-symm_f-lr_0.000169348736061-seed_0",
+        "model_creator": {
+            "class": "flexible_keras.FlexibleKerasSequential",
+            "kwargs": {
+                "loss": "mean_squared_error",
+                "layers_config": [
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 8,
+                            "nb_filter": 116,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.10939595499517414
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 8,
+                            "nb_filter": 75,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.10939595499517414
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 6,
+                            "nb_filter": 114,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.10939595499517414
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 12
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 0.0001693487360607757
+                    }
+                }
+            }
+        },
+        "model_trainer": {
+            "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+            "kwargs": {
+                "samples_per_epoch": 200000,
+                "seed": 0,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 1000,
+                        "epochs_to_wait": 18,
+                        "running_mean_over_epochs": 1
+                    }
+                }
+            }
+        },
+        "other_data_loaders": {
+            "train": {
+                "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+                "kwargs": {
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_znormed_jul18/train_data.hdf5",
+                    "bundle_x_and_y_in_generator": false,
+                    "num_to_load_for_eval": 100000,
+                    "strip_enclosing_dictionary": true,
+                    "batch_size": 500
+                }
+            }
+        }
+    },
+    {
+        "message": "sharpr_qnormed_jul22-nconvlay_3-filterlens_6,9,9-pconvdropout_0.009-poolw_1-poolstride_1-nbf_79,75,83-sep_f-dim_null-symm_f-lr_8.4776333253e-05-seed_0",
+        "model_creator": {
+            "class": "flexible_keras.FlexibleKerasSequential",
+            "kwargs": {
+                "loss": "mean_squared_error",
+                "layers_config": [
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 6,
+                            "nb_filter": 79,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.009372381601615873
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 9,
+                            "nb_filter": 75,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.009372381601615873
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 9,
+                            "nb_filter": 83,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.009372381601615873
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 12
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 8.477633325297452e-05
+                    }
+                }
+            }
+        },
+        "model_trainer": {
+            "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+            "kwargs": {
+                "samples_per_epoch": 200000,
+                "seed": 0,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 1000,
+                        "epochs_to_wait": 18,
+                        "running_mean_over_epochs": 1
+                    }
+                }
+            }
+        },
+        "other_data_loaders": {
+            "train": {
+                "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+                "kwargs": {
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_znormed_jul18/train_data.hdf5",
+                    "bundle_x_and_y_in_generator": false,
+                    "num_to_load_for_eval": 100000,
+                    "strip_enclosing_dictionary": true,
+                    "batch_size": 500
+                }
+            }
+        }
+    },
+    {
+        "message": "sharpr_qnormed_jul22-nconvlay_3-filterlens_5,6,9-pconvdropout_0.094-poolw_1-poolstride_1-nbf_102,76,111-sep_f-dim_null-symm_f-lr_0.000145605626753-seed_0",
+        "model_creator": {
+            "class": "flexible_keras.FlexibleKerasSequential",
+            "kwargs": {
+                "loss": "mean_squared_error",
+                "layers_config": [
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 5,
+                            "nb_filter": 102,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.0941857158543895
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 6,
+                            "nb_filter": 76,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.0941857158543895
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 9,
+                            "nb_filter": 111,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.0941857158543895
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 12
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 0.00014560562675346525
+                    }
+                }
+            }
+        },
+        "model_trainer": {
+            "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+            "kwargs": {
+                "samples_per_epoch": 200000,
+                "seed": 0,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 1000,
+                        "epochs_to_wait": 18,
+                        "running_mean_over_epochs": 1
+                    }
+                }
+            }
+        },
+        "other_data_loaders": {
+            "train": {
+                "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+                "kwargs": {
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_znormed_jul18/train_data.hdf5",
+                    "bundle_x_and_y_in_generator": false,
+                    "num_to_load_for_eval": 100000,
+                    "strip_enclosing_dictionary": true,
+                    "batch_size": 500
+                }
+            }
+        }
+    },
+    {
+        "message": "sharpr_qnormed_jul22-nconvlay_3-filterlens_5,9,6-pconvdropout_0.158-poolw_1-poolstride_1-nbf_108,110,78-sep_f-dim_null-symm_f-lr_0.0002713835898-seed_0",
+        "model_creator": {
+            "class": "flexible_keras.FlexibleKerasSequential",
+            "kwargs": {
+                "loss": "mean_squared_error",
+                "layers_config": [
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 5,
+                            "nb_filter": 108,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.15849042826462084
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 9,
+                            "nb_filter": 110,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.15849042826462084
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 6,
+                            "nb_filter": 78,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.15849042826462084
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 12
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 0.00027138358979986285
+                    }
+                }
+            }
+        },
+        "model_trainer": {
+            "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+            "kwargs": {
+                "samples_per_epoch": 200000,
+                "seed": 0,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 1000,
+                        "epochs_to_wait": 18,
+                        "running_mean_over_epochs": 1
+                    }
+                }
+            }
+        },
+        "other_data_loaders": {
+            "train": {
+                "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+                "kwargs": {
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_znormed_jul18/train_data.hdf5",
+                    "bundle_x_and_y_in_generator": false,
+                    "num_to_load_for_eval": 100000,
+                    "strip_enclosing_dictionary": true,
+                    "batch_size": 500
+                }
+            }
+        }
+    },
+    {
+        "message": "sharpr_qnormed_jul22-nconvlay_3-filterlens_6,8,6-pconvdropout_0.021-poolw_1-poolstride_1-nbf_83,81,91-sep_f-dim_null-symm_f-lr_0.000125883819103-seed_0",
+        "model_creator": {
+            "class": "flexible_keras.FlexibleKerasSequential",
+            "kwargs": {
+                "loss": "mean_squared_error",
+                "layers_config": [
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 6,
+                            "nb_filter": 83,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.02117212920210317
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 8,
+                            "nb_filter": 81,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.02117212920210317
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 6,
+                            "nb_filter": 91,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.02117212920210317
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 12
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 0.0001258838191034192
+                    }
+                }
+            }
+        },
+        "model_trainer": {
+            "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+            "kwargs": {
+                "samples_per_epoch": 200000,
+                "seed": 0,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 1000,
+                        "epochs_to_wait": 18,
+                        "running_mean_over_epochs": 1
+                    }
+                }
+            }
+        },
+        "other_data_loaders": {
+            "train": {
+                "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+                "kwargs": {
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_znormed_jul18/train_data.hdf5",
+                    "bundle_x_and_y_in_generator": false,
+                    "num_to_load_for_eval": 100000,
+                    "strip_enclosing_dictionary": true,
+                    "batch_size": 500
+                }
+            }
+        }
+    },
+    {
+        "message": "sharpr_qnormed_jul22-nconvlay_3-filterlens_4,5,7-pconvdropout_0.043-poolw_1-poolstride_1-nbf_106,110,88-sep_f-dim_null-symm_f-lr_0.000282522574256-seed_0",
+        "model_creator": {
+            "class": "flexible_keras.FlexibleKerasSequential",
+            "kwargs": {
+                "loss": "mean_squared_error",
+                "layers_config": [
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 4,
+                            "nb_filter": 106,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.042537749378995626
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 5,
+                            "nb_filter": 110,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.042537749378995626
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "filter_length": 7,
+                            "nb_filter": 88,
+                            "input_shape": [
+                                145,
+                                4
+                            ]
+                        }
+                    },
+                    {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.042537749378995626
+                        }
+                    },
+                    {
+                        "class": "keras.layers.convolutional.MaxPooling1D",
+                        "kwargs": {
+                            "stride": 1,
+                            "pool_length": 1
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 12
+                        }
+                    },
+                    {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "linear"
+                        }
+                    }
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": 0.0002825225742559435
+                    }
+                }
+            }
+        },
+        "model_trainer": {
+            "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+            "kwargs": {
+                "samples_per_epoch": 200000,
+                "seed": 0,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 1000,
+                        "epochs_to_wait": 18,
+                        "running_mean_over_epochs": 1
+                    }
+                }
+            }
+        },
+        "other_data_loaders": {
+            "train": {
+                "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+                "kwargs": {
+                    "path_to_hdf5": "../hdf5files/sharpr_regression_znormed_jul18/train_data.hdf5",
+                    "bundle_x_and_y_in_generator": false,
+                    "num_to_load_for_eval": 100000,
+                    "strip_enclosing_dictionary": true,
+                    "batch_size": 500
+                }
+            }
+        }
+    }
+]

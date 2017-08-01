@@ -1,0 +1,8 @@
+{
+    "labels": {
+       "file_name": "../labels/labels_sharpr_qnormed_jul22.txt.gz",
+       "content_type": "float",
+       "output_mode_name": "output",
+       "file_with_subset_of_label_names": "../yamls/sharpr_qnormed_jul22_config/taskSubset.txt"
+    }
+}

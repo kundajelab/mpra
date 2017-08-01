@@ -1,0 +1,9 @@
+
+    {
+        "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+        "kwargs": {
+           "path_to_hdf5": "../hdf5files/sharpr_lfcpooled_jul23/valid_data.hdf5",
+           "strip_enclosing_dictionary": True
+        }
+    }
+    

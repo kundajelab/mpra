@@ -1,0 +1,6 @@
+k562_minp_rep1_norm
+k562_minp_rep2_norm
+k562_minp_avg_norm
+hepg2_minp_rep1_norm
+hepg2_minp_rep2_norm
+hepg2_minp_avg_norm

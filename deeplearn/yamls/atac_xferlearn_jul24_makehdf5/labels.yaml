@@ -1,0 +1,9 @@
+{
+    "labels": {
+       "file_name": "../labels/labels_atac_xferlearn_jul24.txt",
+       "content_type": "int",
+       "output_mode_name": "output",
+       "file_with_subset_of_label_names": "../yamls/labelsToUse/atac_xferlearn_jul24_labels.txt",
+       "key_columns": [3]
+    }
+}
