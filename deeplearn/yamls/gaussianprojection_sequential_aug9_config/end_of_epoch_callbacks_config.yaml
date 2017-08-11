@@ -1,0 +1,8 @@
+
+    [
+        {"class": "SaveBestValidModel",
+         "kwargs": {"directory": "../model_files/gaussianprojection_sequential_aug9/"}},
+        {"class": "PrintPerfAfterEpoch",
+         "kwargs": {"print_trend": true}}
+    ]
+    

@@ -1,0 +1,74 @@
+[
+    {
+        "weights": {
+            "file_name": "../weights/functional_weights_weighted_aug7/k562_minp_rep1.txt",
+            "output_mode_name": "k562_minp_rep1",
+        }
+    },
+    {
+        "weights": {
+            "file_name": "../weights/functional_weights_weighted_aug7/k562_minp_rep2.txt",
+            "output_mode_name": "k562_minp_rep2",
+        }
+    },
+    {
+        "weights": {
+            "file_name": "../weights/functional_weights_weighted_aug7/k562_minp_avg.txt",
+            "output_mode_name": "k562_minp_avg",
+        }
+    },
+    {
+        "weights": {
+            "file_name": "../weights/functional_weights_weighted_aug7/k562_sv40p_rep1.txt",
+            "output_mode_name": "k562_sv40p_rep1",
+        }
+    },
+    {
+        "weights": {
+            "file_name": "../weights/functional_weights_weighted_aug7/k562_sv40p_rep2.txt",
+            "output_mode_name": "k562_sv40p_rep2",
+        }
+    },
+    {
+        "weights": {
+            "file_name": "../weights/functional_weights_weighted_aug7/k562_sv40p_avg.txt",
+            "output_mode_name": "k562_sv40p_avg",
+        }
+    },
+    {
+        "weights": {
+            "file_name": "../weights/functional_weights_weighted_aug7/hepg2_minp_rep1.txt",
+            "output_mode_name": "hepg2_minp_rep1",
+        }
+    },
+    {
+        "weights": {
+            "file_name": "../weights/functional_weights_weighted_aug7/hepg2_minp_rep2.txt",
+            "output_mode_name": "hepg2_minp_rep2",
+        }
+    },
+    {
+        "weights": {
+            "file_name": "../weights/functional_weights_weighted_aug7/hepg2_minp_avg.txt",
+            "output_mode_name": "hepg2_minp_avg",
+        }
+    },
+    {
+        "weights": {
+            "file_name": "../weights/functional_weights_weighted_aug7/hepg2_sv40p_rep1.txt",
+            "output_mode_name": "hepg2_sv40p_rep1",
+        }
+    },
+    {
+        "weights": {
+            "file_name": "../weights/functional_weights_weighted_aug7/hepg2_sv40p_rep2.txt",
+            "output_mode_name": "hepg2_sv40p_rep2",
+        }
+    },
+    {
+        "weights": {
+            "file_name": "../weights/functional_weights_weighted_aug7/hepg2_sv40p_avg.txt",
+            "output_mode_name": "hepg2_sv40p_avg",
+        }
+    },
+]

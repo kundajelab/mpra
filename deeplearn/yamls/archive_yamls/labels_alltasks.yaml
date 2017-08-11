@@ -1,0 +1,8 @@
+{
+   "labels": {
+       "file_name": "../labels/labels_weighted_aug7.txt",
+       "content_type": "float",
+       "output_mode_name": "output",
+       "file_with_subset_of_label_names": "../yamls/weighted_aug7_config/taskSubset.txt"
+    }
+}

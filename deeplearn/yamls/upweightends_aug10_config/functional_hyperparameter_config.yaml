@@ -1,0 +1,608 @@
+[
+{
+    "other_data_loaders":{
+        "train": {
+            "class": "hdf5_data_loader.MultimodalBatchDataLoader",
+            "kwargs": {
+                "batch_size": 500,
+                "use_weights": True,
+                "path_to_hdf5": "../hdf5files/upweightends_aug10/train_data.hdf5",
+                "num_to_load_for_eval": 100000,
+                "strip_enclosing_dictionary": False,
+                "bundle_x_and_y_in_generator": False, 
+            }
+        }
+    },
+    "model_creator":{
+        "class": "flexible_keras.FlexibleKerasFunctional",
+        "kwargs": {
+            "input_names": ["sequence"],
+            "nodes_config": {
+                "sequence": {
+                    "layer": {
+                        "class": "keras.layers.Input",
+                        "kwargs": {"shape": [145, 4]}
+                    }
+                },
+                "conv1": {
+                    "layer": {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "nb_filter": 120,
+                            "filter_length": 5
+                        }
+                    },
+                    "input_node_names": "sequence"
+                },
+                "conv1_act": {
+                    "layer": {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    "input_node_names": "conv1"
+                },
+                "conv1_batchnorm": {
+                    "layer": {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    "input_node_names": "conv1_act"
+                },
+                "conv1_dropout": {
+                    "layer": {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.1
+                        }
+                    },
+                    "input_node_names": "conv1_batchnorm"
+                },
+                "conv2": {
+                    "layer": {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "nb_filter": 120,
+                            "filter_length": 5
+                        }
+                    },
+                    "input_node_names": "conv1_batchnorm"
+                },
+                "conv2_act": {
+                    "layer": {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    "input_node_names": "conv2"
+                },
+                "conv2_batchnorm": {
+                    "layer": {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    "input_node_names": "conv2_act"
+                },
+                "conv2_dropout": {
+                    "layer": {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.1
+                        }
+                    },
+                    "input_node_names": "conv2_batchnorm"
+                },
+                "conv3": {
+                    "layer": {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "nb_filter": 120,
+                            "filter_length": 5
+                        }
+                    },
+                    "input_node_names": "conv2_dropout"
+                },
+                "conv3_act": {
+                    "layer": {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    "input_node_names": "conv3"
+                },
+                "conv3_batchnorm": {
+                    "layer": {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    "input_node_names": "conv3_act"
+                },
+                "conv3_dropout": {
+                    "layer": {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.1
+                        }
+                    },
+                    "input_node_names": "conv3_batchnorm"
+                },
+                "flatten": {
+                    "layer": {
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    "input_node_names": "conv3_dropout"
+                },
+                "k562_minp_rep1": {
+                    "layer": {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 1,
+                            "activation": "linear"
+                        },
+                    },
+                    "input_node_names": "flatten"
+                },
+                "k562_minp_rep2": {
+                    "layer": {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 1,
+                            "activation": "linear"
+                        },
+                    },
+                    "input_node_names": "flatten"
+                },
+                "k562_minp_avg": {
+                    "layer": {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 1,
+                            "activation": "linear"
+                        },
+                    },
+                    "input_node_names": "flatten"
+                },
+                "k562_sv40p_rep1": {
+                    "layer": {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 1,
+                            "activation": "linear"
+                        },
+                    },
+                    "input_node_names": "flatten"
+                },
+                "k562_sv40p_rep2": {
+                    "layer": {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 1,
+                            "activation": "linear"
+                        },
+                    },
+                    "input_node_names": "flatten"
+                },
+                "k562_sv40p_avg": {
+                    "layer": {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 1,
+                            "activation": "linear"
+                        },
+                    },
+                    "input_node_names": "flatten"
+                },
+                "hepg2_minp_rep1": {
+                    "layer": {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 1,
+                            "activation": "linear"
+                        },
+                    },
+                    "input_node_names": "flatten"
+                },
+                "hepg2_minp_rep2": {
+                    "layer": {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 1,
+                            "activation": "linear"
+                        },
+                    },
+                    "input_node_names": "flatten"
+                },
+                "hepg2_minp_avg": {
+                    "layer": {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 1,
+                            "activation": "linear"
+                        },
+                    },
+                    "input_node_names": "flatten"
+                },
+                "hepg2_sv40p_rep1": {
+                    "layer": {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 1,
+                            "activation": "linear"
+                        },
+                    },
+                    "input_node_names": "flatten"
+                },
+                "hepg2_sv40p_rep2": {
+                    "layer": {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 1,
+                            "activation": "linear"
+                        },
+                    },
+                    "input_node_names": "flatten"
+                },
+                "hepg2_sv40p_avg": {
+                    "layer": {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 1,
+                            "activation": "linear"
+                        },
+                    },
+                    "input_node_names": "flatten"
+                }
+            },
+            "output_names": ["k562_minp_rep1", "k562_minp_rep2", "k562_minp_avg",
+                             "k562_sv40p_rep1", "k562_sv40p_rep2", "k562_sv40p_avg",
+                             "hepg2_minp_rep1", "hepg2_minp_rep2", "hepg2_minp_avg",
+                             "hepg2_sv40p_rep1", "hepg2_sv40p_rep2", "hepg2_sv40p_avg"],
+            "optimizer_config": {
+                "class": "keras.optimizers.Adam",
+                "kwargs": {"lr": 2e-4}
+            },
+            "loss_dictionary": {
+                "k562_minp_rep1": "mean_squared_error", 
+                "k562_minp_rep2": "mean_squared_error", 
+                "k562_minp_avg": "mean_squared_error",
+                "k562_sv40p_rep1": "mean_squared_error", 
+                "k562_sv40p_rep2": "mean_squared_error", 
+                "k562_sv40p_avg": "mean_squared_error",
+                "hepg2_minp_rep1": "mean_squared_error", 
+                "hepg2_minp_rep2": "mean_squared_error", 
+                "hepg2_minp_avg": "mean_squared_error",
+                "hepg2_sv40p_rep1": "mean_squared_error", 
+                "hepg2_sv40p_rep2": "mean_squared_error", 
+                "hepg2_sv40p_avg": "mean_squared_error"
+            }
+        }
+    },
+    "model_trainer":{
+        "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+        "kwargs": {
+            "samples_per_epoch": 200000,
+            "stopping_criterion_config": {
+                "class": "EarlyStopping" ,
+                "kwargs": {
+                   "max_epochs": 300, 
+                   "epochs_to_wait": 20
+                } 
+            }
+        }
+    },
+    "message": "Functional model with weights"
+},
+{
+    "other_data_loaders":{
+        "train": {
+            "class": "hdf5_data_loader.MultimodalBatchDataLoader",
+            "kwargs": {
+                "batch_size": 500,
+                "use_weights": False,
+                "path_to_hdf5": "../hdf5files/upweightends_aug10/train_data.hdf5",
+                "num_to_load_for_eval": 100000,
+                "strip_enclosing_dictionary": False,
+                "bundle_x_and_y_in_generator": False, 
+            }
+        }
+    },
+    "model_creator":{
+        "class": "flexible_keras.FlexibleKerasFunctional",
+        "kwargs": {
+            "input_names": ["sequence"],
+            "nodes_config": {
+                "sequence": {
+                    "layer": {
+                        "class": "keras.layers.Input",
+                        "kwargs": {"shape": [145, 4]}
+                    }
+                },
+                "conv1": {
+                    "layer": {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "nb_filter": 120,
+                            "filter_length": 5
+                        }
+                    },
+                    "input_node_names": "sequence"
+                },
+                "conv1_act": {
+                    "layer": {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    "input_node_names": "conv1"
+                },
+                "conv1_batchnorm": {
+                    "layer": {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    "input_node_names": "conv1_act"
+                },
+                "conv1_dropout": {
+                    "layer": {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.1
+                        }
+                    },
+                    "input_node_names": "conv1_batchnorm"
+                },
+                "conv2": {
+                    "layer": {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "nb_filter": 120,
+                            "filter_length": 5
+                        }
+                    },
+                    "input_node_names": "conv1_batchnorm"
+                },
+                "conv2_act": {
+                    "layer": {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    "input_node_names": "conv2"
+                },
+                "conv2_batchnorm": {
+                    "layer": {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    "input_node_names": "conv2_act"
+                },
+                "conv2_dropout": {
+                    "layer": {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.1
+                        }
+                    },
+                    "input_node_names": "conv2_batchnorm"
+                },
+                "conv3": {
+                    "layer": {
+                        "class": "keras.layers.convolutional.Convolution1D",
+                        "kwargs": {
+                            "nb_filter": 120,
+                            "filter_length": 5
+                        }
+                    },
+                    "input_node_names": "conv2_dropout"
+                },
+                "conv3_act": {
+                    "layer": {
+                        "class": "keras.layers.core.Activation",
+                        "kwargs": {
+                            "activation": "relu"
+                        }
+                    },
+                    "input_node_names": "conv3"
+                },
+                "conv3_batchnorm": {
+                    "layer": {
+                        "class": "keras.layers.normalization.BatchNormalization",
+                        "kwargs": {
+                            "axis": -1
+                        }
+                    },
+                    "input_node_names": "conv3_act"
+                },
+                "conv3_dropout": {
+                    "layer": {
+                        "class": "keras.layers.core.Dropout",
+                        "kwargs": {
+                            "p": 0.1
+                        }
+                    },
+                    "input_node_names": "conv3_batchnorm"
+                },
+                "flatten": {
+                    "layer": {
+                        "class": "keras.layers.core.Flatten",
+                        "kwargs": {}
+                    },
+                    "input_node_names": "conv3_dropout"
+                },
+                "k562_minp_rep1": {
+                    "layer": {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 1,
+                            "activation": "linear"
+                        },
+                    },
+                    "input_node_names": "flatten"
+                },
+                "k562_minp_rep2": {
+                    "layer": {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 1,
+                            "activation": "linear"
+                        },
+                    },
+                    "input_node_names": "flatten"
+                },
+                "k562_minp_avg": {
+                    "layer": {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 1,
+                            "activation": "linear"
+                        },
+                    },
+                    "input_node_names": "flatten"
+                },
+                "k562_sv40p_rep1": {
+                    "layer": {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 1,
+                            "activation": "linear"
+                        },
+                    },
+                    "input_node_names": "flatten"
+                },
+                "k562_sv40p_rep2": {
+                    "layer": {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 1,
+                            "activation": "linear"
+                        },
+                    },
+                    "input_node_names": "flatten"
+                },
+                "k562_sv40p_avg": {
+                    "layer": {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 1,
+                            "activation": "linear"
+                        },
+                    },
+                    "input_node_names": "flatten"
+                },
+                "hepg2_minp_rep1": {
+                    "layer": {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 1,
+                            "activation": "linear"
+                        },
+                    },
+                    "input_node_names": "flatten"
+                },
+                "hepg2_minp_rep2": {
+                    "layer": {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 1,
+                            "activation": "linear"
+                        },
+                    },
+                    "input_node_names": "flatten"
+                },
+                "hepg2_minp_avg": {
+                    "layer": {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 1,
+                            "activation": "linear"
+                        },
+                    },
+                    "input_node_names": "flatten"
+                },
+                "hepg2_sv40p_rep1": {
+                    "layer": {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 1,
+                            "activation": "linear"
+                        },
+                    },
+                    "input_node_names": "flatten"
+                },
+                "hepg2_sv40p_rep2": {
+                    "layer": {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 1,
+                            "activation": "linear"
+                        },
+                    },
+                    "input_node_names": "flatten"
+                },
+                "hepg2_sv40p_avg": {
+                    "layer": {
+                        "class": "keras.layers.core.Dense",
+                        "kwargs": {
+                            "output_dim": 1,
+                            "activation": "linear"
+                        },
+                    },
+                    "input_node_names": "flatten"
+                }
+            },
+            "output_names": ["k562_minp_rep1", "k562_minp_rep2", "k562_minp_avg",
+                             "k562_sv40p_rep1", "k562_sv40p_rep2", "k562_sv40p_avg",
+                             "hepg2_minp_rep1", "hepg2_minp_rep2", "hepg2_minp_avg",
+                             "hepg2_sv40p_rep1", "hepg2_sv40p_rep2", "hepg2_sv40p_avg"],
+            "optimizer_config": {
+                "class": "keras.optimizers.Adam",
+                "kwargs": {"lr": 2e-4}
+            },
+            "loss_dictionary": {
+                "k562_minp_rep1": "mean_squared_error", 
+                "k562_minp_rep2": "mean_squared_error", 
+                "k562_minp_avg": "mean_squared_error",
+                "k562_sv40p_rep1": "mean_squared_error", 
+                "k562_sv40p_rep2": "mean_squared_error", 
+                "k562_sv40p_avg": "mean_squared_error",
+                "hepg2_minp_rep1": "mean_squared_error", 
+                "hepg2_minp_rep2": "mean_squared_error", 
+                "hepg2_minp_avg": "mean_squared_error",
+                "hepg2_sv40p_rep1": "mean_squared_error", 
+                "hepg2_sv40p_rep2": "mean_squared_error", 
+                "hepg2_sv40p_avg": "mean_squared_error"
+            }
+        }
+    },
+    "model_trainer":{
+        "class": "keras_model_trainer.KerasFitGeneratorModelTrainer",
+        "kwargs": {
+            "samples_per_epoch": 200000,
+            "stopping_criterion_config": {
+                "class": "EarlyStopping" ,
+                "kwargs": {
+                   "max_epochs": 300, 
+                   "epochs_to_wait": 20
+                } 
+            }
+        }
+    },
+    "message": "Functional model with use_weights set to False"
+}
+]

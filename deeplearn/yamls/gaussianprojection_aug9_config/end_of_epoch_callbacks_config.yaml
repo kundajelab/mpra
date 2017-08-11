@@ -1,0 +1,8 @@
+
+    [
+        {"class": "SaveBestValidModel",
+         "kwargs": {"directory": "../model_files/weighted_aug7/"}},
+        {"class": "PrintPerfAfterEpoch",
+         "kwargs": {"print_trend": true}}
+    ]
+    

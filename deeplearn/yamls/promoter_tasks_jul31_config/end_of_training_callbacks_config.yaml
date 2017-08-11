@@ -1,7 +1,7 @@
 
     [
     {"class":"WriteToDbCallback",
-     "kwargs":{"db_path": "../model_results/minp_jul31.db"}},
+     "kwargs":{"db_path": "../model_results/averages_jul31.db"}},
     {"class":"EmailCallback",
      "kwargs":{"to_emails":["therajiv@gmail.com"],
                "from_email": "momma-dragonn@stanford.edu",

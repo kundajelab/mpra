@@ -1,0 +1,12 @@
+k562_minp_rep1
+k562_minp_rep2
+k562_minp_avg
+k562_sv40p_rep1
+k562_sv40p_rep2
+k562_sv40p_avg
+hepg2_minp_rep1
+hepg2_minp_rep2
+hepg2_minp_avg
+hepg2_sv40p_rep1
+hepg2_sv40p_rep2
+hepg2_sv40p_avg

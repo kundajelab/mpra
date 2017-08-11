@@ -18,28 +18,45 @@ chrs = ['chr' + str(i) for i in range(1, 23)] + ['chrX', 'chrY']
 train_chrs = chrs
 train_chrs = [chrom for chrom in train_chrs if chrom not in val_chrs and chrom not in test_chrs]
 
-run_name = 'sharpr_znormed_jul23'
+functional = True
+run_name = 'upweightends_aug10'
 deeplearn_dir = os.environ.get("DL")
 split_path = deeplearn_dir + "/splits/" + run_name + "/"
 os.system("mkdir " + split_path)
 
-dataMatrix = open(os.environ.get("SHARPR") + "/data/processed_data/sharprFullDataMatrixLfcZNormed.tsv").readlines()[1:]
+dataMatrix = open(os.environ.get("SHARPR") + "/data/processed_data/sharprFullDataMatrixLfcGaussianProjected.tsv").readlines()[1:]
 #dataMatrix.readline()
 
 trainSplit = open(split_path + "train_split.txt", 'w')
 valSplit = open(split_path + "val_split.txt", 'w')
 testSplit = open(split_path + "test_split.txt", 'w')
 
-labels = open(deeplearn_dir + "/labels/labels_" + run_name + ".txt", 'w')
+if functional:
+    funcLabelsPath = "%s/labels/functional_%s/" % (deeplearn_dir, run_name)
+    os.system("mkdir %s" % funcLabelsPath)
+    labels = open(funcLabelsPath + 'labelMatrix.txt', 'w')
+else:
+    labels = open(deeplearn_dir + "/labels/labels_" + run_name + ".txt", 'w')
 labels.write("name\t" +
-             "k562_minp_rep1_count\tk562_minp_rep2_count\tk562_minp_avg_count\t" +
-             "k562_sv40p_rep1_count\tk562_sv40p_rep2_count\tk562_sv40p_avg_count\t" +
-             "hepg2_minp_rep1_count\thepg2_minp_rep2_count\thepg2_minp_avg_count\t" +
-             "hepg2_sv40p_rep1_count\thepg2_sv40p_rep2_count\thepg2_sv40p_avg_count\t" +
-             "k562_minp_rep1_norm\tk562_minp_rep2_norm\tk562_minp_avg_norm\t" +
-             "k562_sv40p_rep1_norm\tk562_sv40p_rep2_norm\tk562_sv40p_avg_norm\t" +
-             "hepg2_minp_rep1_norm\thepg2_minp_rep2_norm\thepg2_minp_avg_norm\t" +
-             "hepg2_sv40p_rep1_norm\thepg2_sv40p_rep2_norm\thepg2_sv40p_avg_norm\n")
+             #  "k562_minp_rep1_count\tk562_minp_rep2_count\tk562_minp_avg_count\t" +
+             #  "k562_sv40p_rep1_count\tk562_sv40p_rep2_count\tk562_sv40p_avg_count\t" +
+             #  "hepg2_minp_rep1_count\thepg2_minp_rep2_count\thepg2_minp_avg_count\t" +
+             #  "hepg2_sv40p_rep1_count\thepg2_sv40p_rep2_count\thepg2_sv40p_avg_count\t" +
+             #  "k562_minp_rep1_norm\tk562_minp_rep2_norm\tk562_minp_avg_norm\t" +
+             #  "k562_sv40p_rep1_norm\tk562_sv40p_rep2_norm\tk562_sv40p_avg_norm\t" +
+             #  "hepg2_minp_rep1_norm\thepg2_minp_rep2_norm\thepg2_minp_avg_norm\t" +
+             #  "hepg2_sv40p_rep1_norm\thepg2_sv40p_rep2_norm\thepg2_sv40p_avg_norm\n"
+             "k562_minp_rep1\tk562_minp_rep2\tk562_minp_avg\t" +
+             "k562_sv40p_rep1\tk562_sv40p_rep2\tk562_sv40p_avg\t" +
+             "hepg2_minp_rep1\thepg2_minp_rep2\thepg2_minp_avg\t" +
+             "hepg2_sv40p_rep1\thepg2_sv40p_rep2\thepg2_sv40p_avg\n")
+
+#  weights = open(deeplearn_dir + "/weights/weights_" + run_name + ".txt", 'w')
+#  weights.write("name\t" +
+              #  "k562_minp_rep1\tk562_minp_rep2\tk562_minp_avg\t" +
+              #  "k562_sv40p_rep1\tk562_sv40p_rep2\tk562_sv40p_avg\t" +
+              #  "hepg2_minp_rep1\thepg2_minp_rep2\thepg2_minp_avg\t" +
+              #  "hepg2_sv40p_rep1\thepg2_sv40p_rep2\thepg2_sv40p_avg\n")
               
 features = open(deeplearn_dir + "/features/sequences_" + run_name + ".fa", 'w')
 
@@ -67,7 +84,16 @@ for (i, line) in enumerate(dataMatrix):
             counts[2] += 1
     
         if chrom in train_chrs or chrom in val_chrs or chrom in test_chrs:
-            labels.write(fragmentName + '\t' + '\t'.join(line[7:31]) + '\n')
+            labels.write(fragmentName + '\t' + '\t'.join(line[19:31]) + '\n')
+            
+            # assign weights to each sample's avg data, according to sigmoid(1 / (rep1 - rep2))
+            #  from scipy.stats import logistic
+            #  lbls = np.array(line[19:31]).astype(np.float)
+            #  example_weights = np.ones(len(lbls))
+            #  for idx in range(2, len(example_weights), 3):
+                #  example_weights[idx] = logistic.cdf(np.reciprocal(np.abs(lbls[idx-2] - lbls[idx-1])))
+            #  weights.write(fragmentName + '\t' + '\t'.join(example_weights.astype("string")) + '\n')
+
             seq = line[3]
             features.write('>' + fragmentName + '\n')
             if ori == 'rc':
@@ -79,6 +105,7 @@ trainSplit.close()
 valSplit.close()
 testSplit.close()
 labels.close()
+#  weights.close()
 features.close()
 
 print "train size = " + str(counts[0]) + " fragments"

@@ -1,0 +1,8 @@
+
+    [
+        {"class": "SaveBestValidModel",
+         "kwargs": {"directory": "../model_files/upweightends_aug10/"}},
+        {"class": "PrintPerfAfterEpoch",
+         "kwargs": {"print_trend": true}}
+    ]
+    

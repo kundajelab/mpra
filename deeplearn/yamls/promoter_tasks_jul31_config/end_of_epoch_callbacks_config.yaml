@@ -1,7 +1,7 @@
 
     [
         {"class": "SaveBestValidModel",
-         "kwargs": {"directory": "../model_files/minp_jul31/"}},
+         "kwargs": {"directory": "../model_files/averages_jul31/"}},
         {"class": "PrintPerfAfterEpoch",
          "kwargs": {"print_trend": true}}
     ]

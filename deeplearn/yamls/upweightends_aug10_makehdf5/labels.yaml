@@ -1,0 +1,86 @@
+[
+    {
+        "labels": {
+            "file_name": "../labels/functional_upweightends_aug10/k562_minp_rep1.txt",
+            "content_type": "float",
+            "output_mode_name": "k562_minp_rep1",
+        }
+    },
+    {
+        "labels": {
+            "file_name": "../labels/functional_upweightends_aug10/k562_minp_rep2.txt",
+            "content_type": "float",
+            "output_mode_name": "k562_minp_rep2",
+        }
+    },
+    {
+        "labels": {
+            "file_name": "../labels/functional_upweightends_aug10/k562_minp_avg.txt",
+            "content_type": "float",
+            "output_mode_name": "k562_minp_avg",
+        }
+    },
+    {
+        "labels": {
+            "file_name": "../labels/functional_upweightends_aug10/k562_sv40p_rep1.txt",
+            "content_type": "float",
+            "output_mode_name": "k562_sv40p_rep1",
+        }
+    },
+    {
+        "labels": {
+            "file_name": "../labels/functional_upweightends_aug10/k562_sv40p_rep2.txt",
+            "content_type": "float",
+            "output_mode_name": "k562_sv40p_rep2",
+        }
+    },
+    {
+        "labels": {
+            "file_name": "../labels/functional_upweightends_aug10/k562_sv40p_avg.txt",
+            "content_type": "float",
+            "output_mode_name": "k562_sv40p_avg",
+        }
+    },
+    {
+        "labels": {
+            "file_name": "../labels/functional_upweightends_aug10/hepg2_minp_rep1.txt",
+            "content_type": "float",
+            "output_mode_name": "hepg2_minp_rep1",
+        }
+    },
+    {
+        "labels": {
+            "file_name": "../labels/functional_upweightends_aug10/hepg2_minp_rep2.txt",
+            "content_type": "float",
+            "output_mode_name": "hepg2_minp_rep2",
+        }
+    },
+    {
+        "labels": {
+            "file_name": "../labels/functional_upweightends_aug10/hepg2_minp_avg.txt",
+            "content_type": "float",
+            "output_mode_name": "hepg2_minp_avg",
+        }
+    },
+    {
+        "labels": {
+            "file_name": "../labels/functional_upweightends_aug10/hepg2_sv40p_rep1.txt",
+            "content_type": "float",
+            "output_mode_name": "hepg2_sv40p_rep1",
+        }
+    },
+    {
+        "labels": {
+            "file_name": "../labels/functional_upweightends_aug10/hepg2_sv40p_rep2.txt",
+            "content_type": "float",
+            "output_mode_name": "hepg2_sv40p_rep2",
+        }
+    },
+    {
+        "labels": {
+            "file_name": "../labels/functional_upweightends_aug10/hepg2_sv40p_avg.txt",
+            "content_type": "float",
+            "output_mode_name": "hepg2_sv40p_avg",
+        }
+    },
+]

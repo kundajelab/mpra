@@ -1,0 +1,9 @@
+
+    {
+        "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+        "kwargs": {
+           "path_to_hdf5": "../hdf5files/gaussianprojection_sequential_aug9/valid_data.hdf5",
+           "strip_enclosing_dictionary": True
+        }
+    }
+    

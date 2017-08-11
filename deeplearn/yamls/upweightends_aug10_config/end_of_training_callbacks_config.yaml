@@ -1,0 +1,10 @@
+
+    [
+    {"class":"WriteToDbCallback",
+     "kwargs":{"db_path": "../model_results/upweightends_aug10.db"}},
+    {"class":"EmailCallback",
+     "kwargs":{"to_emails":["therajiv@gmail.com"],
+               "from_email": "momma-dragonn@stanford.edu",
+               "smtp_server": "smtp.stanford.edu"}}
+    ]
+    

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-export YAMLDIR=../yamls/promoter_tasks_jul31_makehdf5/*
-export HDF5DIR=../hdf5files/minP_jul31/
+export YAMLDIR=../yamls/upweightends_aug10_makehdf5/*
+export HDF5DIR=../hdf5files/upweightends_aug10/
 
 if [ ! -d "$HDFDIR" ]; then
     mkdir $HDF5DIR

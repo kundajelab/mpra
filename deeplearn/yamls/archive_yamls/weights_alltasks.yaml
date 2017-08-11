@@ -1,0 +1,6 @@
+{
+    "weights": {
+        "file_name": "../weights/weights_weighted_aug7.txt",
+        "output_mode_name": "output"
+    }
+}
