@@ -67,6 +67,12 @@ for (i, line) in enumerate(dataMatrix):
     if i in print_levels:
         print("On fragment " + str(i) + " / " + str(num_fragments))
     line = line.strip().split('\t')
+    
+    k562_minp_rep1 = float(line[19])
+    k562_minp_rep2 = float(line[20])
+    # check if the datapoint is reproducible OR large fold-change
+    useData = (abs(k562_minp_rep1 - k562_minp_rep2) < 0.5 or abs(k562_minp_rep1 + k562_minp_rep2)/2.0 > 1.7)
+
     for ori in ('n', 'rc'):
         chrom = line[1]
         if chrom in chrs:
@@ -76,7 +82,7 @@ for (i, line) in enumerate(dataMatrix):
         if chrom in train_chrs:
             trainSplit.write(fragmentName + '\n')
             counts[0] += 1
-        if chrom in val_chrs and ori == 'n': # for val, don't get the revcomp sequence too
+        if chrom in val_chrs and ori == 'n' and useData: # for val, don't get the revcomp sequence too
             valSplit.write(fragmentName + '\n')
             counts[1] += 1
         if chrom in test_chrs and ori in 'n':

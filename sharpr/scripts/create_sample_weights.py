@@ -19,25 +19,28 @@ for idx in range(3, weightMatrix.shape[1], 3):
     weightMatrix[:, idx] = logistic.cdf(
                            np.reciprocal(
                            np.abs(
-                           (dataMatrix[1:, 18+idx-2].astype(np.float) - dataMatrix[1:, 18+idx-1].astype(np.float) + 1e-6) # / (dataMatrix[1:, 18+idx-2].astype(np.float) + 1e-6)
+                           2*(dataMatrix[1:, 18+idx-2].astype(np.float) - dataMatrix[1:, 18+idx-1].astype(np.float) + 1e-6) # / (dataMatrix[1:, 18+idx-2].astype(np.float) + 1e-6)
                                   )))
     # Since sigmoid(x) is from 0.5 to 1 for x > 0, scale the range to 0 to 1
     weightMatrix[:, idx] = 1 - 2*(1 - weightMatrix[:, idx].astype(np.float))
     # Upweight repressive fragments
     repressiveFragments = dataMatrix[1:, 18+idx].astype(np.float) < -1 
-    weightMatrix[:, idx][repressiveFragments] = 100*weightMatrix[:, idx][repressiveFragments]
+    weightMatrix[:, idx][repressiveFragments] = 2*weightMatrix[:, idx][repressiveFragments]
     # Upweight the more "extreme" fragments to prevent the model from just predicting the mean
-    extremeFragments = np.abs(dataMatrix[1:, 18+idx].astype(np.float)) > 5
+    extremeFragments = np.abs(dataMatrix[1:, 18+idx].astype(np.float)) > 0
     weightMatrix[:, idx][extremeFragments] = weightMatrix[:, idx][extremeFragments] * np.abs(dataMatrix[1:, 18+idx][extremeFragments].astype(np.float))
     # Set all middle examples to weight 0 just to sanity check that weighting is working
-    middleFragments = np.abs(dataMatrix[1:, 18+idx].astype(np.float)) < 8
-    weightMatrix[:, idx][middleFragments] = np.zeros(len(weightMatrix[:, idx][middleFragments]))
+    #  middleFragments = np.abs(dataMatrix[1:, 18+idx].astype(np.float)) >= 0
+    #  weightMatrix[:, idx][middleFragments] = np.zeros(len(weightMatrix[:, idx][middleFragments]))
     # Convert float array to string
     # weightMatrix[:, idx] = weightMatrix[:, idx].astype("string")
+    # Force the replicates to use the same weights as the average
+    weightMatrix[:, idx-2] = weightMatrix[:, idx]
+    weightMatrix[:, idx-1] = weightMatrix[:, idx]
 
 weightMatrix = weightMatrix.astype("string")
 
-weightFile = open(os.environ.get("DL") + "/weights/upweightends_aug10/sigmoid_scaled_repr_extreme.txt", 'w')
+weightFile = open(os.environ.get("DL") + "/weights/upweightends_aug10/replicatequality_scaled_repressive_distancefromzero.txt", 'w')
 weightFile.write(header + '\n')
 
 for fragment in weightMatrix:

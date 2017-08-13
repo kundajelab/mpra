@@ -5,7 +5,7 @@ import os
 #  base_path = os.environ.get("DL") + '/labels/functional_upweightends_aug10/'
 #  data_path = base_path + 'labelMatrix.txt'
 base_path = os.environ.get("DL") + '/weights/upweightends_aug10/'
-data_path = base_path + 'sigmoid_scaled_repr_extreme.txt'
+data_path = base_path + 'replicatequality_scaled_repressive_distancefromzero.txt'
 allLabels = pd.read_csv(data_path,
                         dtype = 'string',
                         delimiter = '\t',

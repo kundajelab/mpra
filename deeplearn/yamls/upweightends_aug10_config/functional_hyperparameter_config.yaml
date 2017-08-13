@@ -269,7 +269,7 @@
                              "hepg2_sv40p_rep1", "hepg2_sv40p_rep2", "hepg2_sv40p_avg"],
             "optimizer_config": {
                 "class": "keras.optimizers.Adam",
-                "kwargs": {"lr": 2e-4}
+                "kwargs": {"lr": 8e-6}
             },
             "loss_dictionary": {
                 "k562_minp_rep1": "mean_squared_error", 
