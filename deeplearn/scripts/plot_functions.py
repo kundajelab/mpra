@@ -17,7 +17,7 @@ from scipy.stats import spearmanr, pearsonr
 
 def jointplot(vals1, vals2, out_pdf, 
               alpha=0.5, point_size=10, square=False, cor='pearsonr', 
-              x_label=None, y_label=None, figsize=(12,12), 
+              x_label=None, y_label=None, figsize=6, 
               sample=None, table=False,
               show=True, despine=True,
               dpi=300,
@@ -26,7 +26,8 @@ def jointplot(vals1, vals2, out_pdf,
               color='black',
               ratio=5,
               kde=True,
-              bw = 'scott'
+              bw = 'scott',
+              axlim = None
               ):
 
     if table:
@@ -65,11 +66,17 @@ def jointplot(vals1, vals2, out_pdf,
     ax = g.ax_joint
 
     if square:
-        vmin, vmax = scatter_lims(vals1, vals2)
-        ax.set_xlim(vmin,vmax)
-        ax.set_ylim(vmin,vmax)
+        if axlim == None:
+            vmin, vmax = scatter_lims(vals1, vals2)
+            ax.set_xlim(vmin,vmax)
+            ax.set_ylim(vmin,vmax)
 
-        ax.plot([vmin,vmax], [vmin,vmax], linestyle='--', color='black')
+            ax.plot([vmin,vmax], [vmin,vmax], linestyle='--', color='black')
+        else:
+            ax.set_xlim(*axlim)
+            ax.set_ylim(*axlim)
+
+            ax.plot(axlim, axlim, linestyle='--', color='black') 
 
     else:
         xmin, xmax = scatter_lims(vals1)
@@ -122,7 +129,7 @@ def jointplot(vals1, vals2, out_pdf,
     plt.close()
 
 
-def regplot(vals1, vals2, out_pdf, poly_order=1, alpha=0.5, point_size=10, cor='pearsonr', print_sig=False, square=True, x_label=None, y_label=None, title=None, figsize=(6,6), sample=None, table=False):
+def regplot(vals1, vals2, out_pdf, poly_order=1, alpha=0.5, point_size=10, cor='pearsonr', print_sig=False, show=True, square=True, x_label=None, y_label=None, title=None, figsize=(6,6), sample=None, table=False):
 
     if table:
         out_txt = '%s.txt' % out_pdf[:-4]
@@ -187,6 +194,8 @@ def regplot(vals1, vals2, out_pdf, poly_order=1, alpha=0.5, point_size=10, cor='
     # plt.tight_layout(w_pad=0, h_pad=0)
 
     plt.savefig(out_pdf)
+    if show == True:
+        plt.show()
     plt.close()
 
 
