@@ -1,15 +1,1873 @@
 {
     "metadata": {
-        "total_records": 22,
-        "best_valid_key_metric": 0.18894361110780197,
+        "total_records": 26,
+        "best_valid_key_metric": 0.18953192993471354,
         "best_saved_files_config": {
-            "weights_file": "../model_files/upweightends_aug10//record_20_model_gWjY1_modelWeights.h5",
-            "json_file": "../model_files/upweightends_aug10//record_20_model_gWjY1_modelJson.json",
+            "weights_file": "../model_files/upweightends_aug10//record_24_model_xpxJZ_modelWeights.h5",
+            "json_file": "../model_files/upweightends_aug10//record_24_model_xpxJZ_modelJson.json",
             "directory": "../model_files/upweightends_aug10/",
-            "prefix": "model_gWjY1"
+            "prefix": "model_xpxJZ"
         }
     },
     "records": [
+        {
+            "record_number": 24,
+            "message": "Functional model with use_weights set to False",
+            "best_valid_key_metric": 0.18953192993471354,
+            "best_valid_perf_info": {
+                "epoch": 41,
+                "valid_key_metric": 0.18953192993471354,
+                "train_key_metric": 0.2674960087731035,
+                "valid_all_stats": {
+                    "per_output_spearman_corr": {
+                        "hepg2_minp_avg": [
+                            0.21857737045849782
+                        ],
+                        "hepg2_minp_rep1": [
+                            0.22668527525464444
+                        ],
+                        "hepg2_minp_rep2": [
+                            0.1552958408083813
+                        ],
+                        "hepg2_sv40p_avg": [
+                            0.1570970956147448
+                        ],
+                        "hepg2_sv40p_rep1": [
+                            0.1347929168670774
+                        ],
+                        "hepg2_sv40p_rep2": [
+                            0.14327556506282788
+                        ],
+                        "k562_minp_avg": [
+                            0.2944962646646656
+                        ],
+                        "k562_minp_rep1": [
+                            0.2648893229129934
+                        ],
+                        "k562_minp_rep2": [
+                            0.30592918294357807
+                        ],
+                        "k562_sv40p_avg": [
+                            0.13779120933167582
+                        ],
+                        "k562_sv40p_rep1": [
+                            0.13352943439806778
+                        ],
+                        "k562_sv40p_rep2": [
+                            0.102023680899408
+                        ]
+                    },
+                    "mean_spearman_corr": 0.18953192993471354,
+                    "per_output_pearson_corr": {
+                        "hepg2_minp_avg": [
+                            0.23553571105003357
+                        ],
+                        "hepg2_minp_rep1": [
+                            0.23764245212078094
+                        ],
+                        "hepg2_minp_rep2": [
+                            0.18137958645820618
+                        ],
+                        "hepg2_sv40p_avg": [
+                            0.17709018290042877
+                        ],
+                        "hepg2_sv40p_rep1": [
+                            0.16022451221942902
+                        ],
+                        "hepg2_sv40p_rep2": [
+                            0.15558567643165588
+                        ],
+                        "k562_minp_avg": [
+                            0.31158411502838135
+                        ],
+                        "k562_minp_rep1": [
+                            0.28818920254707336
+                        ],
+                        "k562_minp_rep2": [
+                            0.3187607228755951
+                        ],
+                        "k562_sv40p_avg": [
+                            0.15696455538272858
+                        ],
+                        "k562_sv40p_rep1": [
+                            0.1431644856929779
+                        ],
+                        "k562_sv40p_rep2": [
+                            0.1216871589422226
+                        ]
+                    },
+                    "mean_pearson_corr": 0.20731736347079277,
+                    "per_output_mean_squared_error": {
+                        "hepg2_minp_avg": [
+                            0.9986436367034912
+                        ],
+                        "hepg2_minp_rep1": [
+                            1.1035062074661255
+                        ],
+                        "hepg2_minp_rep2": [
+                            1.0628199577331543
+                        ],
+                        "hepg2_sv40p_avg": [
+                            1.2348682880401611
+                        ],
+                        "hepg2_sv40p_rep1": [
+                            1.2855463027954102
+                        ],
+                        "hepg2_sv40p_rep2": [
+                            1.108401894569397
+                        ],
+                        "k562_minp_avg": [
+                            1.3239144086837769
+                        ],
+                        "k562_minp_rep1": [
+                            1.0462578535079956
+                        ],
+                        "k562_minp_rep2": [
+                            0.901576817035675
+                        ],
+                        "k562_sv40p_avg": [
+                            1.0559860467910767
+                        ],
+                        "k562_sv40p_rep1": [
+                            0.9968889355659485
+                        ],
+                        "k562_sv40p_rep2": [
+                            1.1191052198410034
+                        ]
+                    },
+                    "mean_mean_squared_error": 1.1031262973944347
+                }
+            },
+            "training_metadata": {
+                "termination_condition": "KeyboardInterrupt",
+                "total_epochs_trained_for": 58
+            },
+            "other_data_loaders_info": {
+                "train": {
+                    "batch_size": 500,
+                    "num_to_load_for_eval": 100000,
+                    "bundle_x_and_y_in_generator": false,
+                    "strip_enclosing_dictionary": false,
+                    "path_to_hdf5": "../hdf5files/upweightends_aug10/train_data.hdf5"
+                }
+            },
+            "model_trainer_info": {
+                "seed": 1234,
+                "samples_per_epoch": 200000,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 300,
+                        "epochs_to_wait": 20
+                    }
+                },
+                "class_weight": null
+            },
+            "model_creator_info": {
+                "input_names": [
+                    "sequence"
+                ],
+                "shared_layers_config": {},
+                "nodes_config": {
+                    "sequence": {
+                        "layer": {
+                            "class": "keras.layers.Input",
+                            "kwargs": {
+                                "shape": [
+                                    145,
+                                    4
+                                ]
+                            }
+                        }
+                    },
+                    "conv1": {
+                        "layer": {
+                            "class": "keras.layers.convolutional.Convolution1D",
+                            "kwargs": {
+                                "nb_filter": 120,
+                                "filter_length": 5
+                            }
+                        },
+                        "input_node_names": "sequence"
+                    },
+                    "conv1_act": {
+                        "layer": {
+                            "class": "keras.layers.core.Activation",
+                            "kwargs": {
+                                "activation": "relu"
+                            }
+                        },
+                        "input_node_names": "conv1"
+                    },
+                    "conv1_batchnorm": {
+                        "layer": {
+                            "class": "keras.layers.normalization.BatchNormalization",
+                            "kwargs": {
+                                "axis": -1
+                            }
+                        },
+                        "input_node_names": "conv1_act"
+                    },
+                    "conv1_dropout": {
+                        "layer": {
+                            "class": "keras.layers.core.Dropout",
+                            "kwargs": {
+                                "p": 0.1
+                            }
+                        },
+                        "input_node_names": "conv1_batchnorm"
+                    },
+                    "conv2": {
+                        "layer": {
+                            "class": "keras.layers.convolutional.Convolution1D",
+                            "kwargs": {
+                                "nb_filter": 120,
+                                "filter_length": 5
+                            }
+                        },
+                        "input_node_names": "conv1_batchnorm"
+                    },
+                    "conv2_act": {
+                        "layer": {
+                            "class": "keras.layers.core.Activation",
+                            "kwargs": {
+                                "activation": "relu"
+                            }
+                        },
+                        "input_node_names": "conv2"
+                    },
+                    "conv2_batchnorm": {
+                        "layer": {
+                            "class": "keras.layers.normalization.BatchNormalization",
+                            "kwargs": {
+                                "axis": -1
+                            }
+                        },
+                        "input_node_names": "conv2_act"
+                    },
+                    "conv2_dropout": {
+                        "layer": {
+                            "class": "keras.layers.core.Dropout",
+                            "kwargs": {
+                                "p": 0.1
+                            }
+                        },
+                        "input_node_names": "conv2_batchnorm"
+                    },
+                    "conv3": {
+                        "layer": {
+                            "class": "keras.layers.convolutional.Convolution1D",
+                            "kwargs": {
+                                "nb_filter": 120,
+                                "filter_length": 5
+                            }
+                        },
+                        "input_node_names": "conv2_dropout"
+                    },
+                    "conv3_act": {
+                        "layer": {
+                            "class": "keras.layers.core.Activation",
+                            "kwargs": {
+                                "activation": "relu"
+                            }
+                        },
+                        "input_node_names": "conv3"
+                    },
+                    "conv3_batchnorm": {
+                        "layer": {
+                            "class": "keras.layers.normalization.BatchNormalization",
+                            "kwargs": {
+                                "axis": -1
+                            }
+                        },
+                        "input_node_names": "conv3_act"
+                    },
+                    "conv3_dropout": {
+                        "layer": {
+                            "class": "keras.layers.core.Dropout",
+                            "kwargs": {
+                                "p": 0.1
+                            }
+                        },
+                        "input_node_names": "conv3_batchnorm"
+                    },
+                    "flatten": {
+                        "layer": {
+                            "class": "keras.layers.core.Flatten",
+                            "kwargs": {}
+                        },
+                        "input_node_names": "conv3_dropout"
+                    },
+                    "k562_minp_rep1": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "k562_minp_rep2": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "k562_minp_avg": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "k562_sv40p_rep1": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "k562_sv40p_rep2": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "k562_sv40p_avg": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "hepg2_minp_rep1": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "hepg2_minp_rep2": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "hepg2_minp_avg": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "hepg2_sv40p_rep1": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "hepg2_sv40p_rep2": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "hepg2_sv40p_avg": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    }
+                },
+                "output_names": [
+                    "k562_minp_rep1",
+                    "k562_minp_rep2",
+                    "k562_minp_avg",
+                    "k562_sv40p_rep1",
+                    "k562_sv40p_rep2",
+                    "k562_sv40p_avg",
+                    "hepg2_minp_rep1",
+                    "hepg2_minp_rep2",
+                    "hepg2_minp_avg",
+                    "hepg2_sv40p_rep1",
+                    "hepg2_sv40p_rep2",
+                    "hepg2_sv40p_avg"
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": "2e-4"
+                    }
+                },
+                "loss_dictionary": {
+                    "k562_minp_rep1": "mean_squared_error",
+                    "k562_minp_rep2": "mean_squared_error",
+                    "k562_minp_avg": "mean_squared_error",
+                    "k562_sv40p_rep1": "mean_squared_error",
+                    "k562_sv40p_rep2": "mean_squared_error",
+                    "k562_sv40p_avg": "mean_squared_error",
+                    "hepg2_minp_rep1": "mean_squared_error",
+                    "hepg2_minp_rep2": "mean_squared_error",
+                    "hepg2_minp_avg": "mean_squared_error",
+                    "hepg2_sv40p_rep1": "mean_squared_error",
+                    "hepg2_sv40p_rep2": "mean_squared_error",
+                    "hepg2_sv40p_avg": "mean_squared_error"
+                }
+            },
+            "key_metric_history": [
+                [
+                    "train",
+                    "valid"
+                ],
+                [
+                    0.04437183579566869,
+                    0.030288042940378665
+                ],
+                [
+                    0.09033246150807428,
+                    0.06211594895857119
+                ],
+                [
+                    0.06698054376443267,
+                    0.06265999589071662
+                ],
+                [
+                    0.08124181976928016,
+                    0.07360633333276524
+                ],
+                [
+                    0.0920207265871102,
+                    0.07234751269432053
+                ],
+                [
+                    0.1075423001257545,
+                    0.08136977852609296
+                ],
+                [
+                    0.10698940695307187,
+                    0.06852266146254564
+                ],
+                [
+                    0.11881036479898928,
+                    0.08825013163683308
+                ],
+                [
+                    0.1205830568387495,
+                    0.09414721714233332
+                ],
+                [
+                    0.13372218452971837,
+                    0.09778622705635166
+                ],
+                [
+                    0.16449837901782094,
+                    0.12474302502493573
+                ],
+                [
+                    0.10763179020605214,
+                    0.1039569273891428
+                ],
+                [
+                    0.13017175581632676,
+                    0.1064555657938056
+                ],
+                [
+                    0.13775659911036459,
+                    0.10865441369479951
+                ],
+                [
+                    0.16479370817817793,
+                    0.10734484844285253
+                ],
+                [
+                    0.18023604996779571,
+                    0.12825099035503557
+                ],
+                [
+                    0.19611782302420752,
+                    0.14118956320858522
+                ],
+                [
+                    0.1878819237929832,
+                    0.13233459727715036
+                ],
+                [
+                    0.202025991080063,
+                    0.15038745805410034
+                ],
+                [
+                    0.18139716819676868,
+                    0.13821875024567842
+                ],
+                [
+                    0.20602271995616792,
+                    0.15841105549857223
+                ],
+                [
+                    0.22139543420944763,
+                    0.13699537845708865
+                ],
+                [
+                    0.20268409895742753,
+                    0.1534856264241978
+                ],
+                [
+                    0.2013104576784942,
+                    0.1475906808727586
+                ],
+                [
+                    0.2385910878548028,
+                    0.157228283584307
+                ],
+                [
+                    0.20302087572311947,
+                    0.14460674766998802
+                ],
+                [
+                    0.2397465977565719,
+                    0.16712126918833078
+                ],
+                [
+                    0.2202002455450182,
+                    0.1787132688753185
+                ],
+                [
+                    0.23697663275023226,
+                    0.18069922003110117
+                ],
+                [
+                    0.2394531075692025,
+                    0.1802841192055632
+                ],
+                [
+                    0.2547337385881287,
+                    0.17418052426894273
+                ],
+                [
+                    0.21877472766627734,
+                    0.17451283536447296
+                ],
+                [
+                    0.24764583816775387,
+                    0.1796180102105235
+                ],
+                [
+                    0.2582698567243276,
+                    0.17498035249544963
+                ],
+                [
+                    0.23769655653507563,
+                    0.1810113676824681
+                ],
+                [
+                    0.2447808611759621,
+                    0.17256658245702292
+                ],
+                [
+                    0.24744694067987863,
+                    0.18174907091105982
+                ],
+                [
+                    0.274346457552292,
+                    0.18620636733832918
+                ],
+                [
+                    0.25722752873513344,
+                    0.1746175284735931
+                ],
+                [
+                    0.26911567325704805,
+                    0.18586780740938924
+                ],
+                [
+                    0.25826724013966906,
+                    0.18057990950936464
+                ],
+                [
+                    0.2674960087731035,
+                    0.18953192993471354
+                ],
+                [
+                    0.28278306306534895,
+                    0.1892960833061995
+                ],
+                [
+                    0.24955491125312187,
+                    0.18137500686117983
+                ],
+                [
+                    0.2622624089407536,
+                    0.17260620213663158
+                ],
+                [
+                    0.25238457270774267,
+                    0.17886818617278885
+                ],
+                [
+                    0.27818595438492183,
+                    0.16714615384052292
+                ],
+                [
+                    0.2807688895983674,
+                    0.1759337360489375
+                ],
+                [
+                    0.2749155446280122,
+                    0.18532087082212567
+                ],
+                [
+                    0.294497755745498,
+                    0.183404376032301
+                ],
+                [
+                    0.2773555309324461,
+                    0.18178744047582088
+                ],
+                [
+                    0.28814744805558407,
+                    0.18569803372865204
+                ],
+                [
+                    0.27564758530291117,
+                    0.17651558299151307
+                ],
+                [
+                    0.29912550216545325,
+                    0.17460779305813948
+                ],
+                [
+                    0.2534973533579791,
+                    0.17001008878231752
+                ],
+                [
+                    0.2679483345009414,
+                    0.16609814193905506
+                ],
+                [
+                    0.30545077475092014,
+                    0.1743230621559381
+                ],
+                [
+                    0.28043864068625596,
+                    0.17662608224871654
+                ],
+                [
+                    0.3013282249383106,
+                    0.17664842877392858
+                ]
+            ],
+            "saved_files_config": {
+                "weights_file": "../model_files/upweightends_aug10//record_24_model_xpxJZ_modelWeights.h5",
+                "json_file": "../model_files/upweightends_aug10//record_24_model_xpxJZ_modelJson.json",
+                "directory": "../model_files/upweightends_aug10/",
+                "prefix": "model_xpxJZ"
+            }
+        },
+        {
+            "record_number": 23,
+            "message": "Functional model with weights",
+            "best_valid_key_metric": 0.18923183190394796,
+            "best_valid_perf_info": {
+                "epoch": 156,
+                "valid_key_metric": 0.18923183190394796,
+                "train_key_metric": 0.23304749991283336,
+                "valid_all_stats": {
+                    "per_output_spearman_corr": {
+                        "hepg2_minp_avg": [
+                            0.20730432787943764
+                        ],
+                        "hepg2_minp_rep1": [
+                            0.2104549033590891
+                        ],
+                        "hepg2_minp_rep2": [
+                            0.169019063768101
+                        ],
+                        "hepg2_sv40p_avg": [
+                            0.16765048288696638
+                        ],
+                        "hepg2_sv40p_rep1": [
+                            0.15582925190320376
+                        ],
+                        "hepg2_sv40p_rep2": [
+                            0.14006213128717984
+                        ],
+                        "k562_minp_avg": [
+                            0.2817259537742617
+                        ],
+                        "k562_minp_rep1": [
+                            0.2649661174732223
+                        ],
+                        "k562_minp_rep2": [
+                            0.2968599603918208
+                        ],
+                        "k562_sv40p_avg": [
+                            0.13633555850531734
+                        ],
+                        "k562_sv40p_rep1": [
+                            0.1325381693064367
+                        ],
+                        "k562_sv40p_rep2": [
+                            0.10803606231233917
+                        ]
+                    },
+                    "mean_spearman_corr": 0.18923183190394796,
+                    "per_output_pearson_corr": {
+                        "hepg2_minp_avg": [
+                            0.24111224710941315
+                        ],
+                        "hepg2_minp_rep1": [
+                            0.23259292542934418
+                        ],
+                        "hepg2_minp_rep2": [
+                            0.206577867269516
+                        ],
+                        "hepg2_sv40p_avg": [
+                            0.21206827461719513
+                        ],
+                        "hepg2_sv40p_rep1": [
+                            0.19931964576244354
+                        ],
+                        "hepg2_sv40p_rep2": [
+                            0.1722436249256134
+                        ],
+                        "k562_minp_avg": [
+                            0.3038875460624695
+                        ],
+                        "k562_minp_rep1": [
+                            0.29308974742889404
+                        ],
+                        "k562_minp_rep2": [
+                            0.3157440721988678
+                        ],
+                        "k562_sv40p_avg": [
+                            0.15524911880493164
+                        ],
+                        "k562_sv40p_rep1": [
+                            0.1412527710199356
+                        ],
+                        "k562_sv40p_rep2": [
+                            0.13010668754577637
+                        ]
+                    },
+                    "mean_pearson_corr": 0.21693704401453337,
+                    "per_output_mean_squared_error": {
+                        "hepg2_minp_avg": [
+                            0.9893577098846436
+                        ],
+                        "hepg2_minp_rep1": [
+                            0.9666914343833923
+                        ],
+                        "hepg2_minp_rep2": [
+                            1.018125057220459
+                        ],
+                        "hepg2_sv40p_avg": [
+                            1.072196125984192
+                        ],
+                        "hepg2_sv40p_rep1": [
+                            1.1521836519241333
+                        ],
+                        "hepg2_sv40p_rep2": [
+                            1.0362509489059448
+                        ],
+                        "k562_minp_avg": [
+                            1.1501299142837524
+                        ],
+                        "k562_minp_rep1": [
+                            0.8494774699211121
+                        ],
+                        "k562_minp_rep2": [
+                            0.8403728008270264
+                        ],
+                        "k562_sv40p_avg": [
+                            1.0418002605438232
+                        ],
+                        "k562_sv40p_rep1": [
+                            1.0112264156341553
+                        ],
+                        "k562_sv40p_rep2": [
+                            1.0666749477386475
+                        ]
+                    },
+                    "mean_mean_squared_error": 1.0162072281042736
+                }
+            },
+            "training_metadata": {
+                "termination_condition": "normal",
+                "total_epochs_trained_for": 176
+            },
+            "other_data_loaders_info": {
+                "train": {
+                    "batch_size": 500,
+                    "num_to_load_for_eval": 100000,
+                    "bundle_x_and_y_in_generator": false,
+                    "strip_enclosing_dictionary": false,
+                    "path_to_hdf5": "../hdf5files/upweightends_aug10/train_data.hdf5"
+                }
+            },
+            "model_trainer_info": {
+                "seed": 1234,
+                "samples_per_epoch": 200000,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 300,
+                        "epochs_to_wait": 20
+                    }
+                },
+                "class_weight": null
+            },
+            "model_creator_info": {
+                "input_names": [
+                    "sequence"
+                ],
+                "shared_layers_config": {},
+                "nodes_config": {
+                    "sequence": {
+                        "layer": {
+                            "class": "keras.layers.Input",
+                            "kwargs": {
+                                "shape": [
+                                    145,
+                                    4
+                                ]
+                            }
+                        }
+                    },
+                    "conv1": {
+                        "layer": {
+                            "class": "keras.layers.convolutional.Convolution1D",
+                            "kwargs": {
+                                "nb_filter": 120,
+                                "filter_length": 5
+                            }
+                        },
+                        "input_node_names": "sequence"
+                    },
+                    "conv1_act": {
+                        "layer": {
+                            "class": "keras.layers.core.Activation",
+                            "kwargs": {
+                                "activation": "relu"
+                            }
+                        },
+                        "input_node_names": "conv1"
+                    },
+                    "conv1_batchnorm": {
+                        "layer": {
+                            "class": "keras.layers.normalization.BatchNormalization",
+                            "kwargs": {
+                                "axis": -1
+                            }
+                        },
+                        "input_node_names": "conv1_act"
+                    },
+                    "conv1_dropout": {
+                        "layer": {
+                            "class": "keras.layers.core.Dropout",
+                            "kwargs": {
+                                "p": 0.1
+                            }
+                        },
+                        "input_node_names": "conv1_batchnorm"
+                    },
+                    "conv2": {
+                        "layer": {
+                            "class": "keras.layers.convolutional.Convolution1D",
+                            "kwargs": {
+                                "nb_filter": 120,
+                                "filter_length": 5
+                            }
+                        },
+                        "input_node_names": "conv1_batchnorm"
+                    },
+                    "conv2_act": {
+                        "layer": {
+                            "class": "keras.layers.core.Activation",
+                            "kwargs": {
+                                "activation": "relu"
+                            }
+                        },
+                        "input_node_names": "conv2"
+                    },
+                    "conv2_batchnorm": {
+                        "layer": {
+                            "class": "keras.layers.normalization.BatchNormalization",
+                            "kwargs": {
+                                "axis": -1
+                            }
+                        },
+                        "input_node_names": "conv2_act"
+                    },
+                    "conv2_dropout": {
+                        "layer": {
+                            "class": "keras.layers.core.Dropout",
+                            "kwargs": {
+                                "p": 0.1
+                            }
+                        },
+                        "input_node_names": "conv2_batchnorm"
+                    },
+                    "conv3": {
+                        "layer": {
+                            "class": "keras.layers.convolutional.Convolution1D",
+                            "kwargs": {
+                                "nb_filter": 120,
+                                "filter_length": 5
+                            }
+                        },
+                        "input_node_names": "conv2_dropout"
+                    },
+                    "conv3_act": {
+                        "layer": {
+                            "class": "keras.layers.core.Activation",
+                            "kwargs": {
+                                "activation": "relu"
+                            }
+                        },
+                        "input_node_names": "conv3"
+                    },
+                    "conv3_batchnorm": {
+                        "layer": {
+                            "class": "keras.layers.normalization.BatchNormalization",
+                            "kwargs": {
+                                "axis": -1
+                            }
+                        },
+                        "input_node_names": "conv3_act"
+                    },
+                    "conv3_dropout": {
+                        "layer": {
+                            "class": "keras.layers.core.Dropout",
+                            "kwargs": {
+                                "p": 0.1
+                            }
+                        },
+                        "input_node_names": "conv3_batchnorm"
+                    },
+                    "flatten": {
+                        "layer": {
+                            "class": "keras.layers.core.Flatten",
+                            "kwargs": {}
+                        },
+                        "input_node_names": "conv3_dropout"
+                    },
+                    "k562_minp_rep1": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "k562_minp_rep2": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "k562_minp_avg": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "k562_sv40p_rep1": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "k562_sv40p_rep2": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "k562_sv40p_avg": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "hepg2_minp_rep1": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "hepg2_minp_rep2": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "hepg2_minp_avg": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "hepg2_sv40p_rep1": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "hepg2_sv40p_rep2": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "hepg2_sv40p_avg": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    }
+                },
+                "output_names": [
+                    "k562_minp_rep1",
+                    "k562_minp_rep2",
+                    "k562_minp_avg",
+                    "k562_sv40p_rep1",
+                    "k562_sv40p_rep2",
+                    "k562_sv40p_avg",
+                    "hepg2_minp_rep1",
+                    "hepg2_minp_rep2",
+                    "hepg2_minp_avg",
+                    "hepg2_sv40p_rep1",
+                    "hepg2_sv40p_rep2",
+                    "hepg2_sv40p_avg"
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": "8e-6"
+                    }
+                },
+                "loss_dictionary": {
+                    "k562_minp_rep1": "mean_squared_error",
+                    "k562_minp_rep2": "mean_squared_error",
+                    "k562_minp_avg": "mean_squared_error",
+                    "k562_sv40p_rep1": "mean_squared_error",
+                    "k562_sv40p_rep2": "mean_squared_error",
+                    "k562_sv40p_avg": "mean_squared_error",
+                    "hepg2_minp_rep1": "mean_squared_error",
+                    "hepg2_minp_rep2": "mean_squared_error",
+                    "hepg2_minp_avg": "mean_squared_error",
+                    "hepg2_sv40p_rep1": "mean_squared_error",
+                    "hepg2_sv40p_rep2": "mean_squared_error",
+                    "hepg2_sv40p_avg": "mean_squared_error"
+                }
+            },
+            "key_metric_history": [
+                [
+                    "train",
+                    "valid"
+                ],
+                [
+                    0.009164398499540543,
+                    0.007225060951632423
+                ],
+                [
+                    0.02390756589647015,
+                    0.015828277791622953
+                ],
+                [
+                    0.019017721794618338,
+                    0.015392965942084343
+                ],
+                [
+                    0.03314272635409648,
+                    0.027168239592698082
+                ],
+                [
+                    0.032877561414706304,
+                    0.023955645642962403
+                ],
+                [
+                    0.03613267599585116,
+                    0.027343185488437446
+                ],
+                [
+                    0.05816092765199343,
+                    0.0348316702877583
+                ],
+                [
+                    0.05296199190779319,
+                    0.042542384146365575
+                ],
+                [
+                    0.07540066952244794,
+                    0.044568027614734614
+                ],
+                [
+                    0.059575100877304756,
+                    0.047416467934548436
+                ],
+                [
+                    0.07130575884605632,
+                    0.05424081226700649
+                ],
+                [
+                    0.05064929253562498,
+                    0.05316668071601524
+                ],
+                [
+                    0.0705212952786999,
+                    0.06763042264871391
+                ],
+                [
+                    0.0484106618060553,
+                    0.04999541349065314
+                ],
+                [
+                    0.06804207814543066,
+                    0.0451028252700679
+                ],
+                [
+                    0.10373497862965501,
+                    0.07466281941063849
+                ],
+                [
+                    0.07660871193912654,
+                    0.06617023006476365
+                ],
+                [
+                    0.12293008356884522,
+                    0.08443025631973099
+                ],
+                [
+                    0.08593745099026621,
+                    0.07440062418120266
+                ],
+                [
+                    0.09505142555831815,
+                    0.08800965684614036
+                ],
+                [
+                    0.1095447285970027,
+                    0.08650653947113024
+                ],
+                [
+                    0.11229249211342023,
+                    0.09196278687991334
+                ],
+                [
+                    0.05575824440045494,
+                    0.06780419099762773
+                ],
+                [
+                    0.08254394256255279,
+                    0.06431061201302074
+                ],
+                [
+                    0.13674993180199807,
+                    0.10384043482865356
+                ],
+                [
+                    0.10575270256540296,
+                    0.09641291138997242
+                ],
+                [
+                    0.13255489094521752,
+                    0.09816597421094087
+                ],
+                [
+                    0.09885368894185963,
+                    0.08685715690412112
+                ],
+                [
+                    0.11602424933212323,
+                    0.08806543237251506
+                ],
+                [
+                    0.15710449991780548,
+                    0.10592485274171443
+                ],
+                [
+                    0.13359906174080935,
+                    0.1098376122725614
+                ],
+                [
+                    0.12290431227377581,
+                    0.10923261144316006
+                ],
+                [
+                    0.12215731640593724,
+                    0.10124373417841098
+                ],
+                [
+                    0.14928971456236015,
+                    0.11645719391961341
+                ],
+                [
+                    0.11208546866796455,
+                    0.11488514058456219
+                ],
+                [
+                    0.1408018953077991,
+                    0.10244784636222061
+                ],
+                [
+                    0.12438303495982733,
+                    0.10530640496756584
+                ],
+                [
+                    0.1334248915771991,
+                    0.10853329624372414
+                ],
+                [
+                    0.16940661019514489,
+                    0.10881222391113445
+                ],
+                [
+                    0.13984768370088996,
+                    0.12020961796291939
+                ],
+                [
+                    0.15655847874499274,
+                    0.11226248374867381
+                ],
+                [
+                    0.13299916835710862,
+                    0.11168978682831059
+                ],
+                [
+                    0.16099277283098307,
+                    0.13235015027331684
+                ],
+                [
+                    0.12105869382504897,
+                    0.12937694795941243
+                ],
+                [
+                    0.14205579287666367,
+                    0.12342647259712487
+                ],
+                [
+                    0.087716722263869,
+                    0.08812298490628358
+                ],
+                [
+                    0.1327143385599071,
+                    0.09856932382753746
+                ],
+                [
+                    0.1644391254484401,
+                    0.13003738902641845
+                ],
+                [
+                    0.14835143798781228,
+                    0.13371336100448092
+                ],
+                [
+                    0.16844424616782486,
+                    0.13055365602561475
+                ],
+                [
+                    0.14517811544708062,
+                    0.1152168442320119
+                ],
+                [
+                    0.15175797205782307,
+                    0.1263900115497714
+                ],
+                [
+                    0.15912545400965214,
+                    0.13519286395328053
+                ],
+                [
+                    0.16062832804219634,
+                    0.12598289881983168
+                ],
+                [
+                    0.10771642560133667,
+                    0.12011637263772379
+                ],
+                [
+                    0.10805410170823192,
+                    0.07773081761597113
+                ],
+                [
+                    0.17987271027113283,
+                    0.13922579253015444
+                ],
+                [
+                    0.14769502805736523,
+                    0.1334850804526642
+                ],
+                [
+                    0.16587140440503173,
+                    0.1258130989949841
+                ],
+                [
+                    0.1363419333101417,
+                    0.1315081177547812
+                ],
+                [
+                    0.1654090771303188,
+                    0.13320066683083814
+                ],
+                [
+                    0.18766138869169624,
+                    0.14280512901960704
+                ],
+                [
+                    0.16617121875299704,
+                    0.12848761377154563
+                ],
+                [
+                    0.1596428911103616,
+                    0.14506410174814646
+                ],
+                [
+                    0.157870530788052,
+                    0.12599645956512354
+                ],
+                [
+                    0.18856813936142958,
+                    0.15032278080404993
+                ],
+                [
+                    0.15502977028005654,
+                    0.14615568082343547
+                ],
+                [
+                    0.17726360111609474,
+                    0.1407664410134191
+                ],
+                [
+                    0.16790465548251213,
+                    0.1468749277961034
+                ],
+                [
+                    0.18839829807446987,
+                    0.14671901362353168
+                ],
+                [
+                    0.19621763662340874,
+                    0.14687655867348692
+                ],
+                [
+                    0.18442902313367493,
+                    0.15796223367169765
+                ],
+                [
+                    0.18050142081237208,
+                    0.13817298627568414
+                ],
+                [
+                    0.17818608674281225,
+                    0.1429176800008494
+                ],
+                [
+                    0.19336409682402433,
+                    0.15842687542716358
+                ],
+                [
+                    0.14655985989053044,
+                    0.14961650624275596
+                ],
+                [
+                    0.17981834692216747,
+                    0.1489716530526142
+                ],
+                [
+                    0.12427452569453752,
+                    0.1170809438569943
+                ],
+                [
+                    0.18774548587093984,
+                    0.14179966469508223
+                ],
+                [
+                    0.15973238313153007,
+                    0.14661614639060375
+                ],
+                [
+                    0.1825939094074348,
+                    0.16095842688387207
+                ],
+                [
+                    0.1892385337477476,
+                    0.15060966746263202
+                ],
+                [
+                    0.17958353151073903,
+                    0.15175226625543578
+                ],
+                [
+                    0.1841148468554135,
+                    0.14245506916495676
+                ],
+                [
+                    0.1829443384146434,
+                    0.16120219174485942
+                ],
+                [
+                    0.1912347343124976,
+                    0.14618652058501833
+                ],
+                [
+                    0.14072099465747132,
+                    0.1461306433047357
+                ],
+                [
+                    0.16135608660637188,
+                    0.12683858809487308
+                ],
+                [
+                    0.20327745479036596,
+                    0.1600708360291815
+                ],
+                [
+                    0.17545839265839713,
+                    0.15613047466540605
+                ],
+                [
+                    0.19257151193319424,
+                    0.15173226788941788
+                ],
+                [
+                    0.1618090956181849,
+                    0.15255655649901056
+                ],
+                [
+                    0.19610170353411616,
+                    0.15745074556959748
+                ],
+                [
+                    0.20259395922433576,
+                    0.15988261513134736
+                ],
+                [
+                    0.18827931428927325,
+                    0.1387090990285674
+                ],
+                [
+                    0.17647275177621188,
+                    0.15922178675388246
+                ],
+                [
+                    0.1935238684832891,
+                    0.1561876156906493
+                ],
+                [
+                    0.21012989107190982,
+                    0.16805406047389918
+                ],
+                [
+                    0.17850135216144092,
+                    0.16484938497055943
+                ],
+                [
+                    0.19483522672511513,
+                    0.1555698398618928
+                ],
+                [
+                    0.19087699389983226,
+                    0.16394934333617192
+                ],
+                [
+                    0.20881215584925114,
+                    0.16443043745905242
+                ],
+                [
+                    0.2096998303619871,
+                    0.17315622498780145
+                ],
+                [
+                    0.20489108255718522,
+                    0.1707173991885329
+                ],
+                [
+                    0.19400836652715225,
+                    0.14245519205137694
+                ],
+                [
+                    0.19995617980588762,
+                    0.16337060616546922
+                ],
+                [
+                    0.2060614313268849,
+                    0.16054804634186914
+                ],
+                [
+                    0.1654870922490118,
+                    0.16397576571698816
+                ],
+                [
+                    0.20227871784300044,
+                    0.16606902431938605
+                ],
+                [
+                    0.161082719587234,
+                    0.1481645194435159
+                ],
+                [
+                    0.21908796231474237,
+                    0.16992280763355896
+                ],
+                [
+                    0.15788608181710406,
+                    0.15127278039393552
+                ],
+                [
+                    0.2034906836601311,
+                    0.17383076041041298
+                ],
+                [
+                    0.20260190825202948,
+                    0.157786771632188
+                ],
+                [
+                    0.20316348472354484,
+                    0.16799558355685154
+                ],
+                [
+                    0.20153750298133608,
+                    0.14943448575965398
+                ],
+                [
+                    0.19307637233124553,
+                    0.17372185663202988
+                ],
+                [
+                    0.21423006956165158,
+                    0.16807160309085625
+                ],
+                [
+                    0.16805510120639064,
+                    0.16770285591705184
+                ],
+                [
+                    0.2074979850312748,
+                    0.16075208984772246
+                ],
+                [
+                    0.22375958205867272,
+                    0.17240186709961783
+                ],
+                [
+                    0.19470666363736908,
+                    0.1701095332341065
+                ],
+                [
+                    0.20954640369421018,
+                    0.1605764263163527
+                ],
+                [
+                    0.180305237855515,
+                    0.17061752892561452
+                ],
+                [
+                    0.2195072676627261,
+                    0.1763440055124801
+                ],
+                [
+                    0.21204860244554888,
+                    0.16279261770612777
+                ],
+                [
+                    0.20488242879848564,
+                    0.14635308545026762
+                ],
+                [
+                    0.18917212494545158,
+                    0.16801913320476472
+                ],
+                [
+                    0.21746291831885411,
+                    0.17151697542918265
+                ],
+                [
+                    0.22589098611066047,
+                    0.17533622741099855
+                ],
+                [
+                    0.19744017504150838,
+                    0.17587932332708953
+                ],
+                [
+                    0.2094039908549382,
+                    0.165340626173034
+                ],
+                [
+                    0.20522131990612438,
+                    0.17476835273049918
+                ],
+                [
+                    0.22233552992044867,
+                    0.17447153764143664
+                ],
+                [
+                    0.21857900353168172,
+                    0.18198106292770821
+                ],
+                [
+                    0.21944617300799388,
+                    0.17625357712332557
+                ],
+                [
+                    0.20708140683770201,
+                    0.14521177287432638
+                ],
+                [
+                    0.21045992601367614,
+                    0.16763157344988866
+                ],
+                [
+                    0.2230890551925243,
+                    0.1678367234672626
+                ],
+                [
+                    0.18332042563507747,
+                    0.16946734078079487
+                ],
+                [
+                    0.21559086838070632,
+                    0.16728231387448436
+                ],
+                [
+                    0.1903572561983635,
+                    0.16656676128351489
+                ],
+                [
+                    0.23970224923499273,
+                    0.18202522652167896
+                ],
+                [
+                    0.18843829910124207,
+                    0.1700039416307394
+                ],
+                [
+                    0.21999846701822248,
+                    0.18025136313792256
+                ],
+                [
+                    0.2170433239128062,
+                    0.16537172164603892
+                ],
+                [
+                    0.21870539410344716,
+                    0.17241024457480178
+                ],
+                [
+                    0.22107246328493155,
+                    0.15890555042785687
+                ],
+                [
+                    0.1997417964644833,
+                    0.17164169943508734
+                ],
+                [
+                    0.2258775772356413,
+                    0.17634682286664424
+                ],
+                [
+                    0.1975190469361552,
+                    0.1774575179292008
+                ],
+                [
+                    0.23345301817034533,
+                    0.17758628159083492
+                ],
+                [
+                    0.23691360979112316,
+                    0.17966743272236163
+                ],
+                [
+                    0.20638281029946107,
+                    0.17442125910587894
+                ],
+                [
+                    0.22125458741373835,
+                    0.1605186450488313
+                ],
+                [
+                    0.1869697798613763,
+                    0.17518405566061346
+                ],
+                [
+                    0.23304749991283336,
+                    0.18923183190394796
+                ],
+                [
+                    0.22025059786584023,
+                    0.1604266932101822
+                ],
+                [
+                    0.21606441880441818,
+                    0.14818532344817345
+                ],
+                [
+                    0.20284388902423542,
+                    0.17325162930019622
+                ],
+                [
+                    0.23237350339428917,
+                    0.1793043313221396
+                ],
+                [
+                    0.23758219461135976,
+                    0.176788775283105
+                ],
+                [
+                    0.20809212204776584,
+                    0.17473919674841054
+                ],
+                [
+                    0.21833576566346777,
+                    0.15990912122008138
+                ],
+                [
+                    0.21315289494781767,
+                    0.17839329844896146
+                ],
+                [
+                    0.23895917144254852,
+                    0.1848366832214988
+                ],
+                [
+                    0.2295753165372052,
+                    0.17922594432572395
+                ],
+                [
+                    0.23371315027536674,
+                    0.17759043464675506
+                ],
+                [
+                    0.2207785408809558,
+                    0.1454052933890115
+                ],
+                [
+                    0.225108212321894,
+                    0.1673799763895449
+                ],
+                [
+                    0.24178010206975006,
+                    0.1761010859501506
+                ],
+                [
+                    0.18811424975661126,
+                    0.1606555762284613
+                ],
+                [
+                    0.2249371945670909,
+                    0.15970443220523042
+                ],
+                [
+                    0.21096001511622153,
+                    0.17098583489303879
+                ],
+                [
+                    0.2515605744429989,
+                    0.1821835770716279
+                ],
+                [
+                    0.2180309563004715,
+                    0.1732173684794248
+                ],
+                [
+                    0.22870072360250693,
+                    0.1761634323098673
+                ]
+            ],
+            "saved_files_config": {
+                "weights_file": "../model_files/upweightends_aug10//record_23_model_jnJFO_modelWeights.h5",
+                "json_file": "../model_files/upweightends_aug10//record_23_model_jnJFO_modelJson.json",
+                "directory": "../model_files/upweightends_aug10/",
+                "prefix": "model_jnJFO"
+            }
+        },
         {
             "record_number": 20,
             "message": "Functional model with use_weights set to False",
@@ -827,249 +2685,30 @@
                     "mean_mean_squared_error": 1.1423068344593048
                 }
             },
-            "key_metric_history": [
-                [
-                    "train",
-                    "valid"
-                ],
-                [
-                    0.04458626441523739,
-                    0.027985759644015246
-                ],
-                [
-                    0.08759957118012938,
-                    0.05966972999517764
-                ],
-                [
-                    0.06712011583782479,
-                    0.06397344150498581
-                ],
-                [
-                    0.08042055926004263,
-                    0.07255368615040726
-                ],
-                [
-                    0.09292875062937628,
-                    0.07288194474424294
-                ],
-                [
-                    0.10408320568071804,
-                    0.07989453030565768
-                ],
-                [
-                    0.10920369129417073,
-                    0.06893010486758402
-                ],
-                [
-                    0.1135939386944675,
-                    0.08214452330206366
-                ],
-                [
-                    0.1183634811880754,
-                    0.09333333449820437
-                ],
-                [
-                    0.13229905554398952,
-                    0.10112919655586415
-                ],
-                [
-                    0.1642374329919811,
-                    0.12424210693937902
-                ],
-                [
-                    0.10644453261061905,
-                    0.10574694262160854
-                ],
-                [
-                    0.13384913958237618,
-                    0.112345682415383
-                ],
-                [
-                    0.1397822416510465,
-                    0.1139127848924557
-                ],
-                [
-                    0.16384508785249866,
-                    0.10843170709870131
-                ],
-                [
-                    0.17519114278852285,
-                    0.12372721735256274
-                ],
-                [
-                    0.19386989707177238,
-                    0.14448735119970849
-                ],
-                [
-                    0.18797182452057182,
-                    0.1335178426879541
-                ],
-                [
-                    0.1997773656281547,
-                    0.1532895375378043
-                ],
-                [
-                    0.17551971496430518,
-                    0.13730167933540485
-                ],
-                [
-                    0.20453949694858373,
-                    0.15718898682911578
-                ],
-                [
-                    0.21969982268935198,
-                    0.14437978302008117
-                ],
-                [
-                    0.1968706108386037,
-                    0.1565557900482203
-                ],
-                [
-                    0.1986181005347288,
-                    0.14706979854153543
-                ],
-                [
-                    0.2351373638304931,
-                    0.15507264115318767
-                ],
-                [
-                    0.1945952081488901,
-                    0.1425319347755027
-                ],
-                [
-                    0.23346206259478763,
-                    0.16194229742065638
-                ],
-                [
-                    0.21254004904100998,
-                    0.17070790441133674
-                ],
-                [
-                    0.2312474642586687,
-                    0.17630373144997732
-                ],
-                [
-                    0.2368545544754956,
-                    0.17661248317289935
-                ],
-                [
-                    0.2536439918441086,
-                    0.18039968958155636
-                ],
-                [
-                    0.21104926785179554,
-                    0.17290437029072825
-                ],
-                [
-                    0.2471107372769837,
-                    0.17647896253751547
-                ],
-                [
-                    0.25016972745449995,
-                    0.16977487994968332
-                ],
-                [
-                    0.23429889657462763,
-                    0.18356826177532704
-                ],
-                [
-                    0.23595898123564205,
-                    0.16764899482915033
-                ],
-                [
-                    0.24663896835303786,
-                    0.17866022634366777
-                ],
-                [
-                    0.27099954701300716,
-                    0.1886302314236102
-                ],
-                [
-                    0.259475723999898,
-                    0.1809326150702558
-                ],
-                [
-                    0.2677932105134113,
-                    0.18596306876674729
-                ],
-                [
-                    0.24656531119347339,
-                    0.17195107606716573
-                ],
-                [
-                    0.26061504349822123,
-                    0.18389299093567082
-                ],
-                [
-                    0.27543512291084865,
-                    0.18106040096749842
-                ],
-                [
-                    0.24279022042421186,
-                    0.1782304186763678
-                ],
-                [
-                    0.25528618047883067,
-                    0.1694392543155494
-                ],
-                [
-                    0.24625114861213374,
-                    0.17615554437408867
-                ],
-                [
-                    0.2757768153340578,
-                    0.16911469068136567
-                ],
-                [
-                    0.27417325917733304,
-                    0.17139577756147395
-                ],
-                [
-                    0.2752177389028428,
-                    0.17962638064996403
-                ],
-                [
-                    0.28547577899372384,
-                    0.1762246622276716
-                ],
-                [
-                    0.2813047426623004,
-                    0.18753973239228186
-                ],
-                [
-                    0.28642410419876424,
-                    0.17791907815153044
-                ],
-                [
-                    0.2716638671545814,
-                    0.17435041785772967
-                ],
-                [
-                    0.29279350110872254,
-                    0.17133258089888137
-                ],
-                [
-                    0.25608796239136417,
-                    0.17621171236157837
-                ],
-                [
-                    0.2695043884572791,
-                    0.16321362172987336
-                ],
-                [
-                    0.29988407124420285,
-                    0.16536837355728137
-                ],
-                [
-                    0.27442250946383123,
-                    0.16946701440413167
-                ]
-            ],
-            "saved_files_config": {
-                "weights_file": "../model_files/upweightends_aug10//record_22_model_JPzgZ_modelWeights.h5",
-                "json_file": "../model_files/upweightends_aug10//record_22_model_JPzgZ_modelJson.json",
-                "directory": "../model_files/upweightends_aug10/",
-                "prefix": "model_JPzgZ"
+            "training_metadata": {
+                "termination_condition": "normal",
+                "total_epochs_trained_for": 57
+            },
+            "other_data_loaders_info": {
+                "train": {
+                    "batch_size": 500,
+                    "num_to_load_for_eval": 100000,
+                    "bundle_x_and_y_in_generator": false,
+                    "strip_enclosing_dictionary": false,
+                    "path_to_hdf5": "../hdf5files/upweightends_aug10/train_data.hdf5"
+                }
+            },
+            "model_trainer_info": {
+                "seed": 1234,
+                "samples_per_epoch": 200000,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 300,
+                        "epochs_to_wait": 20
+                    }
+                },
+                "class_weight": null
             },
             "model_creator_info": {
                 "input_names": [
@@ -1362,30 +3001,249 @@
                     "hepg2_sv40p_avg": "mean_squared_error"
                 }
             },
-            "other_data_loaders_info": {
-                "train": {
-                    "batch_size": 500,
-                    "num_to_load_for_eval": 100000,
-                    "bundle_x_and_y_in_generator": false,
-                    "strip_enclosing_dictionary": false,
-                    "path_to_hdf5": "../hdf5files/upweightends_aug10/train_data.hdf5"
-                }
-            },
-            "model_trainer_info": {
-                "seed": 1234,
-                "samples_per_epoch": 200000,
-                "stopping_criterion_config": {
-                    "class": "EarlyStopping",
-                    "kwargs": {
-                        "max_epochs": 300,
-                        "epochs_to_wait": 20
-                    }
-                },
-                "class_weight": null
-            },
-            "training_metadata": {
-                "termination_condition": "normal",
-                "total_epochs_trained_for": 57
+            "key_metric_history": [
+                [
+                    "train",
+                    "valid"
+                ],
+                [
+                    0.04458626441523739,
+                    0.027985759644015246
+                ],
+                [
+                    0.08759957118012938,
+                    0.05966972999517764
+                ],
+                [
+                    0.06712011583782479,
+                    0.06397344150498581
+                ],
+                [
+                    0.08042055926004263,
+                    0.07255368615040726
+                ],
+                [
+                    0.09292875062937628,
+                    0.07288194474424294
+                ],
+                [
+                    0.10408320568071804,
+                    0.07989453030565768
+                ],
+                [
+                    0.10920369129417073,
+                    0.06893010486758402
+                ],
+                [
+                    0.1135939386944675,
+                    0.08214452330206366
+                ],
+                [
+                    0.1183634811880754,
+                    0.09333333449820437
+                ],
+                [
+                    0.13229905554398952,
+                    0.10112919655586415
+                ],
+                [
+                    0.1642374329919811,
+                    0.12424210693937902
+                ],
+                [
+                    0.10644453261061905,
+                    0.10574694262160854
+                ],
+                [
+                    0.13384913958237618,
+                    0.112345682415383
+                ],
+                [
+                    0.1397822416510465,
+                    0.1139127848924557
+                ],
+                [
+                    0.16384508785249866,
+                    0.10843170709870131
+                ],
+                [
+                    0.17519114278852285,
+                    0.12372721735256274
+                ],
+                [
+                    0.19386989707177238,
+                    0.14448735119970849
+                ],
+                [
+                    0.18797182452057182,
+                    0.1335178426879541
+                ],
+                [
+                    0.1997773656281547,
+                    0.1532895375378043
+                ],
+                [
+                    0.17551971496430518,
+                    0.13730167933540485
+                ],
+                [
+                    0.20453949694858373,
+                    0.15718898682911578
+                ],
+                [
+                    0.21969982268935198,
+                    0.14437978302008117
+                ],
+                [
+                    0.1968706108386037,
+                    0.1565557900482203
+                ],
+                [
+                    0.1986181005347288,
+                    0.14706979854153543
+                ],
+                [
+                    0.2351373638304931,
+                    0.15507264115318767
+                ],
+                [
+                    0.1945952081488901,
+                    0.1425319347755027
+                ],
+                [
+                    0.23346206259478763,
+                    0.16194229742065638
+                ],
+                [
+                    0.21254004904100998,
+                    0.17070790441133674
+                ],
+                [
+                    0.2312474642586687,
+                    0.17630373144997732
+                ],
+                [
+                    0.2368545544754956,
+                    0.17661248317289935
+                ],
+                [
+                    0.2536439918441086,
+                    0.18039968958155636
+                ],
+                [
+                    0.21104926785179554,
+                    0.17290437029072825
+                ],
+                [
+                    0.2471107372769837,
+                    0.17647896253751547
+                ],
+                [
+                    0.25016972745449995,
+                    0.16977487994968332
+                ],
+                [
+                    0.23429889657462763,
+                    0.18356826177532704
+                ],
+                [
+                    0.23595898123564205,
+                    0.16764899482915033
+                ],
+                [
+                    0.24663896835303786,
+                    0.17866022634366777
+                ],
+                [
+                    0.27099954701300716,
+                    0.1886302314236102
+                ],
+                [
+                    0.259475723999898,
+                    0.1809326150702558
+                ],
+                [
+                    0.2677932105134113,
+                    0.18596306876674729
+                ],
+                [
+                    0.24656531119347339,
+                    0.17195107606716573
+                ],
+                [
+                    0.26061504349822123,
+                    0.18389299093567082
+                ],
+                [
+                    0.27543512291084865,
+                    0.18106040096749842
+                ],
+                [
+                    0.24279022042421186,
+                    0.1782304186763678
+                ],
+                [
+                    0.25528618047883067,
+                    0.1694392543155494
+                ],
+                [
+                    0.24625114861213374,
+                    0.17615554437408867
+                ],
+                [
+                    0.2757768153340578,
+                    0.16911469068136567
+                ],
+                [
+                    0.27417325917733304,
+                    0.17139577756147395
+                ],
+                [
+                    0.2752177389028428,
+                    0.17962638064996403
+                ],
+                [
+                    0.28547577899372384,
+                    0.1762246622276716
+                ],
+                [
+                    0.2813047426623004,
+                    0.18753973239228186
+                ],
+                [
+                    0.28642410419876424,
+                    0.17791907815153044
+                ],
+                [
+                    0.2716638671545814,
+                    0.17435041785772967
+                ],
+                [
+                    0.29279350110872254,
+                    0.17133258089888137
+                ],
+                [
+                    0.25608796239136417,
+                    0.17621171236157837
+                ],
+                [
+                    0.2695043884572791,
+                    0.16321362172987336
+                ],
+                [
+                    0.29988407124420285,
+                    0.16536837355728137
+                ],
+                [
+                    0.27442250946383123,
+                    0.16946701440413167
+                ]
+            ],
+            "saved_files_config": {
+                "weights_file": "../model_files/upweightends_aug10//record_22_model_JPzgZ_modelWeights.h5",
+                "json_file": "../model_files/upweightends_aug10//record_22_model_JPzgZ_modelJson.json",
+                "directory": "../model_files/upweightends_aug10/",
+                "prefix": "model_JPzgZ"
             }
         },
         {
@@ -2075,6 +3933,1808 @@
                 "json_file": "../model_files/upweightends_aug10//record_3_model_VA3cd_modelJson.json",
                 "directory": "../model_files/upweightends_aug10/",
                 "prefix": "model_VA3cd"
+            }
+        },
+        {
+            "record_number": 26,
+            "message": "Functional model with use_weights set to False",
+            "best_valid_key_metric": 0.17181645228164089,
+            "best_valid_perf_info": {
+                "epoch": 36,
+                "valid_key_metric": 0.17181645228164089,
+                "train_key_metric": 0.2515342942194681,
+                "valid_all_stats": {
+                    "per_output_spearman_corr": {
+                        "hepg2_minp_avg": [
+                            0.19230194299520806
+                        ],
+                        "hepg2_minp_rep1": [
+                            0.1987685028521117
+                        ],
+                        "hepg2_minp_rep2": [
+                            0.12821914810913473
+                        ],
+                        "hepg2_sv40p_avg": [
+                            0.14242576114592087
+                        ],
+                        "hepg2_sv40p_rep1": [
+                            0.11820381021668688
+                        ],
+                        "hepg2_sv40p_rep2": [
+                            0.12959157394004459
+                        ],
+                        "k562_minp_avg": [
+                            0.30592764995300004
+                        ],
+                        "k562_minp_rep1": [
+                            0.23172112531211506
+                        ],
+                        "k562_minp_rep2": [
+                            0.2940425873718199
+                        ],
+                        "k562_sv40p_avg": [
+                            0.12134042151806779
+                        ],
+                        "k562_sv40p_rep1": [
+                            0.11508158953850846
+                        ],
+                        "k562_sv40p_rep2": [
+                            0.0841733144270727
+                        ]
+                    },
+                    "mean_spearman_corr": 0.17181645228164089,
+                    "per_output_pearson_corr": {
+                        "hepg2_minp_avg": [
+                            0.22147709131240845
+                        ],
+                        "hepg2_minp_rep1": [
+                            0.220314621925354
+                        ],
+                        "hepg2_minp_rep2": [
+                            0.15906204283237457
+                        ],
+                        "hepg2_sv40p_avg": [
+                            0.15982677042484283
+                        ],
+                        "hepg2_sv40p_rep1": [
+                            0.13767991960048676
+                        ],
+                        "hepg2_sv40p_rep2": [
+                            0.140339195728302
+                        ],
+                        "k562_minp_avg": [
+                            0.3244722783565521
+                        ],
+                        "k562_minp_rep1": [
+                            0.256134033203125
+                        ],
+                        "k562_minp_rep2": [
+                            0.3084604740142822
+                        ],
+                        "k562_sv40p_avg": [
+                            0.13830557465553284
+                        ],
+                        "k562_sv40p_rep1": [
+                            0.12631748616695404
+                        ],
+                        "k562_sv40p_rep2": [
+                            0.09953374415636063
+                        ]
+                    },
+                    "mean_pearson_corr": 0.19099360269804797,
+                    "per_output_mean_squared_error": {
+                        "hepg2_minp_avg": [
+                            0.9674579501152039
+                        ],
+                        "hepg2_minp_rep1": [
+                            0.9512897729873657
+                        ],
+                        "hepg2_minp_rep2": [
+                            1.0645842552185059
+                        ],
+                        "hepg2_sv40p_avg": [
+                            1.2986996173858643
+                        ],
+                        "hepg2_sv40p_rep1": [
+                            1.3434926271438599
+                        ],
+                        "hepg2_sv40p_rep2": [
+                            1.1199109554290771
+                        ],
+                        "k562_minp_avg": [
+                            0.9564988017082214
+                        ],
+                        "k562_minp_rep1": [
+                            1.0061092376708984
+                        ],
+                        "k562_minp_rep2": [
+                            0.9249902963638306
+                        ],
+                        "k562_sv40p_avg": [
+                            1.0067228078842163
+                        ],
+                        "k562_sv40p_rep1": [
+                            0.9672318696975708
+                        ],
+                        "k562_sv40p_rep2": [
+                            1.0744715929031372
+                        ]
+                    },
+                    "mean_mean_squared_error": 1.0567883153756459
+                }
+            },
+            "key_metric_history": [
+                [
+                    "train",
+                    "valid"
+                ],
+                [
+                    0.04436720571744823,
+                    0.030029472120649787
+                ],
+                [
+                    0.0909689739214825,
+                    0.05649404871919974
+                ],
+                [
+                    0.06214327316204767,
+                    0.058435428231201535
+                ],
+                [
+                    0.08245760290479891,
+                    0.0631541701375739
+                ],
+                [
+                    0.09178666646666596,
+                    0.06522112714225911
+                ],
+                [
+                    0.10726371890574778,
+                    0.07120936625990494
+                ],
+                [
+                    0.11184808065008735,
+                    0.059014515012694564
+                ],
+                [
+                    0.11545234719757996,
+                    0.07474659178529666
+                ],
+                [
+                    0.1145452157018892,
+                    0.08657644763408717
+                ],
+                [
+                    0.13076394344833064,
+                    0.0840453727564221
+                ],
+                [
+                    0.16214970240390622,
+                    0.1048630348558701
+                ],
+                [
+                    0.1084222392435825,
+                    0.09059707043471449
+                ],
+                [
+                    0.13110199907698844,
+                    0.09903140755220392
+                ],
+                [
+                    0.13352782110623432,
+                    0.09703937146555265
+                ],
+                [
+                    0.16758309179915176,
+                    0.10277072420480081
+                ],
+                [
+                    0.17563050029945204,
+                    0.11089364667807498
+                ],
+                [
+                    0.191348761450198,
+                    0.12807232654366135
+                ],
+                [
+                    0.18483004358395014,
+                    0.11911818442419085
+                ],
+                [
+                    0.19711948294542447,
+                    0.1397242701113595
+                ],
+                [
+                    0.1803451599913818,
+                    0.12485747904212331
+                ],
+                [
+                    0.2011328106835519,
+                    0.14063793684234327
+                ],
+                [
+                    0.21599208959741859,
+                    0.1353266133199751
+                ],
+                [
+                    0.19361998721713836,
+                    0.1343349784109303
+                ],
+                [
+                    0.2039212297513983,
+                    0.13623254718140218
+                ],
+                [
+                    0.23431390457468312,
+                    0.13949649620204085
+                ],
+                [
+                    0.20010781808857434,
+                    0.13778161928351848
+                ],
+                [
+                    0.2306844439968301,
+                    0.1486964205294636
+                ],
+                [
+                    0.21812900247919612,
+                    0.1638498377281651
+                ],
+                [
+                    0.23566820767616745,
+                    0.16096939910144173
+                ],
+                [
+                    0.24130663455549384,
+                    0.16005244442257346
+                ],
+                [
+                    0.2500369988920568,
+                    0.15855798727277365
+                ],
+                [
+                    0.21211263339052555,
+                    0.15746835375955745
+                ],
+                [
+                    0.24222647763022453,
+                    0.15574813676048896
+                ],
+                [
+                    0.2535040606444145,
+                    0.1549756951369965
+                ],
+                [
+                    0.2324499866391987,
+                    0.16967015828507606
+                ],
+                [
+                    0.2323163234910995,
+                    0.15619301204575128
+                ],
+                [
+                    0.2515342942194681,
+                    0.17181645228164089
+                ],
+                [
+                    0.27014998632201764,
+                    0.17027294284425862
+                ],
+                [
+                    0.2614026400906024,
+                    0.16210435706964
+                ],
+                [
+                    0.2673614492303105,
+                    0.16603717245596966
+                ],
+                [
+                    0.24812767736402044,
+                    0.16117745378161621
+                ],
+                [
+                    0.2648331456835628,
+                    0.1703134921115744
+                ],
+                [
+                    0.28150552705774273,
+                    0.16913141946497734
+                ],
+                [
+                    0.2458489499333464,
+                    0.16460649965519886
+                ],
+                [
+                    0.25356772796238886,
+                    0.15843684735140212
+                ],
+                [
+                    0.25213739982552,
+                    0.16403339322106994
+                ],
+                [
+                    0.27598789082021397,
+                    0.15131795377053534
+                ],
+                [
+                    0.28026681523742053,
+                    0.15709025826876763
+                ],
+                [
+                    0.2721009109959896,
+                    0.1584942908424632
+                ],
+                [
+                    0.2848418706807179,
+                    0.15858194516847585
+                ],
+                [
+                    0.28120647645771907,
+                    0.1657106194898209
+                ],
+                [
+                    0.2871466022878428,
+                    0.15809263999909398
+                ],
+                [
+                    0.27141954969097876,
+                    0.15669746383100483
+                ],
+                [
+                    0.2919853515535521,
+                    0.1557233777292642
+                ],
+                [
+                    0.25178546005448016,
+                    0.15116592321204286
+                ],
+                [
+                    0.28167376037464587,
+                    0.15306959487905764
+                ],
+                [
+                    0.30434939003415845,
+                    0.14936131168242908
+                ]
+            ],
+            "saved_files_config": {
+                "weights_file": "../model_files/upweightends_aug10//record_26_model_C8p5L_modelWeights.h5",
+                "json_file": "../model_files/upweightends_aug10//record_26_model_C8p5L_modelJson.json",
+                "directory": "../model_files/upweightends_aug10/",
+                "prefix": "model_C8p5L"
+            },
+            "model_creator_info": {
+                "input_names": [
+                    "sequence"
+                ],
+                "shared_layers_config": {},
+                "nodes_config": {
+                    "sequence": {
+                        "layer": {
+                            "class": "keras.layers.Input",
+                            "kwargs": {
+                                "shape": [
+                                    145,
+                                    4
+                                ]
+                            }
+                        }
+                    },
+                    "conv1": {
+                        "layer": {
+                            "class": "keras.layers.convolutional.Convolution1D",
+                            "kwargs": {
+                                "nb_filter": 120,
+                                "filter_length": 5
+                            }
+                        },
+                        "input_node_names": "sequence"
+                    },
+                    "conv1_act": {
+                        "layer": {
+                            "class": "keras.layers.core.Activation",
+                            "kwargs": {
+                                "activation": "relu"
+                            }
+                        },
+                        "input_node_names": "conv1"
+                    },
+                    "conv1_batchnorm": {
+                        "layer": {
+                            "class": "keras.layers.normalization.BatchNormalization",
+                            "kwargs": {
+                                "axis": -1
+                            }
+                        },
+                        "input_node_names": "conv1_act"
+                    },
+                    "conv1_dropout": {
+                        "layer": {
+                            "class": "keras.layers.core.Dropout",
+                            "kwargs": {
+                                "p": 0.1
+                            }
+                        },
+                        "input_node_names": "conv1_batchnorm"
+                    },
+                    "conv2": {
+                        "layer": {
+                            "class": "keras.layers.convolutional.Convolution1D",
+                            "kwargs": {
+                                "nb_filter": 120,
+                                "filter_length": 5
+                            }
+                        },
+                        "input_node_names": "conv1_batchnorm"
+                    },
+                    "conv2_act": {
+                        "layer": {
+                            "class": "keras.layers.core.Activation",
+                            "kwargs": {
+                                "activation": "relu"
+                            }
+                        },
+                        "input_node_names": "conv2"
+                    },
+                    "conv2_batchnorm": {
+                        "layer": {
+                            "class": "keras.layers.normalization.BatchNormalization",
+                            "kwargs": {
+                                "axis": -1
+                            }
+                        },
+                        "input_node_names": "conv2_act"
+                    },
+                    "conv2_dropout": {
+                        "layer": {
+                            "class": "keras.layers.core.Dropout",
+                            "kwargs": {
+                                "p": 0.1
+                            }
+                        },
+                        "input_node_names": "conv2_batchnorm"
+                    },
+                    "conv3": {
+                        "layer": {
+                            "class": "keras.layers.convolutional.Convolution1D",
+                            "kwargs": {
+                                "nb_filter": 120,
+                                "filter_length": 5
+                            }
+                        },
+                        "input_node_names": "conv2_dropout"
+                    },
+                    "conv3_act": {
+                        "layer": {
+                            "class": "keras.layers.core.Activation",
+                            "kwargs": {
+                                "activation": "relu"
+                            }
+                        },
+                        "input_node_names": "conv3"
+                    },
+                    "conv3_batchnorm": {
+                        "layer": {
+                            "class": "keras.layers.normalization.BatchNormalization",
+                            "kwargs": {
+                                "axis": -1
+                            }
+                        },
+                        "input_node_names": "conv3_act"
+                    },
+                    "conv3_dropout": {
+                        "layer": {
+                            "class": "keras.layers.core.Dropout",
+                            "kwargs": {
+                                "p": 0.1
+                            }
+                        },
+                        "input_node_names": "conv3_batchnorm"
+                    },
+                    "flatten": {
+                        "layer": {
+                            "class": "keras.layers.core.Flatten",
+                            "kwargs": {}
+                        },
+                        "input_node_names": "conv3_dropout"
+                    },
+                    "k562_minp_rep1": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "k562_minp_rep2": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "k562_minp_avg": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "k562_sv40p_rep1": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "k562_sv40p_rep2": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "k562_sv40p_avg": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "hepg2_minp_rep1": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "hepg2_minp_rep2": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "hepg2_minp_avg": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "hepg2_sv40p_rep1": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "hepg2_sv40p_rep2": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "hepg2_sv40p_avg": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    }
+                },
+                "output_names": [
+                    "k562_minp_rep1",
+                    "k562_minp_rep2",
+                    "k562_minp_avg",
+                    "k562_sv40p_rep1",
+                    "k562_sv40p_rep2",
+                    "k562_sv40p_avg",
+                    "hepg2_minp_rep1",
+                    "hepg2_minp_rep2",
+                    "hepg2_minp_avg",
+                    "hepg2_sv40p_rep1",
+                    "hepg2_sv40p_rep2",
+                    "hepg2_sv40p_avg"
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": "2e-4"
+                    }
+                },
+                "loss_dictionary": {
+                    "k562_minp_rep1": "mean_squared_error",
+                    "k562_minp_rep2": "mean_squared_error",
+                    "k562_minp_avg": "mean_squared_error",
+                    "k562_sv40p_rep1": "mean_squared_error",
+                    "k562_sv40p_rep2": "mean_squared_error",
+                    "k562_sv40p_avg": "mean_squared_error",
+                    "hepg2_minp_rep1": "mean_squared_error",
+                    "hepg2_minp_rep2": "mean_squared_error",
+                    "hepg2_minp_avg": "mean_squared_error",
+                    "hepg2_sv40p_rep1": "mean_squared_error",
+                    "hepg2_sv40p_rep2": "mean_squared_error",
+                    "hepg2_sv40p_avg": "mean_squared_error"
+                }
+            },
+            "other_data_loaders_info": {
+                "train": {
+                    "batch_size": 500,
+                    "num_to_load_for_eval": 100000,
+                    "bundle_x_and_y_in_generator": false,
+                    "strip_enclosing_dictionary": false,
+                    "path_to_hdf5": "../hdf5files/upweightends_aug10/train_data.hdf5"
+                }
+            },
+            "model_trainer_info": {
+                "seed": 1234,
+                "samples_per_epoch": 200000,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 300,
+                        "epochs_to_wait": 20
+                    }
+                },
+                "class_weight": null
+            },
+            "training_metadata": {
+                "termination_condition": "normal",
+                "total_epochs_trained_for": 56
+            }
+        },
+        {
+            "record_number": 25,
+            "message": "Functional model with weights",
+            "best_valid_key_metric": 0.16983081099111488,
+            "best_valid_perf_info": {
+                "epoch": 144,
+                "valid_key_metric": 0.16983081099111488,
+                "train_key_metric": 0.22036927161997577,
+                "valid_all_stats": {
+                    "per_output_spearman_corr": {
+                        "hepg2_minp_avg": [
+                            0.18123196471834602
+                        ],
+                        "hepg2_minp_rep1": [
+                            0.18447760054569753
+                        ],
+                        "hepg2_minp_rep2": [
+                            0.14488325756655118
+                        ],
+                        "hepg2_sv40p_avg": [
+                            0.16535196605455732
+                        ],
+                        "hepg2_sv40p_rep1": [
+                            0.15548791658044608
+                        ],
+                        "hepg2_sv40p_rep2": [
+                            0.1400713016464782
+                        ],
+                        "k562_minp_avg": [
+                            0.28551282839420183
+                        ],
+                        "k562_minp_rep1": [
+                            0.21625855742434255
+                        ],
+                        "k562_minp_rep2": [
+                            0.2754671442998736
+                        ],
+                        "k562_sv40p_avg": [
+                            0.10420031006719976
+                        ],
+                        "k562_sv40p_rep1": [
+                            0.09679023870635435
+                        ],
+                        "k562_sv40p_rep2": [
+                            0.08823664588933028
+                        ]
+                    },
+                    "mean_spearman_corr": 0.16983081099111488,
+                    "per_output_pearson_corr": {
+                        "hepg2_minp_avg": [
+                            0.2091819941997528
+                        ],
+                        "hepg2_minp_rep1": [
+                            0.2045375406742096
+                        ],
+                        "hepg2_minp_rep2": [
+                            0.1721000224351883
+                        ],
+                        "hepg2_sv40p_avg": [
+                            0.191178098320961
+                        ],
+                        "hepg2_sv40p_rep1": [
+                            0.17750762403011322
+                        ],
+                        "hepg2_sv40p_rep2": [
+                            0.15744711458683014
+                        ],
+                        "k562_minp_avg": [
+                            0.30203554034233093
+                        ],
+                        "k562_minp_rep1": [
+                            0.23749369382858276
+                        ],
+                        "k562_minp_rep2": [
+                            0.29093092679977417
+                        ],
+                        "k562_sv40p_avg": [
+                            0.11910504847764969
+                        ],
+                        "k562_sv40p_rep1": [
+                            0.10539321601390839
+                        ],
+                        "k562_sv40p_rep2": [
+                            0.10402526706457138
+                        ]
+                    },
+                    "mean_pearson_corr": 0.1892446738978227,
+                    "per_output_mean_squared_error": {
+                        "hepg2_minp_avg": [
+                            1.1081011295318604
+                        ],
+                        "hepg2_minp_rep1": [
+                            1.156429648399353
+                        ],
+                        "hepg2_minp_rep2": [
+                            1.0334904193878174
+                        ],
+                        "hepg2_sv40p_avg": [
+                            1.0258744955062866
+                        ],
+                        "hepg2_sv40p_rep1": [
+                            0.9966973066329956
+                        ],
+                        "hepg2_sv40p_rep2": [
+                            1.0936399698257446
+                        ],
+                        "k562_minp_avg": [
+                            1.1704319715499878
+                        ],
+                        "k562_minp_rep1": [
+                            1.0209236145019531
+                        ],
+                        "k562_minp_rep2": [
+                            1.245507836341858
+                        ],
+                        "k562_sv40p_avg": [
+                            1.0005910396575928
+                        ],
+                        "k562_sv40p_rep1": [
+                            1.0522255897521973
+                        ],
+                        "k562_sv40p_rep2": [
+                            0.9745806455612183
+                        ]
+                    },
+                    "mean_mean_squared_error": 1.0732078055540721
+                }
+            },
+            "training_metadata": {
+                "termination_condition": "normal",
+                "total_epochs_trained_for": 164
+            },
+            "other_data_loaders_info": {
+                "train": {
+                    "batch_size": 500,
+                    "num_to_load_for_eval": 100000,
+                    "bundle_x_and_y_in_generator": false,
+                    "strip_enclosing_dictionary": false,
+                    "path_to_hdf5": "../hdf5files/upweightends_aug10/train_data.hdf5"
+                }
+            },
+            "model_trainer_info": {
+                "seed": 1234,
+                "samples_per_epoch": 200000,
+                "stopping_criterion_config": {
+                    "class": "EarlyStopping",
+                    "kwargs": {
+                        "max_epochs": 300,
+                        "epochs_to_wait": 20
+                    }
+                },
+                "class_weight": null
+            },
+            "model_creator_info": {
+                "input_names": [
+                    "sequence"
+                ],
+                "shared_layers_config": {},
+                "nodes_config": {
+                    "sequence": {
+                        "layer": {
+                            "class": "keras.layers.Input",
+                            "kwargs": {
+                                "shape": [
+                                    145,
+                                    4
+                                ]
+                            }
+                        }
+                    },
+                    "conv1": {
+                        "layer": {
+                            "class": "keras.layers.convolutional.Convolution1D",
+                            "kwargs": {
+                                "nb_filter": 120,
+                                "filter_length": 5
+                            }
+                        },
+                        "input_node_names": "sequence"
+                    },
+                    "conv1_act": {
+                        "layer": {
+                            "class": "keras.layers.core.Activation",
+                            "kwargs": {
+                                "activation": "relu"
+                            }
+                        },
+                        "input_node_names": "conv1"
+                    },
+                    "conv1_batchnorm": {
+                        "layer": {
+                            "class": "keras.layers.normalization.BatchNormalization",
+                            "kwargs": {
+                                "axis": -1
+                            }
+                        },
+                        "input_node_names": "conv1_act"
+                    },
+                    "conv1_dropout": {
+                        "layer": {
+                            "class": "keras.layers.core.Dropout",
+                            "kwargs": {
+                                "p": 0.1
+                            }
+                        },
+                        "input_node_names": "conv1_batchnorm"
+                    },
+                    "conv2": {
+                        "layer": {
+                            "class": "keras.layers.convolutional.Convolution1D",
+                            "kwargs": {
+                                "nb_filter": 120,
+                                "filter_length": 5
+                            }
+                        },
+                        "input_node_names": "conv1_batchnorm"
+                    },
+                    "conv2_act": {
+                        "layer": {
+                            "class": "keras.layers.core.Activation",
+                            "kwargs": {
+                                "activation": "relu"
+                            }
+                        },
+                        "input_node_names": "conv2"
+                    },
+                    "conv2_batchnorm": {
+                        "layer": {
+                            "class": "keras.layers.normalization.BatchNormalization",
+                            "kwargs": {
+                                "axis": -1
+                            }
+                        },
+                        "input_node_names": "conv2_act"
+                    },
+                    "conv2_dropout": {
+                        "layer": {
+                            "class": "keras.layers.core.Dropout",
+                            "kwargs": {
+                                "p": 0.1
+                            }
+                        },
+                        "input_node_names": "conv2_batchnorm"
+                    },
+                    "conv3": {
+                        "layer": {
+                            "class": "keras.layers.convolutional.Convolution1D",
+                            "kwargs": {
+                                "nb_filter": 120,
+                                "filter_length": 5
+                            }
+                        },
+                        "input_node_names": "conv2_dropout"
+                    },
+                    "conv3_act": {
+                        "layer": {
+                            "class": "keras.layers.core.Activation",
+                            "kwargs": {
+                                "activation": "relu"
+                            }
+                        },
+                        "input_node_names": "conv3"
+                    },
+                    "conv3_batchnorm": {
+                        "layer": {
+                            "class": "keras.layers.normalization.BatchNormalization",
+                            "kwargs": {
+                                "axis": -1
+                            }
+                        },
+                        "input_node_names": "conv3_act"
+                    },
+                    "conv3_dropout": {
+                        "layer": {
+                            "class": "keras.layers.core.Dropout",
+                            "kwargs": {
+                                "p": 0.1
+                            }
+                        },
+                        "input_node_names": "conv3_batchnorm"
+                    },
+                    "flatten": {
+                        "layer": {
+                            "class": "keras.layers.core.Flatten",
+                            "kwargs": {}
+                        },
+                        "input_node_names": "conv3_dropout"
+                    },
+                    "k562_minp_rep1": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "k562_minp_rep2": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "k562_minp_avg": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "k562_sv40p_rep1": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "k562_sv40p_rep2": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "k562_sv40p_avg": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "hepg2_minp_rep1": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "hepg2_minp_rep2": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "hepg2_minp_avg": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "hepg2_sv40p_rep1": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "hepg2_sv40p_rep2": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    },
+                    "hepg2_sv40p_avg": {
+                        "layer": {
+                            "class": "keras.layers.core.Dense",
+                            "kwargs": {
+                                "output_dim": 1,
+                                "activation": "linear"
+                            }
+                        },
+                        "input_node_names": "flatten"
+                    }
+                },
+                "output_names": [
+                    "k562_minp_rep1",
+                    "k562_minp_rep2",
+                    "k562_minp_avg",
+                    "k562_sv40p_rep1",
+                    "k562_sv40p_rep2",
+                    "k562_sv40p_avg",
+                    "hepg2_minp_rep1",
+                    "hepg2_minp_rep2",
+                    "hepg2_minp_avg",
+                    "hepg2_sv40p_rep1",
+                    "hepg2_sv40p_rep2",
+                    "hepg2_sv40p_avg"
+                ],
+                "optimizer_config": {
+                    "class": "keras.optimizers.Adam",
+                    "kwargs": {
+                        "lr": "8e-6"
+                    }
+                },
+                "loss_dictionary": {
+                    "k562_minp_rep1": "mean_squared_error",
+                    "k562_minp_rep2": "mean_squared_error",
+                    "k562_minp_avg": "mean_squared_error",
+                    "k562_sv40p_rep1": "mean_squared_error",
+                    "k562_sv40p_rep2": "mean_squared_error",
+                    "k562_sv40p_avg": "mean_squared_error",
+                    "hepg2_minp_rep1": "mean_squared_error",
+                    "hepg2_minp_rep2": "mean_squared_error",
+                    "hepg2_minp_avg": "mean_squared_error",
+                    "hepg2_sv40p_rep1": "mean_squared_error",
+                    "hepg2_sv40p_rep2": "mean_squared_error",
+                    "hepg2_sv40p_avg": "mean_squared_error"
+                }
+            },
+            "key_metric_history": [
+                [
+                    "train",
+                    "valid"
+                ],
+                [
+                    0.009202538116570572,
+                    0.0047991678772916
+                ],
+                [
+                    0.02408477577891231,
+                    0.013706249453552031
+                ],
+                [
+                    0.019056492402683287,
+                    0.012667608970181932
+                ],
+                [
+                    0.03322250782740767,
+                    0.026845104089519952
+                ],
+                [
+                    0.03280558658544173,
+                    0.02276857929076277
+                ],
+                [
+                    0.036501562481275944,
+                    0.025898247865058538
+                ],
+                [
+                    0.05796647467859419,
+                    0.03213598606760756
+                ],
+                [
+                    0.05169982030724188,
+                    0.03875097434780542
+                ],
+                [
+                    0.07593407076473714,
+                    0.04650376575799902
+                ],
+                [
+                    0.058754418796012904,
+                    0.04810114526026064
+                ],
+                [
+                    0.072381704072358,
+                    0.051615882098162175
+                ],
+                [
+                    0.05361067842535961,
+                    0.04904420159833641
+                ],
+                [
+                    0.07037601134935757,
+                    0.06455506961876899
+                ],
+                [
+                    0.04710860570575127,
+                    0.04584226043922381
+                ],
+                [
+                    0.06890102842389106,
+                    0.044706427867972916
+                ],
+                [
+                    0.10333854907970602,
+                    0.06661580527374202
+                ],
+                [
+                    0.07675945123000995,
+                    0.06256542684293417
+                ],
+                [
+                    0.12276121214252371,
+                    0.07766277877985762
+                ],
+                [
+                    0.08680518174712915,
+                    0.07043414699055643
+                ],
+                [
+                    0.09473415930683989,
+                    0.07881543038862972
+                ],
+                [
+                    0.1101292297752885,
+                    0.07719547754720517
+                ],
+                [
+                    0.112049251224189,
+                    0.08292406758129546
+                ],
+                [
+                    0.056280651298059176,
+                    0.0592221246254851
+                ],
+                [
+                    0.07742176891147119,
+                    0.0562373704626452
+                ],
+                [
+                    0.13826107634880588,
+                    0.09313573405810621
+                ],
+                [
+                    0.10513751264748972,
+                    0.08724386326497545
+                ],
+                [
+                    0.13170510718700393,
+                    0.08787577424592168
+                ],
+                [
+                    0.09891078605842306,
+                    0.07596177614162421
+                ],
+                [
+                    0.11673128567729796,
+                    0.0802438023999724
+                ],
+                [
+                    0.15730060121299969,
+                    0.09256433064072896
+                ],
+                [
+                    0.13045317796510794,
+                    0.09664425910141357
+                ],
+                [
+                    0.12277386082927488,
+                    0.1011342434334576
+                ],
+                [
+                    0.12214309107851899,
+                    0.09015085248240488
+                ],
+                [
+                    0.1499807542454697,
+                    0.10447087623859998
+                ],
+                [
+                    0.11285067246869147,
+                    0.1032142312983933
+                ],
+                [
+                    0.13889533589562691,
+                    0.09069083790566164
+                ],
+                [
+                    0.12271543726680274,
+                    0.09388935428625395
+                ],
+                [
+                    0.13342849639681573,
+                    0.09480772768124744
+                ],
+                [
+                    0.17111991307967764,
+                    0.095600074895058
+                ],
+                [
+                    0.14185254766497732,
+                    0.1098124993609129
+                ],
+                [
+                    0.15565745678046813,
+                    0.09852620736054786
+                ],
+                [
+                    0.13276300391531595,
+                    0.10401433114500212
+                ],
+                [
+                    0.16053643092087025,
+                    0.11704585775197601
+                ],
+                [
+                    0.12076995790380397,
+                    0.1135794775132396
+                ],
+                [
+                    0.14368754856286323,
+                    0.11169481444926067
+                ],
+                [
+                    0.08587166043949822,
+                    0.07976185828247963
+                ],
+                [
+                    0.1324255949813891,
+                    0.09216595430937609
+                ],
+                [
+                    0.1644319022399289,
+                    0.11129290759742834
+                ],
+                [
+                    0.14817272860544542,
+                    0.12437704671255555
+                ],
+                [
+                    0.1684379520863716,
+                    0.11703127381068108
+                ],
+                [
+                    0.14355100234234766,
+                    0.1070790668125751
+                ],
+                [
+                    0.15397620285034402,
+                    0.11419798719245629
+                ],
+                [
+                    0.15847419177324368,
+                    0.12053665476277081
+                ],
+                [
+                    0.15925589699773404,
+                    0.11531285173142826
+                ],
+                [
+                    0.10429903484630561,
+                    0.10382998575502606
+                ],
+                [
+                    0.10862179534722372,
+                    0.07333074936701725
+                ],
+                [
+                    0.18057271679631096,
+                    0.12425663190471364
+                ],
+                [
+                    0.14724285871652393,
+                    0.12127515591378894
+                ],
+                [
+                    0.16624832145069865,
+                    0.11668828488777411
+                ],
+                [
+                    0.13697405061556062,
+                    0.116875008120582
+                ],
+                [
+                    0.16629039010051969,
+                    0.12125690756637346
+                ],
+                [
+                    0.1857181241816702,
+                    0.12831222588583677
+                ],
+                [
+                    0.16462735168628048,
+                    0.11590175020094101
+                ],
+                [
+                    0.15856590581809513,
+                    0.1323354165940793
+                ],
+                [
+                    0.16152407660652118,
+                    0.11710406685236309
+                ],
+                [
+                    0.1888865566496595,
+                    0.13494056329684392
+                ],
+                [
+                    0.15479904186512697,
+                    0.13398772109190385
+                ],
+                [
+                    0.17547396770810544,
+                    0.12280121352512514
+                ],
+                [
+                    0.16701609941270756,
+                    0.1319285136669387
+                ],
+                [
+                    0.1881159843785849,
+                    0.13121319117473645
+                ],
+                [
+                    0.19711716661830314,
+                    0.1312528910126336
+                ],
+                [
+                    0.18322416191847044,
+                    0.1417462736204639
+                ],
+                [
+                    0.1800022605231674,
+                    0.12392332164328713
+                ],
+                [
+                    0.1772656025359481,
+                    0.13204915002162068
+                ],
+                [
+                    0.1933933086221894,
+                    0.14256573796184716
+                ],
+                [
+                    0.14618240476230646,
+                    0.13291266319569905
+                ],
+                [
+                    0.18119944232904098,
+                    0.1383404900407246
+                ],
+                [
+                    0.12307944137319365,
+                    0.10732654027030593
+                ],
+                [
+                    0.18575651045243435,
+                    0.13039564906687567
+                ],
+                [
+                    0.16453436127741997,
+                    0.12898580814133045
+                ],
+                [
+                    0.183013388178873,
+                    0.14897560980521837
+                ],
+                [
+                    0.1896150981824878,
+                    0.1391956328240454
+                ],
+                [
+                    0.1787215562739204,
+                    0.13901838520871987
+                ],
+                [
+                    0.18446557892482932,
+                    0.12822442235690643
+                ],
+                [
+                    0.18286946143312952,
+                    0.14646581952242252
+                ],
+                [
+                    0.19236921306682866,
+                    0.1368205316945555
+                ],
+                [
+                    0.13761939242170537,
+                    0.13141156460290412
+                ],
+                [
+                    0.15706376944953632,
+                    0.1122809094018062
+                ],
+                [
+                    0.20469924903056322,
+                    0.1438393573857597
+                ],
+                [
+                    0.17556638094227564,
+                    0.1438610548843632
+                ],
+                [
+                    0.1930279689610954,
+                    0.14153297779310234
+                ],
+                [
+                    0.16127567012587743,
+                    0.13682444322920656
+                ],
+                [
+                    0.1984386690869123,
+                    0.14625750348641908
+                ],
+                [
+                    0.20267748203459912,
+                    0.14439014262708336
+                ],
+                [
+                    0.18469450701630277,
+                    0.12445055923189229
+                ],
+                [
+                    0.17661320893340612,
+                    0.1454207648184499
+                ],
+                [
+                    0.1952400764117934,
+                    0.1432306470221088
+                ],
+                [
+                    0.21070676118978549,
+                    0.15112273330491285
+                ],
+                [
+                    0.17908650693413106,
+                    0.15030717801618249
+                ],
+                [
+                    0.1960689214412724,
+                    0.14066144998548952
+                ],
+                [
+                    0.18943207097050405,
+                    0.14830424340368534
+                ],
+                [
+                    0.2095262343379987,
+                    0.14855701575980865
+                ],
+                [
+                    0.21109609830561724,
+                    0.15580725776162
+                ],
+                [
+                    0.20261889607465555,
+                    0.15332548876541258
+                ],
+                [
+                    0.19194663330030703,
+                    0.1300086794880451
+                ],
+                [
+                    0.19967764788506645,
+                    0.14906832084968816
+                ],
+                [
+                    0.2058862402824151,
+                    0.1466910917287287
+                ],
+                [
+                    0.16568778140367818,
+                    0.1447554197723074
+                ],
+                [
+                    0.20349937875936538,
+                    0.15208262451673618
+                ],
+                [
+                    0.15928822122862465,
+                    0.13572769046284464
+                ],
+                [
+                    0.21672987387267348,
+                    0.1536625277788054
+                ],
+                [
+                    0.15861235537536014,
+                    0.13042378062144952
+                ],
+                [
+                    0.20394994532877656,
+                    0.16214265676837422
+                ],
+                [
+                    0.20158240924572768,
+                    0.1436195961369624
+                ],
+                [
+                    0.20254388292818262,
+                    0.15271883436629305
+                ],
+                [
+                    0.20060153246627674,
+                    0.13160408618897676
+                ],
+                [
+                    0.19291110109326073,
+                    0.15757180527876172
+                ],
+                [
+                    0.2138555078019165,
+                    0.15392671938037356
+                ],
+                [
+                    0.168598887120739,
+                    0.15222178363384978
+                ],
+                [
+                    0.20615644036095196,
+                    0.14731071771612533
+                ],
+                [
+                    0.2259241851835273,
+                    0.1556312945495835
+                ],
+                [
+                    0.1946170685123977,
+                    0.15573948654457712
+                ],
+                [
+                    0.21104226140084814,
+                    0.15069295885301306
+                ],
+                [
+                    0.1804088093899274,
+                    0.1534543470669292
+                ],
+                [
+                    0.22013772647734722,
+                    0.16124273582445717
+                ],
+                [
+                    0.21292768582508867,
+                    0.1477935816360034
+                ],
+                [
+                    0.20392665243470395,
+                    0.1348114899761703
+                ],
+                [
+                    0.19182606389413762,
+                    0.15555571300269905
+                ],
+                [
+                    0.21841128772242455,
+                    0.15984285250580801
+                ],
+                [
+                    0.22528163899833242,
+                    0.15966401067116412
+                ],
+                [
+                    0.19876249844476188,
+                    0.16260530142519508
+                ],
+                [
+                    0.21034796724431606,
+                    0.14771682816414533
+                ],
+                [
+                    0.20314144683429025,
+                    0.15855870515896411
+                ],
+                [
+                    0.22225909272006725,
+                    0.15651607430079906
+                ],
+                [
+                    0.21882479479994155,
+                    0.16590836382203614
+                ],
+                [
+                    0.21998290144688662,
+                    0.16202577373778693
+                ],
+                [
+                    0.2058338075158068,
+                    0.13412167834239724
+                ],
+                [
+                    0.21307262623423165,
+                    0.1554369741976791
+                ],
+                [
+                    0.22220647614881886,
+                    0.15317213005335392
+                ],
+                [
+                    0.18198572390162035,
+                    0.1486723518306453
+                ],
+                [
+                    0.21798829304869274,
+                    0.1556570902470521
+                ],
+                [
+                    0.19143304398504454,
+                    0.15666281569097446
+                ],
+                [
+                    0.23768236715549615,
+                    0.16621969038645515
+                ],
+                [
+                    0.18708863877955398,
+                    0.14899683570501773
+                ],
+                [
+                    0.22036927161997577,
+                    0.16983081099111488
+                ],
+                [
+                    0.21769217098664118,
+                    0.15433446749464783
+                ],
+                [
+                    0.21994359937668076,
+                    0.16004908418471842
+                ],
+                [
+                    0.22016680890709825,
+                    0.14103533702013527
+                ],
+                [
+                    0.19582178361805558,
+                    0.15678719419795675
+                ],
+                [
+                    0.22577966889971846,
+                    0.16261507253756924
+                ],
+                [
+                    0.19904588424070377,
+                    0.16539840355148874
+                ],
+                [
+                    0.23147539563837505,
+                    0.15970709813273923
+                ],
+                [
+                    0.23662808063890736,
+                    0.16257555137340882
+                ],
+                [
+                    0.2071123247301773,
+                    0.162177466721294
+                ],
+                [
+                    0.2256744714772483,
+                    0.15368186786741048
+                ],
+                [
+                    0.1848208808171805,
+                    0.15857481177400648
+                ],
+                [
+                    0.23231484931960425,
+                    0.16972740030269154
+                ],
+                [
+                    0.2220592637321185,
+                    0.14957422660865896
+                ],
+                [
+                    0.21563919465668072,
+                    0.13773353003071678
+                ],
+                [
+                    0.2041743070917523,
+                    0.1596592729269155
+                ],
+                [
+                    0.23282267487853583,
+                    0.16624009119534827
+                ],
+                [
+                    0.236616253679759,
+                    0.16025752945158464
+                ],
+                [
+                    0.21089025439458675,
+                    0.16597798837744207
+                ],
+                [
+                    0.22045503196860583,
+                    0.14590697680966963
+                ],
+                [
+                    0.21226512408023923,
+                    0.16449806402671038
+                ]
+            ],
+            "saved_files_config": {
+                "weights_file": "../model_files/upweightends_aug10//record_25_model_mRddh_modelWeights.h5",
+                "json_file": "../model_files/upweightends_aug10//record_25_model_mRddh_modelJson.json",
+                "directory": "../model_files/upweightends_aug10/",
+                "prefix": "model_mRddh"
             }
         },
         {

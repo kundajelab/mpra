@@ -25,9 +25,9 @@ for idx in range(3, weightMatrix.shape[1], 3):
     weightMatrix[:, idx] = 1 - 2*(1 - weightMatrix[:, idx].astype(np.float))
     # Upweight repressive fragments
     repressiveFragments = dataMatrix[1:, 18+idx].astype(np.float) < -1 
-    weightMatrix[:, idx][repressiveFragments] = 1.3*weightMatrix[:, idx][repressiveFragments]
+    weightMatrix[:, idx][repressiveFragments] = 1*weightMatrix[:, idx][repressiveFragments]
     # Upweight the more "extreme" fragments to prevent the model from just predicting the mean
-    extremeFragments = np.abs(dataMatrix[1:, 18+idx].astype(np.float)) > 0
+    extremeFragments = np.abs(dataMatrix[1:, 18+idx].astype(np.float)) > 30
     weightMatrix[:, idx][extremeFragments] = weightMatrix[:, idx][extremeFragments] * np.square(dataMatrix[1:, 18+idx][extremeFragments].astype(np.float))
     # Set all middle examples to weight 0 just to sanity check that weighting is working
     #  middleFragments = np.abs(dataMatrix[1:, 18+idx].astype(np.float)) >= 0
@@ -40,7 +40,7 @@ for idx in range(3, weightMatrix.shape[1], 3):
 
 weightMatrix = weightMatrix.astype("string")
 
-weightFile = open(os.environ.get("DL") + "/weights/upweightends_aug10/replicatequality_repressive_squaredmagnitude.txt", 'w')
+weightFile = open(os.environ.get("DL") + "/weights/upweightends_aug10/replicatequality_only.txt", 'w')
 weightFile.write(header + '\n')
 
 for fragment in weightMatrix:

@@ -82,7 +82,7 @@ for (i, line) in enumerate(dataMatrix):
         if chrom in train_chrs:
             trainSplit.write(fragmentName + '\n')
             counts[0] += 1
-        if chrom in val_chrs and ori == 'n' and useData: # for val, don't get the revcomp sequence too
+        if chrom in val_chrs and ori == 'n' and (useData or not useData): # for val, don't get the revcomp sequence too
             valSplit.write(fragmentName + '\n')
             counts[1] += 1
         if chrom in test_chrs and ori in 'n':
