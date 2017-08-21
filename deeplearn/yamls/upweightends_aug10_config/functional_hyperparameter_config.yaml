@@ -5,7 +5,7 @@
             "class": "hdf5_data_loader.MultimodalBatchDataLoader",
             "kwargs": {
                 "batch_size": 500,
-                "use_weights": True,
+                "use_weights": False,
                 "path_to_hdf5": "../hdf5files/upweightends_aug10/train_data.hdf5",
                 "num_to_load_for_eval": 100000,
                 "strip_enclosing_dictionary": False,
@@ -272,17 +272,29 @@
                 "kwargs": {"lr": 8e-6}
             },
             "loss_dictionary": {
-                "k562_minp_rep1": "mean_squared_error", 
-                "k562_minp_rep2": "mean_squared_error", 
+                # "k562_minp_rep1": "mean_absolute_error", 
+                # "k562_minp_rep2": "mean_absolute_error", 
+                # "k562_minp_avg": "mean_absolute_error",
+                # "k562_sv40p_rep1": "mean_absolute_error", 
+                # "k562_sv40p_rep2": "mean_absolute_error", 
+                # "k562_sv40p_avg": "mean_absolute_error",
+                # "hepg2_minp_rep1": "mean_absolute_error", 
+                # "hepg2_minp_rep2": "mean_absolute_error", 
+                # "hepg2_minp_avg": "mean_absolute_error",
+                # "hepg2_sv40p_rep1": "mean_absolute_error", 
+                # "hepg2_sv40p_rep2": "mean_absolute_error", 
+                # "hepg2_sv40p_avg": "mean_absolute_error"
+                "k562_minp_rep1": "mean_squared_error",
+                "k562_minp_rep2": "mean_squared_error",
                 "k562_minp_avg": "mean_squared_error",
-                "k562_sv40p_rep1": "mean_squared_error", 
-                "k562_sv40p_rep2": "mean_squared_error", 
+                "k562_sv40p_rep1": "mean_squared_error",
+                "k562_sv40p_rep2": "mean_squared_error",
                 "k562_sv40p_avg": "mean_squared_error",
-                "hepg2_minp_rep1": "mean_squared_error", 
-                "hepg2_minp_rep2": "mean_squared_error", 
+                "hepg2_minp_rep1": "mean_squared_error",
+                "hepg2_minp_rep2": "mean_squared_error",
                 "hepg2_minp_avg": "mean_squared_error",
-                "hepg2_sv40p_rep1": "mean_squared_error", 
-                "hepg2_sv40p_rep2": "mean_squared_error", 
+                "hepg2_sv40p_rep1": "mean_squared_error",
+                "hepg2_sv40p_rep2": "mean_squared_error",
                 "hepg2_sv40p_avg": "mean_squared_error"
             }
         }
@@ -300,7 +312,7 @@
             }
         }
     },
-    "message": "Functional model with weights"
+    "message": "Functional model without weights, mean squared error"
 },
 {
     "other_data_loaders":{
@@ -572,7 +584,7 @@
                              "hepg2_sv40p_rep1", "hepg2_sv40p_rep2", "hepg2_sv40p_avg"],
             "optimizer_config": {
                 "class": "keras.optimizers.Adam",
-                "kwargs": {"lr": 2e-4}
+                "kwargs": {"lr": 6e-5}
             },
             "loss_dictionary": {
                 "k562_minp_rep1": "mean_squared_error", 
@@ -603,6 +615,6 @@
             }
         }
     },
-    "message": "Functional model with use_weights set to False"
+    "message": "Functional model without weights, mean squared error"
 }
 ]

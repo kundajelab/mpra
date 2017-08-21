@@ -98,7 +98,7 @@ for rna_file in rna_files:
         total_dna_rna_read_counts['rna'][design][celltype][promoter][replicate] += read_count + PSEUDOCOUNT
     f.close()
 
-dataMatrix = open(data_path + "/processed_data/sharprFullDataMatrixLfc.tsv", 'w')
+dataMatrix = open(data_path + "/processed_data/sharprFullDataMatrixLfcPooled.tsv", 'w')
 print("Creating data matrix at path " + data_path + "/processed_data/sharprFullDataMatrixLfc.tsv")
 dataMatrix.write("name\tchrom\tcenter_coord\tsequence\tbarcode\tchromatin_state\tdesign\t" +
                  "k562_minp_rep1_count\tk562_minp_rep2_count\tk562_minp_avg_count\t" + 
@@ -130,6 +130,8 @@ from scipy.stats import rankdata
     #  data_normed = np.array([np.take(average_by_rank, ranks) for ranks in data_ranked])
     #  return data_normed
 
+pooled = True
+
 for (i, seq_name) in enumerate(names_to_info.keys()):
     if i in print_levels:
         print("On fragment " + str(i) + " / " + str(num_fragments))
@@ -151,7 +153,14 @@ for (i, seq_name) in enumerate(names_to_info.keys()):
                                 #  np.log2(total_dna_rna_read_counts['dna'][design][p]))
         if rep == 'avg':
             seq_labels[j] = (seq_labels[j-2] + seq_labels[j-1]) / 2.0
-            seq_labels[j+12] = (seq_labels[j+10] + seq_labels[j+11]) / 2.0
+            if pooled:
+                rna_count_rep1 = rna_reads[design][ct][p]['rep1'][seq_name]
+                rna_count_rep2 = rna_reads[design][ct][p]['rep2'][seq_name]
+                dna_count = dna_reads[design][p][seq_name]
+                seq_labels[j+12] = (np.log2(rna_count_rep1 + rna_count_rep2 + 1) -
+                                    np.log2(dna_count + 1))
+            else:
+                seq_labels[j+12] = (seq_labels[j+10] + seq_labels[j+11]) / 2.0
         j += 1
     dataMatrix.write('\t'.join(seq_labels.astype('string')) + '\t')
     dataMatrix.write(str(dna_reads[design]['minp'][seq_name]) + '\t' +
