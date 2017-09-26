@@ -56,7 +56,7 @@ def jointplot(vals1, vals2, out_pdf,
         cor_func = None
     
     if kde:
-        g = sns.jointplot(vals1, vals2, color=color, space=0, stat_func=None, joint_kws={'alpha':alpha, 's':point_size, 'edgecolor':'black'},
+        g = sns.jointplot(vals1, vals2, space=0, stat_func=None, joint_kws={'alpha':alpha, 's':point_size, 'edgecolor':'black', 'c': color},
                           size = figsize, ratio = ratio,
                           marginal_kws={'kde': True, 'hist': False, 'kde_kws': {'shade': True, 'bw': bw}}) 
     else:

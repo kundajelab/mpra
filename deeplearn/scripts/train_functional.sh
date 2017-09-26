@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-CONFIGPATH="../yamls/upweightends_aug10_config"
+CONFIGPATH="../yamls/counts_poisson_sep7_config"
 momma_dragonn_train --valid_data_loader_config\
  $CONFIGPATH/valid_data_loader_config.yaml\
  --evaluator_config $CONFIGPATH/evaluator_config.yaml\

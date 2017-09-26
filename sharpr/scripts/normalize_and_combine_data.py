@@ -152,7 +152,7 @@ for (i, seq_name) in enumerate(names_to_info.keys()):
                                 #  np.log2(total_dna_rna_read_counts['rna'][design][ct][p][rep]) + 
                                 #  np.log2(total_dna_rna_read_counts['dna'][design][p]))
         if rep == 'avg':
-            seq_labels[j] = (seq_labels[j-2] + seq_labels[j-1]) / 2.0
+            seq_labels[j] = (seq_labels[j-2] + seq_labels[j-1]) # / 2.0
             if pooled:
                 rna_count_rep1 = rna_reads[design][ct][p]['rep1'][seq_name]
                 rna_count_rep2 = rna_reads[design][ct][p]['rep2'][seq_name]
