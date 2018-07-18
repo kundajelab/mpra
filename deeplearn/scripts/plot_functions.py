@@ -100,30 +100,46 @@ def jointplot(vals1, vals2, out_pdf,
         ax.set_ylim(ymin,ymax)
     
     corLocX = 0.05
-    corLocY = 0.89
+    corLocY = 0.9
     annotLocX = 1 - corLocX
     annotLocY = 1 - corLocY
+    corAlign = 'left'
+    annotAlign = 'right'
     
-    if flipAnnotation:
+    if flipAnnotations:
         corLocX = annotLocX
         corLocY = annotLocY
         annotLocX = 1 - corLocX
         annotLocY = 1 - corLocY
+        corAlign = 'right'
+        annotAlign = 'left'
         
     if cor_func is spearmanr:
-        ax.text(corLocX, corLocY, 'Spearman R = %.3f\nP-value = %.1E' % (corr, pval),
-                ha = 'left', va = 'center',
-                transform = ax.transAxes,
-                fontsize=axfont)
+        if pval < 1e-300:
+            ax.text(corLocX, corLocY, 'Spearman R = %.3f\nP-value < 1E-300' % (corr),
+                    ha = corAlign, va = 'center',
+                    transform = ax.transAxes,
+                    fontsize=axfont)
+        else:
+            ax.text(corLocX, corLocY, 'Spearman R = %.3f\nP-value = %.1E' % (corr, pval),
+                    ha = corAlign, va = 'center',
+                    transform = ax.transAxes,
+                    fontsize=axfont)
     if cor_func is pearsonr:
-        ax.text(corLocX, corLocY, 'Pearson R = %.3f\nP-value = %.1E' % (corr, pval),
-                ha = 'left', va = 'center',
-                transform = ax.transAxes,
-                fontsize=axfont)
+        if pval < 1e-300:
+            ax.text(corLocX, corLocY, 'Pearson R = %.3f\nP-value < 1E-300' % (corr),
+                    ha = corAlign, va = 'center',
+                    transform = ax.transAxes,
+                    fontsize=axfont)
+        else:
+            ax.text(corLocX, corLocY, 'Pearson R = %.3f\nP-value = %.1E' % (corr, pval),
+                    ha = corAlign, va = 'center',
+                    transform = ax.transAxes,
+                    fontsize=axfont)
         
     if annot is not None:
         ax.text(annotLocX, annotLocY, annot,
-                ha = 'right', va = 'center',
+                ha = annotAlign, va = 'center',
                 transform = ax.transAxes,
                 fontsize=axfont)
 
