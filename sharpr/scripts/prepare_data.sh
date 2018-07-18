@@ -7,7 +7,7 @@ python zscore_normalize_labels.py
 echo "Creating train/val/test splits, regression labels, and sequence features"
 python create_splits_labels_features.py
 
-export RUN_NAME=weighted_jul7
+export RUN_NAME=counts_poisson_sep7
 
 echo "Gzipping files"
 gzip -f $DL/labels/labels_${RUN_NAME}.txt

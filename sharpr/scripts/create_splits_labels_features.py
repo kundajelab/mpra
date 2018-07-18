@@ -19,12 +19,12 @@ train_chrs = chrs
 train_chrs = [chrom for chrom in train_chrs if chrom not in val_chrs and chrom not in test_chrs]
 
 functional = True
-run_name = 'upweightends_aug10'
+run_name = 'counts_poisson_sep7'
 deeplearn_dir = os.environ.get("DL")
 split_path = deeplearn_dir + "/splits/" + run_name + "/"
 os.system("mkdir " + split_path)
 
-dataMatrix = open(os.environ.get("SHARPR") + "/data/processed_data/sharprFullDataMatrixLfcGaussianProjected.tsv").readlines()[1:]
+dataMatrix = open(os.environ.get("SHARPR") + "/data/processed_data/sharprFullDataMatrixZNormedLfcWCounts.tsv").readlines()[1:]
 #dataMatrix.readline()
 
 trainSplit = open(split_path + "train_split.txt", 'w')
@@ -90,7 +90,8 @@ for (i, line) in enumerate(dataMatrix):
             counts[2] += 1
     
         if chrom in train_chrs or chrom in val_chrs or chrom in test_chrs:
-            labels.write(fragmentName + '\t' + '\t'.join(line[19:31]) + '\n')
+            #  labels.write(fragmentName + '\t' + '\t'.join(line[19:31]) + '\n')
+            labels.write(fragmentName + '\t' + '\t'.join(line[7:19]) + '\n')
             
             # assign weights to each sample's avg data, according to sigmoid(1 / (rep1 - rep2))
             #  from scipy.stats import logistic

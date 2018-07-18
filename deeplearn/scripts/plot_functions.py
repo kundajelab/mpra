@@ -27,7 +27,10 @@ def jointplot(vals1, vals2, out_pdf,
               ratio=5,
               kde=True,
               bw = 'scott',
-              axlim = None
+              axlim = None,
+              hexbin = False,
+              bincount = 100,
+              title = None
               ):
 
     if table:
@@ -55,8 +58,18 @@ def jointplot(vals1, vals2, out_pdf,
     else:
         cor_func = None
     
-    if kde:
-        g = sns.jointplot(vals1, vals2, color=color, space=0, stat_func=None, joint_kws={'alpha':alpha, 's':point_size, 'edgecolor':'black'},
+    if kde and hexbin:
+        g = sns.jointplot(vals1, vals2, space=0, stat_func=None,
+                          color = color,
+                          kind = "hex",
+                          joint_kws={'bins': 'log', 'gridsize': bincount},
+                          size = figsize, ratio = ratio,
+                          marginal_kws={'kde': True, 'hist': False, 'kde_kws': {'shade': True, 'bw': bw}}) 
+    elif kde and not hexbin:
+        g = sns.jointplot(vals1, vals2, space=0, stat_func=None,
+                          color = color,
+                          kind = "scatter",
+                          joint_kws={'alpha':alpha, 's':point_size, 'edgecolor':'black'},
                           size = figsize, ratio = ratio,
                           marginal_kws={'kde': True, 'hist': False, 'kde_kws': {'shade': True, 'bw': bw}}) 
     else:
@@ -111,6 +124,8 @@ def jointplot(vals1, vals2, out_pdf,
         ax.set_ylabel(y_label, fontsize = axfont, labelpad = 10)
     if x_label is not None:
         ax.set_xlabel(x_label, fontsize = axfont, labelpad = 10)
+    if title is not None:
+        g.fig.suptitle(title, fontsize = axfont)
 
     for tick in ax.xaxis.get_major_ticks():
         tick.label.set_fontsize(tickfont)
@@ -122,7 +137,7 @@ def jointplot(vals1, vals2, out_pdf,
  
     if despine:
         sns.despine(offset=5, trim=True, ax=ax)
-
+    
     plt.savefig(out_pdf, bbox_inches='tight', dpi=dpi)
     if show == True:
         plt.show()
