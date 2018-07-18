@@ -32,7 +32,8 @@ def jointplot(vals1, vals2, out_pdf,
               bincount = 100,
               title = None,
               flipAnnotations = False,
-              annot = None
+              annot = None,
+              regline = False
               ):
 
     if table:
@@ -67,7 +68,13 @@ def jointplot(vals1, vals2, out_pdf,
                           joint_kws={'bins': 'log', 'gridsize': bincount},
                           size = figsize, ratio = ratio,
                           marginal_kws={'kde': True, 'hist': False, 'kde_kws': {'shade': True, 'bw': bw}}) 
-    elif kde and not hexbin:
+    elif kde and regline:
+        g = sns.jointplot(vals1, vals2, space=0, stat_func=None,
+                          color = color,
+                          kind = "reg",
+                          size = figsize, ratio = ratio,
+                          marginal_kws={'kde': True, 'hist': False, 'kde_kws': {'shade': True, 'bw': bw}}) 
+    elif kde and not hexbin and not regline:
         g = sns.jointplot(vals1, vals2, space=0, stat_func=None,
                           color = color,
                           kind = "scatter",
