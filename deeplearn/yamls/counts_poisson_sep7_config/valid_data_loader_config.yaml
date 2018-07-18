@@ -1,0 +1,13 @@
+
+    {
+        "class": "hdf5_data_loader.MultimodalAtOnceDataLoader",
+        "kwargs": {
+           "path_to_hdf5": "../hdf5files/counts_poisson_sep7/valid_data.hdf5",
+           "batch_size": 500,
+           # "batch_size_train": 500,
+           # "batch_size_predict": 500,
+           # "use_weights": True
+           "strip_enclosing_dictionary": False
+        }
+    }
+    
