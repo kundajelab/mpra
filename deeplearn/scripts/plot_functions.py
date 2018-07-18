@@ -30,7 +30,9 @@ def jointplot(vals1, vals2, out_pdf,
               axlim = None,
               hexbin = False,
               bincount = 100,
-              title = None
+              title = None,
+              flipAnnotations = False,
+              annot = None
               ):
 
     if table:
@@ -96,29 +98,34 @@ def jointplot(vals1, vals2, out_pdf,
         ax.set_xlim(xmin,xmax)
         ymin, ymax = scatter_lims(vals2)
         ax.set_ylim(ymin,ymax)
-
+    
+    corLocX = 0.05
+    corLocY = 0.89
+    annotLocX = 1 - corLocX
+    annotLocY = 1 - corLocY
+    
+    if flipAnnotation:
+        corLocX = annotLocX
+        corLocY = annotLocY
+        annotLocX = 1 - corLocX
+        annotLocY = 1 - corLocY
+        
     if cor_func is spearmanr:
-        if pval < 1e-99:
-            ax.text(0.05, 0.89, 'Spearman R = %.3f\nP-value = 0' % (corr),
+        ax.text(corLocX, corLocY, 'Spearman R = %.3f\nP-value = %.1E' % (corr, pval),
                 ha = 'left', va = 'center',
                 transform = ax.transAxes,
                 fontsize=axfont)
-        else:
-            ax.text(0.05, 0.89, 'Spearman R = %.3f\nP-value = %.1E' % (corr, pval),
-                    ha = 'left', va = 'center',
-                    transform = ax.transAxes,
-                    fontsize=axfont)
     if cor_func is pearsonr:
-        if pval < 1e-99:
-            ax.text(0.05, 0.89, 'Pearson R = %.3f\nP-value = 0' % (corr),
+        ax.text(corLocX, corLocY, 'Pearson R = %.3f\nP-value = %.1E' % (corr, pval),
                 ha = 'left', va = 'center',
                 transform = ax.transAxes,
                 fontsize=axfont)
-        else:
-            ax.text(0.05, 0.89, 'Pearson R = %.3f\nP-value = %.1E' % (corr, pval),
-                    ha = 'left', va = 'center',
-                    transform = ax.transAxes,
-                    fontsize=axfont)
+        
+    if annot is not None:
+        ax.text(annotLocX, annotLocY, annot,
+                ha = 'right', va = 'center',
+                transform = ax.transAxes,
+                fontsize=axfont)
 
     if y_label is not None:
         ax.set_ylabel(y_label, fontsize = axfont, labelpad = 10)
