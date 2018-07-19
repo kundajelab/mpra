@@ -33,7 +33,8 @@ def jointplot(vals1, vals2, out_pdf,
               title = None,
               flipAnnotations = False,
               annot = None,
-              regline = False
+              regline = False,
+              sciNotTicksX = False
               ):
 
     if table:
@@ -107,17 +108,17 @@ def jointplot(vals1, vals2, out_pdf,
         ax.set_ylim(ymin,ymax)
     
     corLocX = 0.05
-    corLocY = 0.9
-    annotLocX = 1 - corLocX
-    annotLocY = 1 - corLocY
+    corLocY = 0.88
+    annotLocX = 0.95
+    annotLocY = (1.0 - corLocY) / 2
     corAlign = 'left'
     annotAlign = 'right'
     
     if flipAnnotations:
-        corLocX = annotLocX
-        corLocY = annotLocY
-        annotLocX = 1 - corLocX
-        annotLocY = 1 - corLocY
+        corLocX = 0.95
+        corLocY = 0.1
+        annotLocX = 0.05
+        annotLocY = 0.9
         corAlign = 'right'
         annotAlign = 'left'
         
@@ -161,6 +162,9 @@ def jointplot(vals1, vals2, out_pdf,
         tick.label.set_fontsize(tickfont)
     for tick in ax.yaxis.get_major_ticks():
         tick.label.set_fontsize(tickfont) 
+    
+    if sciNotTicksX:
+        ax.ticklabel_format(style='sci', axis='x', scilimits=(0,0))
     
     # ax.grid(True, linestyle=':')
     # plt.tight_layout(w_pad=0, h_pad=0)
