@@ -2,6 +2,24 @@ import numpy as np
 import gzip
 import sys
 
+# convert seq as one hot numpy array to ACGT char string
+def one_hot_to_seq_string(one_hot_seq, one_hot_axis=1):
+    one_hot_seq = np.array(one_hot_seq)
+    assert one_hot_axis == 0 or one_hot_axis == 1
+    assert len(one_hot_seq.shape) == 2
+    assert np.shape(one_hot_seq)[one_hot_axis] == 4
+    char_seq = ""
+    chars = ['A', 'C', 'G', 'T']
+    for i in range(one_hot_seq.shape[1 - one_hot_axis]):
+        if one_hot_axis == 0:
+            assert np.sum(one_hot_seq[:, i]) == 1
+            char_seq += chars[np.argmax(one_hot_seq[:, i])]
+        if one_hot_axis == 1:
+            assert np.sum(one_hot_seq[i, :]) == 1
+            char_seq += chars[np.argmax(one_hot_seq[i, :])]
+    return char_seq
+    
+
 def get_coords_from_name(name):
 	name = name.strip()
 	chrom = name.split(':')[0]
