@@ -2,7 +2,7 @@
 
 This project applies convolutional neural networks to predict output from massively parallel reporter assays (MPRAs), with the aim of systematically decoding regulatory sequence patterns and identifying disease-causing noncodign variants.
 
-Most of the code involved with training and interpreting the models can be found in Jupyter notebooks in `deeplearn/scripts/`. The final model was trained in Keras 1.2.2 and can be loaded with the `load_model` or `model_from_json` methods using the weights (`deeplearn/model_files/record_13_model_bgGhy_modelWeights.h5`) and/or architecture files (`deeplearn/model_files/record_13_model_bgGhy_modelJson.json`).
+Most of the code involved with training and interpreting the models can be found in Jupyter notebooks (compiled with Python 2.7) in `deeplearn/scripts/`. The final model was trained in Keras 1.2.2 and can be loaded with the `load_model` or `model_from_json` methods using the weights (`deeplearn/model_files/record_13_model_bgGhy_modelWeights.h5`) and/or architecture files (`deeplearn/model_files/record_13_model_bgGhy_modelJson.json`).
 
 Dependencies:
 * numpy, scipy, pandas, seaborn, etc.
